@@ -1,0 +1,109 @@
+form{
+  max-width: 350px;
+  margin: 0 auto;
+  margin-top: 30px;
+
+  label{
+    font-size:1.125rem;
+    font-weight:400;
+    display:inline-block;
+  }
+
+  input,textarea,select{
+    @include input__reset();
+  }
+
+  input[type=time]::-webkit-inner-spin-button,
+  input[type=time]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  textarea{
+    height:100px;
+    resize:none;
+  }
+
+  input[type="submit"]{
+    @include button__bg($back:#0C5EB0);
+  }
+
+  input[type="button"]{
+    @include button__bg($back:#0C5EB0);
+  }
+
+
+
+  .button__back{
+    @include button__bg($back:#0C5EB0);
+  }
+
+
+
+
+  .is-required:after{
+    content: '*';
+    padding-left: 3px;
+    color: #ed403a;
+  }
+
+  .redBorder{
+    border:1px solid #ed403a;
+  }
+
+
+
+}
+
+
+#timetableForm{
+  max-width:800px;
+}
+
+#loginForm{
+  position:absolute;
+  top:200px;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.errorSignUp{
+  max-width: 350px;
+  margin: 0 auto;
+  background: beige;
+  padding: 10px;
+  margin-top: 20px;
+
+  p{
+    font-size:1.2em;
+  }
+}
+
+.warning-error{
+  max-width: 350px;
+  margin: 0 auto;
+  background: beige;
+  padding: 20px;
+  margin-top: 20px;
+  font-size:1.4em;
+}
+
+.hidden{
+  display:none;
+}
+
+
+.no__content{
+  max-width:800px;
+  margin:0 auto;
+  text-align:center;
+  color: #ed403a;
+  text-decoration: underline;
+  letter-spacing: 0.1em;
+  position:absolute;
+  top:200px;
+  left:0;
+  right:0;
+  bottom:0;
+}

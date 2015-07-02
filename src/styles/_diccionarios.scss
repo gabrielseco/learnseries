@@ -1,0 +1,22 @@
+.dictionaryButton{
+  text-align:right;
+  padding-top:10px;
+  padding-right:50px;
+
+  button{
+    @include button__bg($width:none,$display:inline-block,$back:#0C5EB0);
+  }
+}
+
+.optionDictionary{
+  text-align:right;
+  padding-top:10px;
+
+  max-width: 350px;
+  margin: 0 auto;
+  margin-top: 30px;
+
+  button{
+    @include button__bg($width:100%,$display:block,$back:#0C5EB0);
+  }
+}

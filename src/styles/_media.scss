@@ -1,0 +1,75 @@
+/* #Media Queries
+================================================== */
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: $br4) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: $br3) and (max-width: $br4) {}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: $br3) {
+  .dictionaryButton{
+    text-align:left;
+  }
+
+
+
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: $br2) and (max-width: $br3) {
+  .table-react{
+    padding-left:0px;
+    padding-right:0px;
+  }
+
+  .dictionaryButton{
+    text-align:left;
+    button{
+      width:100%;
+    }
+  }
+
+  .pagination{
+    float:none;
+  }
+
+
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: $br1) {
+
+  .bar-button{
+    float:none;
+  }
+
+  .table-react{
+    padding-left:0px;
+    padding-right:0px;
+  }
+
+  .filmButton{
+    text-align:left;
+    button{
+      width:100%;
+    }
+  }
+
+  .dictionaryButton{
+    text-align:left;
+    padding-left:10px;
+    button{
+      width:100%;
+    }
+  }
+  .search-container{
+    float:none;
+  }
+
+  .pagination{
+    float:none;
+  }
+
+}

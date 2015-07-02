@@ -1,0 +1,51 @@
+div.show-image {
+    position: relative;
+    display: inline-block;
+    margin:5px;
+}
+div.show-image:hover img{
+    opacity:0.5;
+    border:1px solid #000;
+}
+div.show-image:hover input {
+    display: block;
+}
+div.show-image input {
+    position:absolute;
+    display:none;
+    background: #000;
+    border:1px solid #000;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;
+    width: 130px;
+    padding: 12px 12px;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+div.show-image input.delete {
+    top:37%;
+    left:20%;
+}
+
+
+.diccionarios{
+  margin-button:10px;
+
+  button{
+    @include button__bg($display:inline-block,$back:#0C5EB0);
+  }
+}
+
+.filmButton{
+  text-align:right;
+
+  button{
+    @include button__bg($width:none,$display:inline-block,$back:#0C5EB0);
+  }
+}

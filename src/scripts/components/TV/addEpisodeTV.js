@@ -1,0 +1,135 @@
+'use strict';
+
+import React from 'react/addons';
+import Mensaje from '../UI/Mensaje';
+import { Navigation, TransitionHook, State } from 'react-router';
+
+
+var mensaje = {
+  errorInsertada: 'La serie ya está insertada'
+};
+
+let addEpisodeTV = React.createClass({
+
+  mixins: [ Navigation, TransitionHook, State ],
+
+    getInitialState(){
+      return {
+        value: {},
+        nombre: '',
+        numero: '',
+        inputName: '',
+        mostrar: false
+      };
+    },
+    componentWillMount(){
+      var self = this;
+      var id = this.getParams().id;
+      this.props.flux.getActions('tv').getTVEpisode(id).then(function(res){
+
+        console.log('res', res);
+        var value = {
+          serie: res[0].Nombre,
+          temporada: res[0].Temporada,
+          numero: res[0].Episodio,
+          nombre: ''
+        };
+
+
+
+        self.setState({
+          value: value,
+          numero: value.numero
+        });
+
+      });
+    },
+    handleForm(e){
+      e.preventDefault();
+
+      var self = this;
+
+      var id = this.getParams().id;
+
+      var form = {
+        id: id,
+        nombre: this.refs.nombre.getDOMNode().value,
+        numero: this.refs.numero.getDOMNode().value
+      };
+
+
+      this.props.flux.getActions('tv').createEpisodeTV(form).then(function(res){
+        console.log('res', res);
+
+        if(res[0].Resultado === 500){
+          //error película insertada añadir clases
+          console.log('error episodio ya insertado');
+          self.setState({
+            inputName: 'redBorder',
+            mostrar: true
+          });
+        } else if (res[0].Resultado === 501) {
+          //velneo caído
+          console.log('Velneo caído');
+        } else if(res[0].Resultado === 200){
+          //we move to films
+          console.log('episodio insertado');
+          self.props.flux.getActions('tv').fetchTVEpisodes();
+          self.transitionTo('/episodes/:id', {id: id});
+        }
+
+      });
+    },
+    render() {
+
+      const handleChange = (e) => {
+
+        var value = {
+          nombre: e.target.value,
+          numero: this.state.value.numero,
+          serie: this.state.value.serie,
+          temporada: this.state.value.temporada
+        };
+
+        this.setState({value: value});
+
+
+       };
+
+       const handleNumero = (e) => {
+
+         var value = {
+           nombre: this.state.value.nombre,
+           numero: e.target.value,
+           serie: this.state.value.serie,
+           temporada: this.state.value.temporada
+         };
+
+         this.setState({value: value});
+
+
+       };
+
+
+      return (
+        <div>
+          <Mensaje mostrar={this.state.mostrar} mensaje={mensaje.errorInsertada} />
+          <form onSubmit={this.handleForm} id="addEpisode" method="post" role="form">
+          <p>{this.state.value.serie} - Season {this.state.value.temporada}</p>
+          <label className="is-required">Nombre</label>
+          <input ref="nombre" className={this.state.inputName} type="text" onChange={handleChange} required placeholder="Nombre" value={this.state.value.nombre}></input>
+            <label className="is-required">Número</label>
+            <input ref="numero" className={this.state.inputName} type="number" onChange={handleNumero} required placeholder="Número" value={this.state.value.numero}></input>
+            <input type="submit" value="Enviar"></input>
+          </form>
+       </div>
+
+      );
+
+
+    }
+
+});
+
+
+module.exports = addEpisodeTV;

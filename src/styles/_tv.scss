@@ -1,0 +1,31 @@
+.tv{
+  li{
+    margin-top:10px;
+  }
+}
+
+
+.tvButton{
+  text-align:right;
+
+  button{
+    @include button__bg($width:none,$display:inline-block,$back:#0C5EB0);
+  }
+}
+
+.tv-wrapper > div.show-image > input.delete{
+  top:40%;
+}
+
+
+.episodes{
+  margin-button:10px;
+
+  button{
+    @include button__bg($display:inline-block,$back:#0C5EB0);
+  }
+}
+
+.imagen{
+  position:relative;
+}
