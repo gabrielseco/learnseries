@@ -210,7 +210,10 @@ export class TVActions extends Actions {
         this.imagePath = imagePath;
     }
 
-    async fetchTV() { return await serverFetchTV(this.apiendpoint); }
+    async fetchTV() {
+      const response = await serverFetchTV(this.apiendpoint);
+      return response;
+    }
 
     async fetchTVEpisodes(tvContent){
 

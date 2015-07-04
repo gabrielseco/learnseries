@@ -157,7 +157,10 @@ export class FilmsActions extends Actions {
         this.imagePath = imagePath;
     }
 
-    async fetchFilms() { return await serverFetchFilms(this.apiendpoint); }
+    async fetchFilms() {
+      const response = await serverFetchFilms(this.apiendpoint);
+      return response;
+    }
 
     async fetchFilmsWords (filmContent) {
 

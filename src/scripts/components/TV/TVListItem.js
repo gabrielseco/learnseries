@@ -30,11 +30,11 @@ let TVListItem = React.createClass({
 
     console.log('clicked the submit modal button');
 
-    console.log('obj', obj.ID());
+    console.log('obj', obj.ID);
 
     var self = this;
 
-    this.props.flux.getActions('tv').deleteTV(obj.ID()).then(function(res){
+    this.props.flux.getActions('tv').deleteTV(obj.ID).then(function(res){
 
       console.log('res', res);
 
@@ -58,12 +58,12 @@ let TVListItem = React.createClass({
   },
 
   modifyTV(obj){
-    this.transitionTo('/modifyTV/:id', {id: obj.ID()});
+    this.transitionTo('/modifyTV/:id', {id: obj.ID});
 
   },
   episodes(obj){
     console.log('episodes');
-    this.transitionTo('/episodes/:id', {id: obj.ID()});
+    this.transitionTo('/episodes/:id', {id: obj.ID});
 
   },
 
@@ -79,9 +79,9 @@ let TVListItem = React.createClass({
 
         <div className="show-image">
                   <img onClick={this.modifyTV.bind(this, this.props.data)}
-                        src={this.props.data.foto()}
-                        title={this.props.data.nombre()}
-                        alt={this.props.data.nombre()}
+                        src={this.props.data.Foto}
+                        title={this.props.data.Nombre}
+                        alt={this.props.data.Nombre}
                         width="230"
                         height="345"/>
                         <input type="button"
@@ -93,7 +93,7 @@ let TVListItem = React.createClass({
                         <button onClick={this.episodes.bind(this, this.props.data)}>EPISODES</button>
                   </div>
                   <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal}>
-                    <h2>Desea eliminar la serie {this.props.data.nombre()} - temporada {this.props.data.temporada()} ?</h2>
+                    <h2>Desea eliminar la serie {this.props.data.Nombre} - temporada {this.props.data.Temporada} ?</h2>
                     <div className="buttons">
                       <button className="cancel" onClick={this.closeModal}>Cancelar</button>
                       <button className="submit" onClick={this.remove.bind(this, this.props.data)}>Enviar</button>

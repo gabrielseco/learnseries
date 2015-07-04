@@ -9,44 +9,47 @@ import { Navigation, TransitionHook } from 'react-router';
 
 
 let InterfaceFilms = React.createClass({
-
     mixins: [ Navigation, TransitionHook ],
-
-
+    getInitialState(){
+      return {
+        films: ''
+      };
+    },
     componentWillMount() {
-      this.props.flux.getStore('films').addListener('change', this.onFilmsStoreChange);
-    },
+      this.props.flux.getActions('films').fetchFilms().then((res) => {
+        console.log('res', res);
 
-    componentWillUnmount() {
-      this.props.flux.getStore('films').removeListener('change', this.onFilmsStoreChange);
+        this.setState({ films: res });
 
-    },
-
-    onFilmsStoreChange() {
-      this.setState({films: this.props.flux.getStore('films').getFilms() });
+      });
     },
     render() {
-      var list = this.props.films.map((film, i) => {
-        return (
-          <FilmsListItem key={film.ID()} data={film} flux={this.props.flux}/>
-        );
-      }).toJS();
+      if (this.state.films !== ''){
+        var list = this.state.films.map((film, i) => {
+          console.log(film.ID);
+          return (
+            <FilmsListItem key={film.ID} data={film} flux={this.props.flux}/>
+          );
+        });
+        const addFilm = () => {
+          console.log('we go to addFilm');
+          this.transitionTo('/addFilm');
+        };
 
-      const addFilm = () => {
-        console.log('we go to addFilm');
-        this.transitionTo('/addFilm');
-      };
-
-        return (
-            <div className="films">
-              <div className="filmButton">
-                <button className="addFilm" onClick={addFilm}>ADD FILM</button>
-              </div>
+          return (
               <div className="films">
-                {list}
+                <div className="filmButton">
+                  <button className="addFilm" onClick={addFilm}>ADD FILM</button>
+                </div>
+                <div className="films">
+                  {list}
+                </div>
               </div>
-            </div>
-        );
+          );
+        }
+        else {
+          return (<div></div>);
+        }
     }
 });
 

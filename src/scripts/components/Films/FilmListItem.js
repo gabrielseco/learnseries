@@ -33,11 +33,11 @@ let FilmsListItem = React.createClass({
   remove(obj){
     console.log('clicked the submit modal button');
 
-    console.log('obj', obj.ID());
+    console.log('obj', obj.ID);
 
     var self = this;
 
-    this.props.flux.getActions('films').deleteFilm(obj.ID()).then(function(res){
+    this.props.flux.getActions('films').deleteFilm(obj.ID).then(function(res){
 
       console.log('res', res);
 
@@ -61,15 +61,15 @@ let FilmsListItem = React.createClass({
 
   modifyFilm(obj){
     console.log('modify');
-    console.log('name', obj.nombre());
-    this.transitionTo('/modifyFilm/:name', {name: obj.nombre()});
+    console.log('name', obj.Nombre);
+    this.transitionTo('/modifyFilm/:name', {name: obj.Nombre});
 
 
   },
 
   diccionarios(obj){
     console.log('diccionarios');
-    this.transitionTo('/diccionarios/:id', {id: obj.ID()});
+    this.transitionTo('/diccionarios/:id', {id: obj.ID});
 
   },
 
@@ -80,9 +80,9 @@ let FilmsListItem = React.createClass({
 
               <div className="show-image">
                   <img onClick={this.modifyFilm.bind(this, this.props.data)}
-                       src={this.props.data.foto()}
-                       title={this.props.data.nombre()}
-                       alt={this.props.data.nombre()}
+                       src={this.props.data.Foto}
+                       title={this.props.data.Nombre}
+                       alt={this.props.data.Nombre}
                        width="230"
                        height="345"/>
                   <input type="button"
@@ -94,7 +94,7 @@ let FilmsListItem = React.createClass({
                     <button onClick={this.diccionarios.bind(this, this.props.data)}>PALABRAS</button>
                   </div>
                   <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal}>
-                    <h2>Desea eliminar la película {this.props.data.nombre()} ?</h2>
+                    <h2>Desea eliminar la película {this.props.data.Nombre} ?</h2>
                     <div className="buttons">
                       <button className="cancel" onClick={this.closeModal}>Cancelar</button>
                       <button className="submit" onClick={this.remove.bind(this, this.props.data)}>Enviar</button>

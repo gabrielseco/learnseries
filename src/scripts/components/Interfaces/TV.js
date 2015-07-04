@@ -11,26 +11,27 @@ import { Navigation, TransitionHook } from 'react-router';
 let InterfaceTV = React.createClass({
 
     mixins: [ Navigation, TransitionHook ],
-
-
+    getInitialState(){
+      return {
+        tv: ''
+      };
+    },
     componentWillMount() {
-      this.props.flux.getStore('tv').addListener('change', this.onTVStoreChange);
-    },
+      this.props.flux.getActions('tv').fetchTV().then((res) => {
+        console.log('res', res);
 
-    componentWillUnmount() {
-      this.props.flux.getStore('tv').removeListener('change', this.onTVStoreChange);
+        this.setState({ tv: res });
 
-    },
-
-    onTVStoreChange() {
-      this.setState({tv: this.props.flux.getStore('tv').getTV() });
+      });
     },
     render() {
-      var list = this.props.tv.map((tv, i) => {
+
+      if(this.state.tv !== '') {
+      var list = this.state.tv.map((tv, i) => {
         return (
-          <TVListItem key={tv.ID()} data={tv} flux={this.props.flux} />
+          <TVListItem key={tv.ID} data={tv} flux={this.props.flux} />
         );
-      }).toJS();
+      });
 
       const addTV = () => {
         this.transitionTo('/addTV');
@@ -46,7 +47,10 @@ let InterfaceTV = React.createClass({
               </div>
             </div>
         );
+    } else {
+      return (<div></div>);
     }
+  }
 });
 
 module.exports = InterfaceTV;
