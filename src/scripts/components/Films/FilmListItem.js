@@ -37,7 +37,7 @@ let FilmsListItem = React.createClass({
 
     var self = this;
 
-    this.props.flux.getActions('films').deleteFilm(obj.ID).then(function(res){
+    this.props.flux.getActions('films').deleteFilm(obj.ID).then((res) => {
 
       console.log('res', res);
 
@@ -50,7 +50,9 @@ let FilmsListItem = React.createClass({
       } else if(res[0].Resultado === 200){
         //we move to films
         console.log('película eliminada');
-        self.props.flux.getActions('films').fetchFilms();
+        var film = document.getElementById(obj.ID);
+            film.parentNode.removeChild(film);
+        this.transitionTo('/films');
 
       }
       self.closeModal();
@@ -78,7 +80,7 @@ let FilmsListItem = React.createClass({
 
       return (
 
-              <div className="show-image">
+              <div className="show-image" id={this.props.data.ID}>
                   <img onClick={this.modifyFilm.bind(this, this.props.data)}
                        src={this.props.data.Foto}
                        title={this.props.data.Nombre}
@@ -97,16 +99,13 @@ let FilmsListItem = React.createClass({
                     <h2>Desea eliminar la película {this.props.data.Nombre} ?</h2>
                     <div className="buttons">
                       <button className="cancel" onClick={this.closeModal}>Cancelar</button>
-                      <button className="submit" onClick={this.remove.bind(this, this.props.data)}>Enviar</button>
+                      <button className="submit" onClick={this.remove.bind(this, this.props.data)}>Eliminar</button>
                     </div>
                   </Modal>
               </div>
 
       );
-
-
     }
-
 });
 
 

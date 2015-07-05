@@ -9,13 +9,16 @@ var mensaje = {
   errorInsertada: 'La película ya está insertada'
 };
 
+var fieldValues = {
+  name: null
+};
+
 let addFilm = React.createClass({
 
   mixins: [ Navigation, TransitionHook ],
 
     getInitialState(){
       return {
-        name: '',
         inputName: '',
         mostrar: false
       };
@@ -23,15 +26,16 @@ let addFilm = React.createClass({
     handleForm(e){
       e.preventDefault();
 
-      var self = this;
+      var name = this.refs.name.getDOMNode().value;
 
-      this.props.flux.getActions('films').createFilm(this.state.name).then(function(res){
+      this.props.flux.getActions('films').createFilm(name).then((res) => {
         console.log('res', res);
 
         if(res[0].Resultado === 500){
           //error película insertada añadir clases
           console.log('error película ya insertada');
-          self.setState({
+
+          this.setState({
             inputName: 'redBorder',
             mostrar: true
           });
@@ -41,22 +45,19 @@ let addFilm = React.createClass({
         } else if(res[0].Resultado === 200){
           //we move to films
           console.log('película insertada');
-          self.props.flux.getActions('films').fetchFilms();
-          self.transitionTo('/films');
+          this.transitionTo('/films');
         }
 
       });
     },
     render() {
-
-      const handleChange = (e) => this.setState({name: e.target.value});
-
       return (
         <div>
           <Mensaje mostrar={this.state.mostrar} mensaje={mensaje.errorInsertada} />
           <form onSubmit={this.handleForm} id="addFilm" method="post" role="form">
             <label className="is-required">Nombre</label>
-            <input ref="name" className={this.state.inputName} type="text" name="name" onChange={handleChange} required placeholder="Nombre" value={this.state.name}></input>
+            <input ref="name" className={this.state.inputName} type="text" name="name" required placeholder="Nombre"
+                   defaultValue={fieldValues.name}></input>
             <input type="submit" value="Enviar"></input>
           </form>
        </div>
