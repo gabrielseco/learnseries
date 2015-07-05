@@ -9,13 +9,17 @@ var mensaje = {
   errorInsertada: 'La serie ya está insertada'
 };
 
+var fieldValues = {
+  name: null,
+  temporada: null
+};
+
 let addTV = React.createClass({
 
   mixins: [ Navigation, TransitionHook ],
 
     getInitialState(){
       return {
-        value: {},
         inputName: '',
         mostrar: false
       };
@@ -23,7 +27,6 @@ let addTV = React.createClass({
     handleForm(e){
       e.preventDefault();
 
-      var self = this;
 
       var value = {
         name: this.refs.name.getDOMNode().value,
@@ -32,13 +35,13 @@ let addTV = React.createClass({
 
       console.log('value', value);
 
-      this.props.flux.getActions('tv').createTV(value).then(function(res){
+      this.props.flux.getActions('tv').createTV(value).then((res) => {
         console.log('res', res);
 
         if(res[0].Resultado === 500){
           //error serie insertada añadir clases
           console.log('error serie ya insertada');
-          self.setState({
+          this.setState({
             inputName: 'redBorder',
             mostrar: true
           });
@@ -48,35 +51,20 @@ let addTV = React.createClass({
         } else if(res[0].Resultado === 200){
           //we move to films
           console.log('serie insertada');
-          self.props.flux.getActions('tv').fetchTV();
-          self.transitionTo('/tv');
+          this.transitionTo('/tv');
         }
 
       });
     },
     render() {
-
-      const handleChange = (e) => {
-
-         this.state.value.name = e.target.value;
-
-       };
-
-       const handleTemporada = (e) => {
-
-         this.state.value.temporada = e.target.value;
-
-
-       };
-
       return (
         <div>
           <Mensaje mostrar={this.state.mostrar} mensaje={mensaje.errorInsertada} />
           <form onSubmit={this.handleForm} id="addTV" method="post" role="form">
             <label className="is-required">Nombre</label>
-            <input ref="name" className={this.state.inputName} type="text" name="name" onChange={handleChange} required placeholder="Nombre" value={this.state.value.name}></input>
+            <input ref="name" className={this.state.inputName} type="text" name="name" required placeholder="Nombre" defaultValue={fieldValues.name}></input>
             <label className="is-required">Temporada</label>
-            <input ref="temporada" className={this.state.inputName} type="text" name="name" onChange={handleTemporada} required placeholder="Temporada" value={this.state.value.temporada}></input>
+            <input ref="temporada" className={this.state.inputName} type="text" name="temporada" required placeholder="Temporada" defaultValue={fieldValues.temporada}></input>
             <input type="submit" value="Enviar"></input>
           </form>
        </div>

@@ -32,9 +32,7 @@ let TVListItem = React.createClass({
 
     console.log('obj', obj.ID);
 
-    var self = this;
-
-    this.props.flux.getActions('tv').deleteTV(obj.ID).then(function(res){
+    this.props.flux.getActions('tv').deleteTV(obj.ID).then((res) => {
 
       console.log('res', res);
 
@@ -47,10 +45,11 @@ let TVListItem = React.createClass({
       } else if(res[0].Resultado === 200){
         //we move to films
         console.log('serie eliminada');
-        self.props.flux.getActions('tv').fetchTV();
+        var tv = document.getElementById(obj.ID);
+            tv.parentNode.removeChild(tv);
 
       }
-      self.closeModal();
+      this.closeModal();
 
     });
 
@@ -77,7 +76,7 @@ let TVListItem = React.createClass({
 
       return (
 
-        <div className="show-image">
+        <div className="show-image" id={this.props.data.ID}>
                   <img onClick={this.modifyTV.bind(this, this.props.data)}
                         src={this.props.data.Foto}
                         title={this.props.data.Nombre}
