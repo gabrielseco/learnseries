@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react/addons';
+import Loading from '../UI/Loading';
 var Table = require('reactabular').Table;
 var Search = require('reactabular').Search;
 var Paginator = require('react-pagify');
@@ -128,6 +129,7 @@ addWords(){
 },
 
     render() {
+      if(this.state.data !== ''){
       var dataPagination = this.state.data;
       var pagination = this.state.pagination;
       var header = this.state.header;
@@ -175,6 +177,10 @@ addWords(){
       </div>
 
       );
+
+    } else {
+      return (<Loading/>);
+    }
 
 
     }

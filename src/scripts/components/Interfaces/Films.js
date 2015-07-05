@@ -2,6 +2,7 @@
 
 import React from 'react/addons';
 import FilmsListItem from '../Films/FilmListItem';
+import Loading from '../UI/Loading';
 import Router from 'react-router';
 import { Navigation, TransitionHook } from 'react-router';
 
@@ -48,7 +49,7 @@ let InterfaceFilms = React.createClass({
           );
         }
         else {
-          return (<div></div>);
+          return (<Loading/>);
         }
     }
 });

@@ -2,6 +2,7 @@
 
 import React from 'react/addons';
 import TVListItem from '../TV/TVListItem';
+import Loading from '../UI/Loading';
 import Router from 'react-router';
 import { Navigation, TransitionHook } from 'react-router';
 
@@ -48,7 +49,7 @@ let InterfaceTV = React.createClass({
             </div>
         );
     } else {
-      return (<div></div>);
+      return (<Loading/>);
     }
   }
 });
