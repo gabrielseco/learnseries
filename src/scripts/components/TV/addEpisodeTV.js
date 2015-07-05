@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react/addons';
+import Loading from '../UI/Loading';
 import Mensaje from '../UI/Mensaje';
 import { Navigation, TransitionHook, State } from 'react-router';
 
@@ -9,13 +10,20 @@ var mensaje = {
   errorInsertada: 'La serie ya está insertada'
 };
 
+var fieldValues = {
+  serie: null,
+  temporada: null,
+  numero: null,
+  nombre: null
+};
+
 let addEpisodeTV = React.createClass({
 
   mixins: [ Navigation, TransitionHook, State ],
 
     getInitialState(){
       return {
-        value: {},
+        value: '',
         nombre: '',
         numero: '',
         inputName: '',
@@ -25,7 +33,7 @@ let addEpisodeTV = React.createClass({
     componentWillMount(){
       var self = this;
       var id = this.getParams().id;
-      this.props.flux.getActions('tv').getTVEpisode(id).then(function(res){
+      this.props.flux.getActions('tv').getTVEpisode(id).then((res) => {
 
         console.log('res', res);
         var value = {
@@ -37,7 +45,7 @@ let addEpisodeTV = React.createClass({
 
 
 
-        self.setState({
+        this.setState({
           value: value,
           numero: value.numero
         });
@@ -46,8 +54,6 @@ let addEpisodeTV = React.createClass({
     },
     handleForm(e){
       e.preventDefault();
-
-      var self = this;
 
       var id = this.getParams().id;
 
@@ -58,7 +64,7 @@ let addEpisodeTV = React.createClass({
       };
 
 
-      this.props.flux.getActions('tv').createEpisodeTV(form).then(function(res){
+      this.props.flux.getActions('tv').createEpisodeTV(form).then((res) => {
         console.log('res', res);
 
         if(res[0].Resultado === 500){
@@ -74,42 +80,14 @@ let addEpisodeTV = React.createClass({
         } else if(res[0].Resultado === 200){
           //we move to films
           console.log('episodio insertado');
-          self.props.flux.getActions('tv').fetchTVEpisodes();
-          self.transitionTo('/episodes/:id', {id: id});
+          this.transitionTo('/episodes/:id', {id: id});
         }
 
       });
     },
     render() {
 
-      const handleChange = (e) => {
-
-        var value = {
-          nombre: e.target.value,
-          numero: this.state.value.numero,
-          serie: this.state.value.serie,
-          temporada: this.state.value.temporada
-        };
-
-        this.setState({value: value});
-
-
-       };
-
-       const handleNumero = (e) => {
-
-         var value = {
-           nombre: this.state.value.nombre,
-           numero: e.target.value,
-           serie: this.state.value.serie,
-           temporada: this.state.value.temporada
-         };
-
-         this.setState({value: value});
-
-
-       };
-
+      if(this.state.value !== ''){
 
       return (
         <div>
@@ -117,14 +95,18 @@ let addEpisodeTV = React.createClass({
           <form onSubmit={this.handleForm} id="addEpisode" method="post" role="form">
           <p>{this.state.value.serie} - Season {this.state.value.temporada}</p>
           <label className="is-required">Nombre</label>
-          <input ref="nombre" className={this.state.inputName} type="text" onChange={handleChange} required placeholder="Nombre" value={this.state.value.nombre}></input>
+          <input ref="nombre" className={this.state.inputName} type="text" required placeholder="Nombre" defaultValue={this.state.value.nombre}></input>
             <label className="is-required">Número</label>
-            <input ref="numero" className={this.state.inputName} type="number" onChange={handleNumero} required placeholder="Número" value={this.state.value.numero}></input>
+            <input ref="numero" className={this.state.inputName} type="number" required placeholder="Número" defaultValue={this.state.value.numero}></input>
             <input type="submit" value="Enviar"></input>
           </form>
        </div>
 
       );
+
+    } else {
+      return (<Loading/>);
+    }
 
 
     }
