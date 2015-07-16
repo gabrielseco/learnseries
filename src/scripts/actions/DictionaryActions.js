@@ -19,6 +19,13 @@ let serverFetchTVWords = async function(apiendpoint) {
 
 };
 
+let serverFetchDictionaryEpisode = async function(apiendpoint, formContent){
+
+  let words = await axios.get(apiendpoint + '/diccionarios_episodio?ID='+formContent);
+  return words.data;
+
+};
+
 let serverCreateWords = async function(apiendpoint, form){
 
   form.english = form.english.trim();
@@ -66,6 +73,12 @@ export class DictionaryActions extends Actions {
       const response = await serverFetchTVWords(this.apiendpoint);
       return response;
 
+    }
+
+    async fetchTVDictionaryFromEpisode(formContent){
+
+      const response = await serverFetchDictionaryEpisode(this.apiendpoint, formContent);
+      return response;
     }
 
     async insertWords(form) {

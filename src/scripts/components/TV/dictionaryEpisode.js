@@ -10,42 +10,17 @@ import { Navigation, TransitionHook, State } from 'react-router';
 require('reactabular/style.css');
 
 
-let episodesTV = React.createClass({
+let dictionaryEpisode = React.createClass({
 
   mixins: [ Navigation, TransitionHook, State ],
   getInitialState(){
     var columns = [
       {
-          property: 'Nombre',
-          header: 'Nombre'
+          property: 'english',
+          header: 'English'
       }, {
-          property: 'Serie',
-          header: 'Serie'
-      }, {
-          property: 'Temporada',
-          header: 'Temporada'
-      },
-      {
-          property: 'Numero',
-          header: 'Número'
-      },
-      {
-          property: 'ver',
-          header: 'Ver',
-          cell: (value, data, rowIndex, property) => {
-             var ver = () => {
-               var id = data[rowIndex].ID;
-               console.log('ver palabras de un capítulo'+id);
-               this.transitionTo('dictionaryEpisode/:id', {id: id} );
-
-             };
-
-             return {
-                 value: <span>
-                     <a onClick={ver} className="edit-btn">ver</a>
-                 </span>
-             };
-           }
+          property: 'spanish',
+          header: 'Spanish'
       },
       {
         property: 'editar',
@@ -79,7 +54,6 @@ let episodesTV = React.createClass({
             };
           }
         }
-
     ];
     return {
       data: [],
@@ -106,9 +80,7 @@ let episodesTV = React.createClass({
   componentWillMount() {
     var params = this.getParams().id;
 
-    var self = this;
-
-    this.props.flux.getActions('tv').fetchTVEpisodes(params).then((res) => {
+    this.props.flux.getActions('diccionarios').fetchTVDictionaryFromEpisode(params).then((res) => {
       console.log('res', res);
 
       this.setState({ data: res });
@@ -142,14 +114,6 @@ onPerPage(e) {
     this.setState({
         pagination: pagination
     });
-},
-
-addEpisodes(){
-  console.log('Add Episodes');
-
-  var id = this.getParams().id;
-
-  this.transitionTo('/addEpisode/:id', {id: id});
 },
 
     render() {
@@ -207,4 +171,4 @@ addEpisodes(){
 });
 
 
-module.exports = episodesTV;
+module.exports = dictionaryEpisode;
