@@ -20,19 +20,19 @@ let Select = React.createClass({
 
           var list = this.props.data.map((value, i) => {
             return (
-              <option key={value.ID()} value={value.ID()}>
-                {value.nombre()}
+              <option key={value.ID} value={value.ID}>
+                {value.Nombre}
               </option>
             );
-          }).toJS();
+          });
         } else if(this.props.series === 'true') {
          list = this.props.data.map((value, i) => {
             return (
-              <option key={value.ID()} value={value.ID()}>
-                {value.nombre()} - Season {value.temporada()}
+              <option key={value.ID} value={value.ID}>
+                {value.Nombre} - Season {value.Temporada}
               </option>
             );
-          }).toJS();
+          });
         } else if (this.props.series === 'episodio'){
           list = this.props.data.map((value, i) => {
              return (

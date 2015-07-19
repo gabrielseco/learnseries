@@ -89,6 +89,11 @@ let dictionaryEpisode = React.createClass({
 
 
   },
+  addWords(){
+    console.log('add words');
+    this.transitionTo('/addWords/:id', {id: '2'});
+
+  },
   onSearch(search) {
 
     console.log(search);
@@ -143,7 +148,7 @@ onPerPage(e) {
       return (
         <div className="table-react">
           <div className="dictionaryButton">
-            <button className="addWords" onClick={this.addEpisodes}>ADD EPISODES</button>
+            <button className="addWords" onClick={this.addWords}>ADD WORDS</button>
           </div>
           <div className='per-page-container'>
               Results <input type='text' defaultValue={pagination.perPage} onChange={this.onPerPage}></input>

@@ -27,33 +27,27 @@ let addWords = React.createClass({
         text: ''
       };
     },
-
     componentWillMount() {
       var params = this.getParams().id;
 
       if( params === "1"){
-        this.props.flux.getStore('films').addListener('change', this.onFilmsStoreChange);
+
+        console.log('films');
+        this.props.flux.getActions('films').fetchFilms().then((res) => {
+          console.log('res', res);
+
+          this.setState({ data: res });
+
+        });
       } else if(params === "2") {
-        this.props.flux.getStore('tv').addListener('change', this.onTVStoreChange);
+        console.log('series');
+        this.props.flux.getActions('tv').fetchTV().then((res) => {
+          console.log('res', res);
+
+          this.setState({ data: res });
+
+        });
       }
-    },
-
-    componentWillUnmount() {
-      var params = this.getParams().id;
-
-      if( params === "1"){
-        this.props.flux.getStore('films').removeListener('change', this.onFilmsStoreChange);
-      } else if(params === "2") {
-        this.props.flux.getStore('tv').removeListener('change', this.onTVStoreChange);
-      }
-
-    },
-
-    onFilmsStoreChange() {
-        this.setState({ data: this.props.flux.getStore('films').getFilms(), text: text.pelicula });
-    },
-    onTVStoreChange(){
-      this.setState({ data: this.props.flux.getStore('tv').getTV(), text: text.serie });
 
     },
     handleForm(e){
@@ -103,10 +97,6 @@ let addWords = React.createClass({
 
       document.getElementById('selectEpisode').className = 'hidden';
       this.refs.english.getDOMNode().focus();
-
-
-
-
 
     },
 
@@ -271,7 +261,7 @@ let addWords = React.createClass({
           <div>
           <Select
                   ID="ID"
-                  text={this.state.text}
+                  text={text.serie}
                   data={this.state.data}
                   series="true">
           </Select>
@@ -301,7 +291,7 @@ let addWords = React.createClass({
           <div>
           <Select
                   ID="ID"
-                  text={this.state.text}
+                  text={text.pelicula}
                   data={this.state.data}
                   series="false">
           </Select>
