@@ -33,7 +33,7 @@ let serverCreateWords = async function(apiendpoint, form){
   form.spanish = form.spanish.trim();
   form.spanish = form.spanish.charAt(0).toUpperCase() + form.spanish.slice(1);
 
-  if(form.idEpisodio !== null){
+  if(form.idEpisodio !== ''){
     var url = "registro_palabra?english="+form.english+
       "&spanish="+form.spanish+"&ID_SERIE="+form.idSerie.toString()+
       "&ID_EPISODIO="+form.idEpisodio.toString();
@@ -55,11 +55,15 @@ let serverCreateWords = async function(apiendpoint, form){
 };
 
 
+
+
+
 export class DictionaryActions extends Actions {
 
     constructor(apiendpoint) {
         super();
         this.apiendpoint = apiendpoint;
+        this.requiredValues = [];
     }
 
     async fetchFilmsWords() {
@@ -84,6 +88,10 @@ export class DictionaryActions extends Actions {
     async insertWords(form) {
       const response = await serverCreateWords(this.apiendpoint, form);
       return response;
+    }
+
+    async saveRequiredData(data) {
+      this.requiredValues = data;
     }
 
 

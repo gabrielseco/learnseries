@@ -21,6 +21,7 @@ import modifyTV from './TV/modifyTV';
 import episodesTV from './TV/episodesTV';
 import dictionaryEpisode from './TV/dictionaryEpisode';
 import addEpisodeTV from './TV/addEpisodeTV';
+import modifyEpisode from './TV/modifyEpisode';
 import addWords from './Dictionary/addWords';
 
 
@@ -50,6 +51,7 @@ try {
         <Route name="modifyTV" path="/modifyTV/:id" handler={modifyTV} />
         <Route name="episodes" path="/episodes/:id" handler={episodesTV} />
         <Route name="addEpisode" path="/addEpisode/:id" handler={addEpisodeTV} />
+        <Route name="modifyEpisode" path="/modifyEpisode/:serie/:id" handler={modifyEpisode} />
         <Route name="dictionaryFilms" path="/dictionaryFilms" handler={DictionaryFilms} />
         <Route name="dictionaryTV" path="/dictionaryTV" handler={DictionaryTV} />
         <Route name="dictionaryEpisode/:id" path="/dictionaryEpisode/:id" handler={dictionaryEpisode} />

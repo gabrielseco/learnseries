@@ -15,8 +15,8 @@ let Select = React.createClass({
     componentWillMount(){
       this.setState({values: this.props.data});
     },
-    render(){
-      if(this.props.data !== '' && this.props.series === 'false'){
+    render() {
+      if(this.props.data !== ''){
 
           var list = this.props.data.map((value, i) => {
             return (
@@ -25,24 +25,8 @@ let Select = React.createClass({
               </option>
             );
           });
-        } else if(this.props.series === 'true') {
-         list = this.props.data.map((value, i) => {
-            return (
-              <option key={value.ID} value={value.ID}>
-                {value.Nombre} - Season {value.Temporada}
-              </option>
-            );
-          });
-        } else if (this.props.series === 'episodio'){
-          list = this.props.data.map((value, i) => {
-             return (
-               <option key={value.ID} value={value.ID} >
-                {value.Nombre} - Episode {value.Numero}
-               </option>
-             );
-           });
         }
-          return (
+        return (
             <div className={this.props.class}>
               <select onChange={this.onSelect}>
                 <option value="0">{this.props.text}</option>

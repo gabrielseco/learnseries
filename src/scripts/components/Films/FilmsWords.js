@@ -124,6 +124,7 @@ onPerPage(e) {
 
 addWords(){
   console.log('Add Words');
+  this.transitionTo('/addWords/:id', {id: '1'});
 },
 
     render() {

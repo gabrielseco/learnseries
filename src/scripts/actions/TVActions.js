@@ -19,6 +19,33 @@ let serverFetchTV = async function(apiendpoint) {
 
 };
 
+
+let serverBuildSelect = function(response, episodio = false){
+  var select = [];
+
+  for(var i = 0; i < response.length; i++) {
+    var nombre = "";
+
+    if(episodio === true){
+      nombre = response[i].Nombre + " - Episodio " + response[i].Numero;
+
+    }
+    else {
+      nombre = response[i].Nombre + " - Season " + response[i].Temporada;
+    }
+    var obj = {
+      ID: response[i].ID,
+      Nombre: nombre
+    };
+
+    select.push(obj);
+
+  }
+
+  return select;
+
+};
+
 let serverFetchTVEpisodes = async function (apiendpoint, tvContent) {
 
   console.log('fetching episodes of tv in actions');
@@ -212,6 +239,19 @@ export class TVActions extends Actions {
 
     async fetchTV() {
       const response = await serverFetchTV(this.apiendpoint);
+      return response;
+    }
+
+    async fetchTVSelect(){
+
+      var response = await serverFetchTV(this.apiendpoint);
+          response = serverBuildSelect(response);
+      return response;
+    }
+
+    async fetchTVEpisodesSelect(tvContent){
+      var response = await serverFetchTVEpisodes(this.apiendpoint, tvContent);
+          response = serverBuildSelect(response, true);
       return response;
     }
 

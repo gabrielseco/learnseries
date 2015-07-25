@@ -53,7 +53,10 @@ let episodesTV = React.createClass({
         cell: (value, data, rowIndex, property) => {
            var editar = () => {
              var id = data[rowIndex].ID;
-             console.log(id);
+             var idSerie = this.getParams().id;
+             console.log('editar episodio '+id);
+             console.log('idSerie' +idSerie);
+             this.transitionTo('/modifyEpisode/:serie/:id', {serie: idSerie, id: id});
            };
 
            return {
