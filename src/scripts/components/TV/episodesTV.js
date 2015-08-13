@@ -6,6 +6,11 @@ var Search = require('reactabular').Search;
 var Paginator = require('react-pagify');
 var sortColumn = require('reactabular').sortColumn;
 import { Navigation, TransitionHook, State } from 'react-router';
+import Modal from 'react-modal';
+
+var appElement = document.getElementById('app');
+Modal.setAppElement(appElement);
+Modal.injectCSS();
 
 require('reactabular/style.css');
 
@@ -54,9 +59,8 @@ let episodesTV = React.createClass({
            var editar = () => {
              var id = data[rowIndex].ID;
              var idSerie = this.getParams().id;
-             console.log('editar episodio '+id);
-             console.log('idSerie' +idSerie);
-             this.transitionTo('/modifyEpisode/:serie/:id', {serie: idSerie, id: id});
+
+             this.transitionTo('/modifyEpisode/:id/:idSerie', {id: id, idSerie: idSerie });
            };
 
            return {
@@ -77,7 +81,7 @@ let episodesTV = React.createClass({
 
             return {
                 value: <span>
-                    <a onClick={eliminar} className="delete-btn">Eliminar</a>
+                    <a onClick={this.openModal} className="delete-btn">Eliminar</a>
                 </span>
             };
           }
@@ -85,6 +89,7 @@ let episodesTV = React.createClass({
 
     ];
     return {
+      modalIsOpen: false,
       data: [],
       columns: columns,
       pagination: {
@@ -105,6 +110,12 @@ let episodesTV = React.createClass({
       }
     }
     };
+  },
+  openModal: function() {
+    this.setState({modalIsOpen: true});
+  },
+  closeModal: function() {
+    this.setState({modalIsOpen: false});
   },
   componentWillMount() {
     var params = this.getParams().id;

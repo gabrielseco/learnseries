@@ -51,7 +51,7 @@ try {
         <Route name="modifyTV" path="/modifyTV/:id" handler={modifyTV} />
         <Route name="episodes" path="/episodes/:id" handler={episodesTV} />
         <Route name="addEpisode" path="/addEpisode/:id" handler={addEpisodeTV} />
-        <Route name="modifyEpisode" path="/modifyEpisode/:serie/:id" handler={modifyEpisode} />
+        <Route name="modifyEpisode" path="/modifyEpisode/:id/:idSerie" handler={modifyEpisode} />
         <Route name="dictionaryFilms" path="/dictionaryFilms" handler={DictionaryFilms} />
         <Route name="dictionaryTV" path="/dictionaryTV" handler={DictionaryTV} />
         <Route name="dictionaryEpisode/:id" path="/dictionaryEpisode/:id" handler={dictionaryEpisode} />

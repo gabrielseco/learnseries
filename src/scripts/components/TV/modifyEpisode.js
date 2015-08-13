@@ -31,35 +31,25 @@ let modifyEpisode = React.createClass({
       };
     },
     componentWillMount(){
-      var self = this;
-      var idEpisode = this.getParams().id;
-      var idSerie = this.getParams().serie;
+      var id = this.getParams().id;
 
-      console.log('ID SERIE', idSerie);
-
-      /*this.props.flux.getActions('tv').getTVEpisode(id).then((res) => {
+      this.props.flux.getActions('tv').getEpisode(id).then((res) => {
 
         console.log('res', res);
-        var value = {
-          serie: res[0].Nombre,
-          temporada: res[0].Temporada,
-          numero: res[0].Episodio,
-          nombre: ''
-        };
-
 
 
         this.setState({
-          value: value,
-          numero: value.numero
+          value: res
         });
 
-      });*/
+      });
     },
     handleForm(e){
       e.preventDefault();
 
       var id = this.getParams().id;
+      var idSerie = this.getParams().idSerie;
+
 
       var form = {
         id: id,
@@ -68,7 +58,8 @@ let modifyEpisode = React.createClass({
       };
 
 
-      /*this.props.flux.getActions('tv').createEpisodeTV(form).then((res) => {
+      this.props.flux.getActions('tv').modifyEpisode(form).then((res) => {
+
         console.log('res', res);
 
         if(res[0].Resultado === 500){
@@ -81,13 +72,14 @@ let modifyEpisode = React.createClass({
         } else if (res[0].Resultado === 501) {
           //velneo caído
           console.log('Velneo caído');
+
         } else if(res[0].Resultado === 200){
-          //we move to films
+
           console.log('episodio insertado');
-          this.transitionTo('/episodes/:id', {id: id});
+          this.transitionTo('/episodes/:id', {id: idSerie});
         }
 
-      });*/
+      });
     },
     render() {
 
@@ -97,11 +89,11 @@ let modifyEpisode = React.createClass({
         <div>
           <Mensaje mostrar={this.state.mostrar} mensaje={mensaje.errorInsertada} />
           <form onSubmit={this.handleForm} id="addEpisode" method="post" role="form">
-          <p>{this.state.value.serie} - Season {this.state.value.temporada}</p>
+          <p>{this.state.value[0].Serie} - Season {this.state.value[0].Temporada}</p>
           <label className="is-required">Nombre</label>
-          <input ref="nombre" className={this.state.inputName} type="text" required placeholder="Nombre" defaultValue={this.state.value.nombre}></input>
+          <input ref="nombre" className={this.state.inputName} type="text" required placeholder="Nombre" defaultValue={this.state.value[0].Nombre}></input>
             <label className="is-required">Número</label>
-            <input ref="numero" className={this.state.inputName} type="number" required placeholder="Número" defaultValue={this.state.value.numero}></input>
+            <input ref="numero" className={this.state.inputName} type="number" required placeholder="Número" defaultValue={this.state.value[0].Numero}></input>
             <input type="submit" value="Enviar"></input>
           </form>
        </div>

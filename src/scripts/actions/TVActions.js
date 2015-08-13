@@ -220,6 +220,30 @@ let serverCreateEpisode = async function(apiendpoint, tvContent) {
 
 };
 
+let serverGetEpisode = async function(apiendpoint, tvContent) {
+  var url = "episodio?ID=" + tvContent;
+
+  var velneo = await axios.get(apiendpoint + url);
+
+  return velneo.data;
+};
+
+
+let serverModifyEpisode = async function(apiendpoint, tvContent) {
+
+  var url = "modificar_episodio?nombre="+tvContent.nombre+"&numero="+tvContent.numero+"&id="+tvContent.id;
+
+  var velneo = await axios.get(apiendpoint + url);
+
+  console.log(apiendpoint + url);
+
+  return velneo.data;
+
+
+};
+
+
+
 
 let serverDeleteTV = async function(apiendpoint, tvContent) {
     let tv = await axios.get(apiendpoint + '/baja_serie?id=' + tvContent);
@@ -291,6 +315,19 @@ export class TVActions extends Actions {
 
       return response;
 
+    }
+
+    async getEpisode(tvContent) {
+
+      const response = await serverGetEpisode(this.apiendpoint, tvContent);
+      return response;
+
+    }
+
+    async modifyEpisode(tvContent) {
+
+      const response = await serverModifyEpisode(this.apiendpoint, tvContent);
+      return response;
     }
 
 
