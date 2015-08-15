@@ -1,0 +1,447 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'react-pagify' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 verbose readDependencies npm-shrinkwrap.json is overriding dependencies
+5 info shrinkwrap file "/Users/Gabriel/learnseries/npm-shrinkwrap.json"
+6 verbose readDependencies returned deps { axios: 'https://registry.npmjs.org/axios/-/axios-0.5.2.tgz',
+6 verbose readDependencies returned deps   'babel-runtime': 'https://registry.npmjs.org/babel-runtime/-/babel-runtime-4.7.16.tgz',
+6 verbose readDependencies returned deps   'file-loader': 'https://registry.npmjs.org/file-loader/-/file-loader-0.8.1.tgz',
+6 verbose readDependencies returned deps   flummox: 'https://registry.npmjs.org/flummox/-/flummox-2.13.2.tgz',
+6 verbose readDependencies returned deps   immutable: 'https://registry.npmjs.org/immutable/-/immutable-3.6.4.tgz',
+6 verbose readDependencies returned deps   react: 'https://registry.npmjs.org/react/-/react-0.12.2.tgz',
+6 verbose readDependencies returned deps   'react-router': 'https://registry.npmjs.org/react-router/-/react-router-0.11.6.tgz' }
+7 silly cache add args [ 'react-pagify', null ]
+8 verbose cache add spec react-pagify
+9 silly cache add parsed spec { raw: 'react-pagify',
+9 silly cache add   scope: null,
+9 silly cache add   name: 'react-pagify',
+9 silly cache add   rawSpec: '',
+9 silly cache add   spec: '*',
+9 silly cache add   type: 'range' }
+10 verbose addNamed react-pagify@*
+11 silly addNamed semver.valid null
+12 silly addNamed semver.validRange *
+13 silly addNameRange { name: 'react-pagify', range: '*', hasData: false }
+14 silly mapToRegistry name react-pagify
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry https://registry.npmjs.org/
+17 silly mapToRegistry uri https://registry.npmjs.org/react-pagify
+18 verbose addNameRange registry:https://registry.npmjs.org/react-pagify not in flight; fetching
+19 verbose request uri https://registry.npmjs.org/react-pagify
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 23:37:50
+22 verbose request id d8ce1e01e2f0230a
+23 verbose etag "D41ROWJEPE4MGO6IVLS879NAQ"
+24 http request GET https://registry.npmjs.org/react-pagify
+25 http 304 https://registry.npmjs.org/react-pagify
+26 silly get cb [ 304,
+26 silly get   { date: 'Sat, 15 Aug 2015 21:25:07 GMT',
+26 silly get     via: '1.1 varnish',
+26 silly get     'cache-control': 'max-age=60',
+26 silly get     etag: '"D41ROWJEPE4MGO6IVLS879NAQ"',
+26 silly get     age: '0',
+26 silly get     connection: 'keep-alive',
+26 silly get     'x-served-by': 'cache-ams4131-AMS',
+26 silly get     'x-cache': 'MISS',
+26 silly get     'x-cache-hits': '0',
+26 silly get     'x-timer': 'S1439673907.881500,VS0,VE320',
+26 silly get     vary: 'Accept' } ]
+27 verbose etag https://registry.npmjs.org/react-pagify from cache
+28 verbose get saving react-pagify to /Users/Gabriel/.npm/registry.npmjs.org/react-pagify/.cache.json
+29 silly addNameRange number 2 { name: 'react-pagify', range: '*', hasData: true }
+30 silly addNameRange versions [ 'react-pagify',
+30 silly addNameRange   [ '0.1.1',
+30 silly addNameRange     '0.1.2',
+30 silly addNameRange     '0.2.0',
+30 silly addNameRange     '0.2.1',
+30 silly addNameRange     '0.3.1',
+30 silly addNameRange     '0.3.2',
+30 silly addNameRange     '0.3.3',
+30 silly addNameRange     '0.4.0',
+30 silly addNameRange     '0.5.0',
+30 silly addNameRange     '0.5.1',
+30 silly addNameRange     '0.6.0',
+30 silly addNameRange     '0.6.2',
+30 silly addNameRange     '0.6.3',
+30 silly addNameRange     '0.6.4',
+30 silly addNameRange     '0.6.5' ] ]
+31 verbose addNamed react-pagify@0.6.5
+32 silly addNamed semver.valid 0.6.5
+33 silly addNamed semver.validRange 0.6.5
+34 silly cache afterAdd react-pagify@0.6.5
+35 verbose afterAdd /Users/Gabriel/.npm/react-pagify/0.6.5/package/package.json not in flight; writing
+36 verbose afterAdd /Users/Gabriel/.npm/react-pagify/0.6.5/package/package.json written
+37 silly install resolved [ { name: 'react-pagify',
+37 silly install resolved     description: 'Simple pagination for React',
+37 silly install resolved     author: { name: 'Juho Vepsalainen', email: 'bebraw@gmail.com' },
+37 silly install resolved     version: '0.6.5',
+37 silly install resolved     scripts:
+37 silly install resolved      { start: 'node server.js',
+37 silly install resolved        test: 'jest && npm run lint',
+37 silly install resolved        'gh-pages': 'webpack --config ./config/webpack.gh-pages.js',
+37 silly install resolved        'deploy-gh-pages': 'node ./config/deploy-gh-pages.js',
+37 silly install resolved        dist: 'webpack --config ./config/webpack.dist.js && webpack --config ./config/webpack.dist.min.js',
+37 silly install resolved        watch: 'npm-watch',
+37 silly install resolved        lint: 'eslint . --ext .js --ext .jsx',
+37 silly install resolved        version: 'npm run test && npm run dist && npm version "$@" && npm run gh-pages && npm run deploy-gh-pages' },
+37 silly install resolved     dependencies: { intersect: '^1.0.1', uniq: '^1.0.1' },
+37 silly install resolved     devDependencies:
+37 silly install resolved      { annomath: '^0.4.1',
+37 silly install resolved        'babel-eslint': '^2.0.2',
+37 silly install resolved        'css-loader': '^0.9.1',
+37 silly install resolved        'cumberbatch-name': '^1.0.9',
+37 silly install resolved        eslint: '^0.18.0',
+37 silly install resolved        'eslint-plugin-react': '^2.1.0',
+37 silly install resolved        'file-loader': '^0.8.1',
+37 silly install resolved        'gh-pages': '^0.2.0',
+37 silly install resolved        'highlight.js': '^8.4.0',
+37 silly install resolved        'html-loader': '^0.2.3',
+37 silly install resolved        'html-webpack-plugin': '^1.1.0',
+37 silly install resolved        'jest-cli': '^0.4.0',
+37 silly install resolved        'json-loader': '^0.5.1',
+37 silly install resolved        'jsx-loader': '^0.12.2',
+37 silly install resolved        marked: '^0.3.3',
+37 silly install resolved        'npm-watch': '^0.0.0',
+37 silly install resolved        'react-ghfork': '^0.3.0',
+37 silly install resolved        'react-hot-loader': '^1.2.4',
+37 silly install resolved        'react-tools': '^0.13.1',
+37 silly install resolved        'style-loader': '^0.9.0',
+37 silly install resolved        webpack: '^1.7.3',
+37 silly install resolved        'webpack-dev-server': '^1.8.0',
+37 silly install resolved        xtend: '^4.0.0' },
+37 silly install resolved     peerDependencies: { react: '>=0.11.0 <1.0.0' },
+37 silly install resolved     main: 'dist/react-pagify.js',
+37 silly install resolved     repository:
+37 silly install resolved      { type: 'git',
+37 silly install resolved        url: 'https://github.com/bebraw/react-pagify.git' },
+37 silly install resolved     homepage: 'https://bebraw.github.io/react-pagify/',
+37 silly install resolved     bugs: { url: 'https://github.com/bebraw/react-pagify/issues' },
+37 silly install resolved     keywords: [ 'react', 'reactjs', 'pagination' ],
+37 silly install resolved     licenses: [ [Object] ],
+37 silly install resolved     jest:
+37 silly install resolved      { scriptPreprocessor: './config/preprocessor.js',
+37 silly install resolved        unmockedModulePathPatterns: [Object] },
+37 silly install resolved     watch: { test: '{lib,__tests__}/*.js' },
+37 silly install resolved     gitHead: 'f239bdbb3763c2b8ac827cb5054ae9fdcc499c74',
+37 silly install resolved     _id: 'react-pagify@0.6.5',
+37 silly install resolved     _shasum: '7098bd997e73179f3df40e4562695621a746172d',
+37 silly install resolved     _from: 'react-pagify@*',
+37 silly install resolved     _npmVersion: '2.7.1',
+37 silly install resolved     _nodeVersion: '0.10.37',
+37 silly install resolved     _npmUser: { name: 'bebraw', email: 'bebraw@gmail.com' },
+37 silly install resolved     maintainers: [ [Object] ],
+37 silly install resolved     dist:
+37 silly install resolved      { shasum: '7098bd997e73179f3df40e4562695621a746172d',
+37 silly install resolved        tarball: 'http://registry.npmjs.org/react-pagify/-/react-pagify-0.6.5.tgz' },
+37 silly install resolved     directories: {},
+37 silly install resolved     _resolved: 'https://registry.npmjs.org/react-pagify/-/react-pagify-0.6.5.tgz',
+37 silly install resolved     readme: 'ERROR: No README data found!' } ]
+38 info install react-pagify@0.6.5 into /Users/Gabriel/learnseries
+39 info installOne react-pagify@0.6.5
+40 verbose installOne of react-pagify to /Users/Gabriel/learnseries not in flight; installing
+41 verbose lock using /Users/Gabriel/.npm/_locks/react-pagify-0d1769d4eb433933.lock for /Users/Gabriel/learnseries/node_modules/react-pagify
+42 silly install write writing react-pagify 0.6.5 to /Users/Gabriel/learnseries/node_modules/react-pagify
+43 silly cache addNamed cb react-pagify@0.6.5
+44 verbose unbuild node_modules/react-pagify
+45 verbose gentlyRm vacuuming /Users/Gabriel/learnseries/node_modules/react-pagify
+46 verbose tar unpack /Users/Gabriel/.npm/react-pagify/0.6.5/package.tgz
+47 verbose tar unpacking to /Users/Gabriel/learnseries/node_modules/react-pagify
+48 verbose gentlyRm vacuuming /Users/Gabriel/learnseries/node_modules/react-pagify
+49 silly gunzTarPerm modes [ '755', '644' ]
+50 silly gunzTarPerm extractEntry package.json
+51 silly gunzTarPerm extractEntry .npmignore
+52 silly gunzTarPerm extractEntry README.md
+53 silly gunzTarPerm extractEntry LICENSE
+54 silly gunzTarPerm extractEntry server.js
+55 silly gunzTarPerm extractEntry demo/app.js
+56 silly gunzTarPerm extractEntry demo/index.js
+57 silly gunzTarPerm extractEntry demo/demo.css
+58 silly gunzTarPerm extractEntry .eslintignore
+59 silly gunzTarPerm extractEntry __tests__/paginator-test.js
+60 silly gunzTarPerm extractEntry __tests__/segmentize-test.js
+61 silly gunzTarPerm extractEntry config/deploy-gh-pages.js
+62 silly gunzTarPerm extractEntry config/preprocessor.js
+63 silly gunzTarPerm extractEntry config/webpack.common.dist.js
+64 silly gunzTarPerm extractEntry config/webpack.common.js
+65 silly gunzTarPerm extractEntry config/webpack.config.js
+66 silly gunzTarPerm extractEntry config/webpack.dist.js
+67 silly gunzTarPerm extractEntry config/webpack.dist.min.js
+68 silly gunzTarPerm extractEntry config/webpack.gh-pages.js
+69 silly gunzTarPerm extractEntry .eslintrc
+70 silly gunzTarPerm extractEntry dist/react-pagify.js
+71 silly gunzTarPerm extractEntry dist/react-pagify.min.js
+72 silly gunzTarPerm extractEntry index.html
+73 silly gunzTarPerm extractEntry lib/range.js
+74 silly gunzTarPerm extractEntry lib/segmentize.js
+75 silly gunzTarPerm extractEntry lib/index.jsx
+76 silly gunzTarPerm extractEntry loaders/markdown.js
+77 silly gunzTarPerm extractEntry .jshintrc
+78 silly gunzTarPerm extractEntry .travis.yml
+79 silly gunzTarPerm extractEntry style.css
+80 info preinstall react-pagify@0.6.5
+81 silly prepareForInstallMany adding intersect@^1.0.1 from react-pagify dependencies
+82 silly prepareForInstallMany adding uniq@^1.0.1 from react-pagify dependencies
+83 silly cache add args [ 'intersect@^1.0.1', null ]
+84 verbose cache add spec intersect@^1.0.1
+85 silly cache add args [ 'uniq@^1.0.1', null ]
+86 verbose cache add spec uniq@^1.0.1
+87 silly cache add parsed spec { raw: 'intersect@^1.0.1',
+87 silly cache add   scope: null,
+87 silly cache add   name: 'intersect',
+87 silly cache add   rawSpec: '^1.0.1',
+87 silly cache add   spec: '>=1.0.1 <2.0.0',
+87 silly cache add   type: 'range' }
+88 verbose addNamed intersect@>=1.0.1 <2.0.0
+89 silly addNamed semver.valid null
+90 silly addNamed semver.validRange >=1.0.1 <2.0.0
+91 silly addNameRange { name: 'intersect', range: '>=1.0.1 <2.0.0', hasData: false }
+92 silly mapToRegistry name intersect
+93 silly mapToRegistry using default registry
+94 silly mapToRegistry registry https://registry.npmjs.org/
+95 silly mapToRegistry uri https://registry.npmjs.org/intersect
+96 verbose addNameRange registry:https://registry.npmjs.org/intersect not in flight; fetching
+97 silly cache add parsed spec { raw: 'uniq@^1.0.1',
+97 silly cache add   scope: null,
+97 silly cache add   name: 'uniq',
+97 silly cache add   rawSpec: '^1.0.1',
+97 silly cache add   spec: '>=1.0.1 <2.0.0',
+97 silly cache add   type: 'range' }
+98 verbose addNamed uniq@>=1.0.1 <2.0.0
+99 silly addNamed semver.valid null
+100 silly addNamed semver.validRange >=1.0.1 <2.0.0
+101 silly addNameRange { name: 'uniq', range: '>=1.0.1 <2.0.0', hasData: false }
+102 silly mapToRegistry name uniq
+103 silly mapToRegistry using default registry
+104 silly mapToRegistry registry https://registry.npmjs.org/
+105 silly mapToRegistry uri https://registry.npmjs.org/uniq
+106 verbose addNameRange registry:https://registry.npmjs.org/uniq not in flight; fetching
+107 verbose request uri https://registry.npmjs.org/intersect
+108 verbose request no auth needed
+109 info attempt registry request try #1 at 23:37:52
+110 verbose etag "8E0XRGVI1JYA2PYANRMWGBJWL"
+111 http request GET https://registry.npmjs.org/intersect
+112 verbose request uri https://registry.npmjs.org/uniq
+113 verbose request no auth needed
+114 info attempt registry request try #1 at 23:37:52
+115 verbose etag "EYW95VW096Z70CXUQJ5OU86C1"
+116 http request GET https://registry.npmjs.org/uniq
+117 http 304 https://registry.npmjs.org/intersect
+118 silly get cb [ 304,
+118 silly get   { date: 'Sat, 15 Aug 2015 21:25:09 GMT',
+118 silly get     via: '1.1 varnish',
+118 silly get     'cache-control': 'max-age=60',
+118 silly get     etag: '"8E0XRGVI1JYA2PYANRMWGBJWL"',
+118 silly get     age: '44',
+118 silly get     connection: 'keep-alive',
+118 silly get     'x-served-by': 'cache-ams4133-AMS',
+118 silly get     'x-cache': 'HIT',
+118 silly get     'x-cache-hits': '1',
+118 silly get     'x-timer': 'S1439673909.063426,VS0,VE0',
+118 silly get     vary: 'Accept' } ]
+119 verbose etag https://registry.npmjs.org/intersect from cache
+120 verbose get saving intersect to /Users/Gabriel/.npm/registry.npmjs.org/intersect/.cache.json
+121 silly addNameRange number 2 { name: 'intersect', range: '>=1.0.1 <2.0.0', hasData: true }
+122 silly addNameRange versions [ 'intersect',
+122 silly addNameRange   [ '0.0.0', '0.0.1', '0.0.2', '0.0.3', '0.1.0', '1.0.0', '1.0.1' ] ]
+123 verbose addNamed intersect@1.0.1
+124 silly addNamed semver.valid 1.0.1
+125 silly addNamed semver.validRange 1.0.1
+126 silly cache afterAdd intersect@1.0.1
+127 verbose afterAdd /Users/Gabriel/.npm/intersect/1.0.1/package/package.json not in flight; writing
+128 verbose afterAdd /Users/Gabriel/.npm/intersect/1.0.1/package/package.json written
+129 http 304 https://registry.npmjs.org/uniq
+130 silly get cb [ 304,
+130 silly get   { date: 'Sat, 15 Aug 2015 21:25:09 GMT',
+130 silly get     via: '1.1 varnish',
+130 silly get     'cache-control': 'max-age=60',
+130 silly get     etag: '"EYW95VW096Z70CXUQJ5OU86C1"',
+130 silly get     age: '0',
+130 silly get     connection: 'keep-alive',
+130 silly get     'x-served-by': 'cache-ams4124-AMS',
+130 silly get     'x-cache': 'HIT',
+130 silly get     'x-cache-hits': '1',
+130 silly get     'x-timer': 'S1439673909.104952,VS0,VE162',
+130 silly get     vary: 'Accept' } ]
+131 verbose etag https://registry.npmjs.org/uniq from cache
+132 verbose get saving uniq to /Users/Gabriel/.npm/registry.npmjs.org/uniq/.cache.json
+133 silly addNameRange number 2 { name: 'uniq', range: '>=1.0.1 <2.0.0', hasData: true }
+134 silly addNameRange versions [ 'uniq', [ '0.0.0', '0.0.2', '1.0.0', '1.0.1' ] ]
+135 verbose addNamed uniq@1.0.1
+136 silly addNamed semver.valid 1.0.1
+137 silly addNamed semver.validRange 1.0.1
+138 silly cache afterAdd uniq@1.0.1
+139 verbose afterAdd /Users/Gabriel/.npm/uniq/1.0.1/package/package.json not in flight; writing
+140 verbose afterAdd /Users/Gabriel/.npm/uniq/1.0.1/package/package.json written
+141 silly install resolved [ { name: 'intersect',
+141 silly install resolved     description: 'Find the intersection of two arrays',
+141 silly install resolved     version: '1.0.1',
+141 silly install resolved     repository:
+141 silly install resolved      { type: 'git',
+141 silly install resolved        url: 'git://github.com/juliangruber/intersect.git' },
+141 silly install resolved     homepage: 'https://github.com/juliangruber/intersect',
+141 silly install resolved     main: 'index.js',
+141 silly install resolved     scripts: { test: 'tape test/*.js' },
+141 silly install resolved     dependencies: {},
+141 silly install resolved     devDependencies: { tape: '~2.3.0' },
+141 silly install resolved     keywords: [ 'intersect', 'array' ],
+141 silly install resolved     author:
+141 silly install resolved      { name: 'Julian Gruber',
+141 silly install resolved        email: 'mail@juliangruber.com',
+141 silly install resolved        url: 'http://juliangruber.com' },
+141 silly install resolved     license: 'MIT',
+141 silly install resolved     testling: { files: 'test/*.js', browsers: [Object] },
+141 silly install resolved     gitHead: '0a48f9fa15a8cba97a2e381984042a8f4c392d8a',
+141 silly install resolved     bugs: { url: 'https://github.com/juliangruber/intersect/issues' },
+141 silly install resolved     _id: 'intersect@1.0.1',
+141 silly install resolved     _shasum: '332650e10854d8c0ac58c192bdc27a8bf7e7a30c',
+141 silly install resolved     _from: 'intersect@>=1.0.1 <2.0.0',
+141 silly install resolved     _npmVersion: '2.6.1',
+141 silly install resolved     _nodeVersion: '0.10.36',
+141 silly install resolved     _npmUser: { name: 'juliangruber', email: 'julian@juliangruber.com' },
+141 silly install resolved     maintainers: [ [Object] ],
+141 silly install resolved     dist:
+141 silly install resolved      { shasum: '332650e10854d8c0ac58c192bdc27a8bf7e7a30c',
+141 silly install resolved        tarball: 'http://registry.npmjs.org/intersect/-/intersect-1.0.1.tgz' },
+141 silly install resolved     directories: {},
+141 silly install resolved     _resolved: 'https://registry.npmjs.org/intersect/-/intersect-1.0.1.tgz',
+141 silly install resolved     readme: 'ERROR: No README data found!' },
+141 silly install resolved   { name: 'uniq',
+141 silly install resolved     version: '1.0.1',
+141 silly install resolved     description: 'Removes duplicates from a sorted array in place',
+141 silly install resolved     main: 'uniq.js',
+141 silly install resolved     directories: { test: 'test' },
+141 silly install resolved     dependencies: {},
+141 silly install resolved     devDependencies: { tape: '^2.12.3' },
+141 silly install resolved     scripts: { test: 'tape test/*.js' },
+141 silly install resolved     repository: { type: 'git', url: 'git://github.com/mikolalysenko/uniq.git' },
+141 silly install resolved     keywords:
+141 silly install resolved      [ 'array',
+141 silly install resolved        'duplicate',
+141 silly install resolved        'unique',
+141 silly install resolved        'uniq',
+141 silly install resolved        'remove',
+141 silly install resolved        'sort',
+141 silly install resolved        'in',
+141 silly install resolved        'place',
+141 silly install resolved        'no',
+141 silly install resolved        'copy' ],
+141 silly install resolved     author: { name: 'Mikola Lysenko' },
+141 silly install resolved     license: 'MIT',
+141 silly install resolved     gitHead: 'e9828cfcb97e25a351f95b39fdf3c31876ff3985',
+141 silly install resolved     bugs: { url: 'https://github.com/mikolalysenko/uniq/issues' },
+141 silly install resolved     homepage: 'https://github.com/mikolalysenko/uniq',
+141 silly install resolved     _id: 'uniq@1.0.1',
+141 silly install resolved     dist:
+141 silly install resolved      { shasum: 'b31c5ae8254844a3a8281541ce2b04b865a734ff',
+141 silly install resolved        tarball: 'http://registry.npmjs.org/uniq/-/uniq-1.0.1.tgz' },
+141 silly install resolved     _from: 'uniq@>=1.0.1 <2.0.0',
+141 silly install resolved     _npmVersion: '1.4.3',
+141 silly install resolved     _npmUser: { name: 'mikolalysenko', email: 'mikolalysenko@gmail.com' },
+141 silly install resolved     maintainers: [ [Object] ],
+141 silly install resolved     _shasum: 'b31c5ae8254844a3a8281541ce2b04b865a734ff',
+141 silly install resolved     _resolved: 'https://registry.npmjs.org/uniq/-/uniq-1.0.1.tgz',
+141 silly install resolved     readme: 'ERROR: No README data found!' } ]
+142 info install intersect@1.0.1 into /Users/Gabriel/learnseries/node_modules/react-pagify
+143 info install uniq@1.0.1 into /Users/Gabriel/learnseries/node_modules/react-pagify
+144 info installOne intersect@1.0.1
+145 verbose installOne of intersect to /Users/Gabriel/learnseries/node_modules/react-pagify not in flight; installing
+146 info installOne uniq@1.0.1
+147 verbose installOne of uniq to /Users/Gabriel/learnseries/node_modules/react-pagify not in flight; installing
+148 verbose lock using /Users/Gabriel/.npm/_locks/intersect-25ecd221d749c67f.lock for /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/intersect
+149 silly install write writing intersect 1.0.1 to /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/intersect
+150 silly cache addNamed cb intersect@1.0.1
+151 verbose unbuild node_modules/react-pagify/node_modules/intersect
+152 verbose gentlyRm vacuuming /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/intersect
+153 verbose tar unpack /Users/Gabriel/.npm/intersect/1.0.1/package.tgz
+154 verbose tar unpacking to /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/intersect
+155 verbose gentlyRm vacuuming /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/intersect
+156 silly gunzTarPerm modes [ '755', '644' ]
+157 verbose lock using /Users/Gabriel/.npm/_locks/uniq-00e58575b775af11.lock for /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/uniq
+158 silly install write writing uniq 1.0.1 to /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/uniq
+159 silly cache addNamed cb uniq@1.0.1
+160 verbose unbuild node_modules/react-pagify/node_modules/uniq
+161 verbose gentlyRm vacuuming /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/uniq
+162 verbose tar unpack /Users/Gabriel/.npm/uniq/1.0.1/package.tgz
+163 verbose tar unpacking to /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/uniq
+164 verbose gentlyRm vacuuming /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/uniq
+165 silly gunzTarPerm modes [ '755', '644' ]
+166 silly gunzTarPerm extractEntry package.json
+167 silly gunzTarPerm extractEntry .npmignore
+168 silly gunzTarPerm extractEntry README.md
+169 silly gunzTarPerm extractEntry bench.js
+170 silly gunzTarPerm extractEntry index.js
+171 silly gunzTarPerm extractEntry .travis.yml
+172 silly gunzTarPerm extractEntry component.json
+173 silly gunzTarPerm extractEntry Makefile
+174 silly gunzTarPerm extractEntry test/test.js
+175 silly gunzTarPerm extractEntry package.json
+176 silly gunzTarPerm extractEntry .npmignore
+177 silly gunzTarPerm extractEntry README.md
+178 info preinstall intersect@1.0.1
+179 silly install resolved []
+180 verbose about to build /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/intersect
+181 info build /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/intersect
+182 verbose linkStuff [ false,
+182 verbose linkStuff   false,
+182 verbose linkStuff   false,
+182 verbose linkStuff   '/Users/Gabriel/learnseries/node_modules/react-pagify/node_modules' ]
+183 info linkStuff intersect@1.0.1
+184 verbose linkBins intersect@1.0.1
+185 verbose linkMans intersect@1.0.1
+186 verbose rebuildBundles intersect@1.0.1
+187 info install intersect@1.0.1
+188 silly gunzTarPerm extractEntry LICENSE
+189 silly gunzTarPerm extractEntry uniq.js
+190 info postinstall intersect@1.0.1
+191 verbose unlock done using /Users/Gabriel/.npm/_locks/intersect-25ecd221d749c67f.lock for /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/intersect
+192 silly gunzTarPerm extractEntry test/test.js
+193 info preinstall uniq@1.0.1
+194 silly install resolved []
+195 verbose about to build /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/uniq
+196 info build /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/uniq
+197 verbose linkStuff [ false,
+197 verbose linkStuff   false,
+197 verbose linkStuff   false,
+197 verbose linkStuff   '/Users/Gabriel/learnseries/node_modules/react-pagify/node_modules' ]
+198 info linkStuff uniq@1.0.1
+199 verbose linkBins uniq@1.0.1
+200 verbose linkMans uniq@1.0.1
+201 verbose rebuildBundles uniq@1.0.1
+202 info install uniq@1.0.1
+203 info postinstall uniq@1.0.1
+204 verbose unlock done using /Users/Gabriel/.npm/_locks/uniq-00e58575b775af11.lock for /Users/Gabriel/learnseries/node_modules/react-pagify/node_modules/uniq
+205 verbose about to build /Users/Gabriel/learnseries/node_modules/react-pagify
+206 info build /Users/Gabriel/learnseries/node_modules/react-pagify
+207 verbose linkStuff [ false, false, false, '/Users/Gabriel/learnseries/node_modules' ]
+208 info linkStuff react-pagify@0.6.5
+209 verbose linkBins react-pagify@0.6.5
+210 verbose linkMans react-pagify@0.6.5
+211 verbose rebuildBundles react-pagify@0.6.5
+212 verbose rebuildBundles [ 'intersect', 'uniq' ]
+213 info install react-pagify@0.6.5
+214 info postinstall react-pagify@0.6.5
+215 verbose unlock done using /Users/Gabriel/.npm/_locks/react-pagify-0d1769d4eb433933.lock for /Users/Gabriel/learnseries/node_modules/react-pagify
+216 verbose stack Error: The package react does not satisfy its siblings' peerDependencies requirements!
+216 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:103:32
+216 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:225:5
+216 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:138:5
+216 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+216 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+216 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+216 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+216 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+216 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+216 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:251:14
+217 verbose cwd /Users/Gabriel/learnseries
+218 error Darwin 14.4.0
+219 error argv "node" "/usr/local/bin/npm" "install" "react-pagify"
+220 error node v0.12.0
+221 error npm  v2.5.1
+222 error code EPEERINVALID
+223 error peerinvalid The package react does not satisfy its siblings' peerDependencies requirements!
+223 error peerinvalid Peer react-modal@0.3.0 wants react@>=0.13.3
+223 error peerinvalid Peer react-pagify@0.6.5 wants react@>=0.11.0 <1.0.0
+223 error peerinvalid Peer react-router@0.11.6 wants react@0.12.x
+223 error peerinvalid Peer reactabular@0.6.6 wants react@>= 0.11.2 < 1.0.0
+224 verbose exit [ 1, true ]
