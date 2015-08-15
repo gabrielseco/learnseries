@@ -10,8 +10,7 @@
   "mainInput": "main",
   "mainOutput": "main",
   "scripts": {
-    "start": "grunt serve",
-    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt serve"
+    "start": "grunt serve"
   },
   "dependencies": {
     "axios": "^0.5.2",
