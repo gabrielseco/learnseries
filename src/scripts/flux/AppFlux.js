@@ -25,7 +25,7 @@ export class AppFlux extends Flux {
     }
 
     getApiendpoint() {
-      return "http://vlab.es/web/";
+      return "http://88.2.2.236:8080/web/";
     }
 
     getApiDB(){
