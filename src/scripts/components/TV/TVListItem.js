@@ -62,7 +62,7 @@ let TVListItem = React.createClass({
   },
   episodes(obj){
     console.log('episodes');
-    this.transitionTo('/episodes/:id', {id: obj.ID});
+    this.transitionTo('/episodes/:id/:idGenerator', {id: obj.ID, idGenerator: obj.IDGenerator});
 
   },
 
@@ -73,9 +73,7 @@ let TVListItem = React.createClass({
   },
 
     render() {
-
       return (
-
         <div className="show-image" id={this.props.data.ID}>
                   <img onClick={this.modifyTV.bind(this, this.props.data)}
                         src={this.props.data.Foto}
@@ -88,6 +86,7 @@ let TVListItem = React.createClass({
                                value="BORRAR"
                                onClick={this.openModal}>
                         </input>
+                        <h3>SEASON {this.props.data.Temporada}</h3>
                   <div className="episodes">
                         <button onClick={this.episodes.bind(this, this.props.data)}>EPISODES</button>
                   </div>

@@ -80,6 +80,47 @@ let serverGetTVEpisode = async function(apiendpoint, tvContent) {
 
 };
 
+let serverGenerateTVEpisodes = async function(apiendpoint, apiDB, apiKey, tvContent){
+  var obj = tvContent.idGenerator.split("_");
+
+  if(obj[0] === ''){
+    return false;
+  } else {
+
+    var api = await axios.get(apiDB + 'tv/'+obj[0]+'/season/'+obj[1]+'?api_key='+apiKey + "");
+    var episodes = api.data.episodes;
+    var data = [];
+
+    for(var i = 0; i < episodes.length; i++ ){
+
+      var episode = {
+        id: tvContent.id,
+        name: episodes[i].name,
+        overview: episodes[i].overview,
+        number: episodes[i].episode_number,
+        airdate: episodes[i].air_date
+      };
+
+      data.push(episode);
+
+    }
+
+
+    for(var j = 0; j < data.length; j++){
+      var url = "registro_episodio?nombre=" + data[j].name + "&numero="+ data[j].number +"&ID="+ data[j].id+"&overview="+data[j].overview+"&airdate="+data[j].airdate;
+      console.log('url generate', url);
+      var velneo = await axios.get(apiendpoint + url);
+      console.log('velneo', velneo);
+    }
+
+
+    //console.log('episodes info'+ JSON.stringify(data));
+
+  }
+
+
+};
+
 
 let serverModifyTV = async function(apiendpoint, apiDB, apiKey, imagePath, tvContent) {
   var nombre = tvContent.nombre.trim();
@@ -250,6 +291,11 @@ let serverDeleteTV = async function(apiendpoint, tvContent) {
     return tv.data;
 };
 
+let serverDeleteEpisode = async function(apiendpoint, tvContent){
+  let tv = await axios.get(apiendpoint + '/baja_episodio?id=' + tvContent);
+  return tv.data;
+};
+
 
 export class TVActions extends Actions {
 
@@ -324,6 +370,12 @@ export class TVActions extends Actions {
 
     }
 
+    async generateTVEpisodes(tvContent){
+
+      const response = await serverGenerateTVEpisodes(this.apiendpoint, this.apiDB, this.apiKey, tvContent);
+      return response;
+    }
+
     async modifyEpisode(tvContent) {
 
       const response = await serverModifyEpisode(this.apiendpoint, tvContent);
@@ -344,5 +396,10 @@ export class TVActions extends Actions {
       const response = await serverDeleteTV(this.apiendpoint, tvContent);
       return response;
 
+    }
+
+    async deleteEpisode(tvContent){
+      const response = await serverDeleteEpisode(this.apiendpoint, tvContent);
+      return response;
     }
 }

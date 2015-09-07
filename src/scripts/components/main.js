@@ -49,7 +49,7 @@ try {
         <Route name="tv" path="/tv" handler={InterfaceTV} />
         <Route name="addtv" path="/addTV" handler={addTV} />
         <Route name="modifyTV" path="/modifyTV/:id" handler={modifyTV} />
-        <Route name="episodes" path="/episodes/:id" handler={episodesTV} />
+        <Route name="episodes" path="/episodes/:id/:idGenerator" handler={episodesTV} />
         <Route name="addEpisode" path="/addEpisode/:id" handler={addEpisodeTV} />
         <Route name="modifyEpisode" path="/modifyEpisode/:id/:idSerie" handler={modifyEpisode} />
         <Route name="dictionaryFilms" path="/dictionaryFilms" handler={DictionaryFilms} />

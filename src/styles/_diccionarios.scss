@@ -1,8 +1,13 @@
-.dictionaryButton{
-  text-align:right;
-  padding-top:10px;
-  padding-right:50px;
+.buttons{
+  margin-bottom: 100px;
+}
 
+
+
+
+
+.dictionaryButton{
+  text-align: right;
   button{
     @include button__bg($width:none,$display:inline-block,$back:#0C5EB0);
   }

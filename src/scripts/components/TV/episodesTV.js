@@ -6,11 +6,6 @@ var Search = require('reactabular').Search;
 var Paginator = require('react-pagify');
 var sortColumn = require('reactabular').sortColumn;
 import { Navigation, TransitionHook, State } from 'react-router';
-import Modal from 'react-modal';
-
-var appElement = document.getElementById('app');
-Modal.setAppElement(appElement);
-Modal.injectCSS();
 
 require('reactabular/style.css');
 
@@ -76,12 +71,25 @@ let episodesTV = React.createClass({
          cell: (value, data, rowIndex, property) => {
             var eliminar = () => {
               var id = data[rowIndex].ID;
-              console.log(id);
+              var nombre = data[rowIndex].Nombre;
+              var numero = data[rowIndex].Numero;
+              console.log(nombre+" "+id+" "+numero);
+
+              var del = confirm('Quieres eliminar el episodio numero '+numero+ ' con nombre: '+nombre);
+
+              if(del){
+                this.props.flux.getActions('tv').deleteEpisode(id).then(function(res){
+                  console.log('res delete',res);
+                  if(res[0].Resultado === 200){
+                    location.reload();
+                  }
+                });
+              }
             };
 
             return {
                 value: <span>
-                    <a onClick={this.openModal} className="delete-btn">Eliminar</a>
+                    <a onClick={eliminar} className="delete-btn">Eliminar</a>
                 </span>
             };
           }
@@ -89,7 +97,6 @@ let episodesTV = React.createClass({
 
     ];
     return {
-      modalIsOpen: false,
       data: [],
       columns: columns,
       pagination: {
@@ -110,12 +117,6 @@ let episodesTV = React.createClass({
       }
     }
     };
-  },
-  openModal: function() {
-    this.setState({modalIsOpen: true});
-  },
-  closeModal: function() {
-    this.setState({modalIsOpen: false});
   },
   componentWillMount() {
     var params = this.getParams().id;
@@ -166,10 +167,31 @@ addEpisodes(){
   this.transitionTo('/addEpisode/:id', {id: id});
 },
 
+generateEpisodes(){
+
+  console.log('generate episodes');
+
+  var id = this.getParams().id;
+  var idGenerator = this.getParams().idGenerator;
+  var params = {
+    id: id,
+    idGenerator: idGenerator
+  };
+
+  this.props.flux.getActions('tv').generateTVEpisodes(params).then((res) => {
+    console.log('generateTVEpisodes', res);
+
+  });
+
+
+},
+
     render() {
       var dataPagination = this.state.data;
       var pagination = this.state.pagination;
       var header = this.state.header;
+
+
 
       if (this.state.search.query) {
         // apply search to data
@@ -193,7 +215,10 @@ addEpisodes(){
       return (
         <div className="table-react">
           <div className="dictionaryButton">
-            <button className="addWords" onClick={this.addEpisodes}>ADD EPISODES</button>
+              <button onClick={this.addEpisodes}>ADD EPISODES</button>
+              <div>
+              <button onClick={this.generateEpisodes}>GENERATE</button>
+              </div>
           </div>
           <div className='per-page-container'>
               Results <input type='text' defaultValue={pagination.perPage} onChange={this.onPerPage}></input>
@@ -212,6 +237,7 @@ addEpisodes(){
              </Paginator>
           </div>
       </div>
+
 
       );
 

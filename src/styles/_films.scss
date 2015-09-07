@@ -33,6 +33,19 @@ div.show-image input.delete {
     left:20%;
 }
 
+div.show-image h3 {
+  position: absolute;
+  top: 10%;
+  left: 28%;
+  visibility: hidden;
+  color: #fff;
+
+}
+
+div.show-image:hover h3{
+  visibility: visible;
+  transition: visibility 0.3s;
+}
 
 .diccionarios{
   margin-button:10px;
