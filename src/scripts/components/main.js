@@ -50,12 +50,12 @@ try {
         <Route name="addtv" path="/addTV" handler={addTV} />
         <Route name="modifyTV" path="/modifyTV/:id" handler={modifyTV} />
         <Route name="episodes" path="/episodes/:id/:idGenerator" handler={episodesTV} />
-        <Route name="addEpisode" path="/addEpisode/:id" handler={addEpisodeTV} />
-        <Route name="modifyEpisode" path="/modifyEpisode/:id/:idSerie" handler={modifyEpisode} />
+        <Route name="addEpisode" path="/addEpisode/:id/:idGenerator" handler={addEpisodeTV} />
+        <Route name="modifyEpisode" path="/modifyEpisode/:id/:idSerie/:idGenerator" handler={modifyEpisode} />
         <Route name="dictionaryFilms" path="/dictionaryFilms" handler={DictionaryFilms} />
         <Route name="dictionaryTV" path="/dictionaryTV" handler={DictionaryTV} />
-        <Route name="dictionaryEpisode/:id" path="/dictionaryEpisode/:id" handler={dictionaryEpisode} />
-        <Route name="addWords" path="/addWords/:id" handler={addWords} />
+        <Route name="dictionaryEpisode" path="/dictionaryEpisode/:idPelicula/:idEpisodio" handler={dictionaryEpisode} />
+        <Route name="addWords" path="/addWords/:id/:idPelicula/:idEpisodio" handler={addWords} />
         <Route name="login" path="/login" handler={InterfaceRest} />
 
       </Route>

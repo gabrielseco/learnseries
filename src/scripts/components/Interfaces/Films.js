@@ -18,7 +18,7 @@ let InterfaceFilms = React.createClass({
     },
     componentWillMount() {
       this.props.flux.getActions('films').fetchFilms().then((res) => {
-        console.log('res', res);
+        //console.log('res', res);
 
         this.setState({ films: res });
 
@@ -27,13 +27,13 @@ let InterfaceFilms = React.createClass({
     render() {
       if (this.state.films !== ''){
         var list = this.state.films.map((film, i) => {
-          console.log(film.ID);
+          //console.log(film.ID);
           return (
             <FilmsListItem key={film.ID} data={film} flux={this.props.flux}/>
           );
         });
         const addFilm = () => {
-          console.log('we go to addFilm');
+        //  console.log('we go to addFilm');
           this.transitionTo('/addFilm');
         };
 

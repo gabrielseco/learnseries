@@ -26,25 +26,25 @@ let TVListItem = React.createClass({
   },
 
   remove(obj){
-    console.log('clicked the delete button');
+    //console.log('clicked the delete button');
 
-    console.log('clicked the submit modal button');
+    //console.log('clicked the submit modal button');
 
-    console.log('obj', obj.ID);
+    //console.log('obj', obj.ID);
 
     this.props.flux.getActions('tv').deleteTV(obj.ID).then((res) => {
 
-      console.log('res', res);
+      //console.log('res', res);
 
       if(res[0].Resultado === 500){
         //error película insertada añadir clases
-        console.log('error no se pudo eliminar la serie');
+        //console.log('error no se pudo eliminar la serie');
       } else if (res[0].Resultado === 501) {
         //velneo caído
-        console.log('Velneo caído');
+        //console.log('Velneo caído');
       } else if(res[0].Resultado === 200){
         //we move to films
-        console.log('serie eliminada');
+      //  console.log('serie eliminada');
         var tv = document.getElementById(obj.ID);
             tv.parentNode.removeChild(tv);
 
@@ -61,23 +61,25 @@ let TVListItem = React.createClass({
 
   },
   episodes(obj){
-    console.log('episodes');
+    //console.log('episodes');
     this.transitionTo('/episodes/:id/:idGenerator', {id: obj.ID, idGenerator: obj.IDGenerator});
 
   },
 
 
   diccionarios(obj){
-    console.log('diccionarios');
+    //console.log('diccionarios');
     //this.transitionTo('/diccionarios');
   },
 
     render() {
+      var title = this.props.data.Nombre + " - SEASON " + this.props.data.Temporada;
+
       return (
         <div className="show-image" id={this.props.data.ID}>
                   <img onClick={this.modifyTV.bind(this, this.props.data)}
                         src={this.props.data.Foto}
-                        title={this.props.data.Nombre}
+                        title={title}
                         alt={this.props.data.Nombre}
                         width="230"
                         height="345"/>
@@ -86,7 +88,6 @@ let TVListItem = React.createClass({
                                value="BORRAR"
                                onClick={this.openModal}>
                         </input>
-                        <h3>SEASON {this.props.data.Temporada}</h3>
                   <div className="episodes">
                         <button onClick={this.episodes.bind(this, this.props.data)}>EPISODES</button>
                   </div>

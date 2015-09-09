@@ -19,7 +19,7 @@ let InterfaceTV = React.createClass({
     },
     componentWillMount() {
       this.props.flux.getActions('tv').fetchTV().then((res) => {
-        console.log('res', res);
+        //console.log('res', res);
 
         this.setState({ tv: res });
 

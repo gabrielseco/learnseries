@@ -28,7 +28,7 @@ let TVForm = React.createClass({
 
     this.props.flux.getActions('diccionarios').saveRequiredData(requiredValues);
 
-    this.transitionTo('/addWords/4');
+    this.transitionTo('/addWords/4/0/0');
   },
   render(){
     if(this.state.data !== ''){

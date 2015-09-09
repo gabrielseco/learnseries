@@ -30,7 +30,9 @@ let FilmsForm = React.createClass({
 
     this.props.flux.getActions('diccionarios').saveRequiredData(requiredValues);
 
-    this.transitionTo('/addWords/3');
+    var idPelicula = requiredValues.idSerie;
+    var idEpisodio = requiredValues.idEpisodio;
+    this.transitionTo('/addWords/:id/:idPelicula/:idEpisodio', {id:'3', idPelicula: idPelicula, idEpisodio: idEpisodio});
   },
   render(){
     if(this.state.data !== ''){

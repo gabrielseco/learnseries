@@ -9,11 +9,11 @@ import uuid from '../utils/uuid'
 
 let serverFetchTV = async function(apiendpoint) {
 
-    console.log('fetching tv in tv actions');
+    //console.log('fetching tv in tv actions');
 
     let tv = await axios.get(apiendpoint + 'series');
 
-    console.log('items '+tv.data.length);
+    //console.log('items '+tv.data.length);
     return tv.data;  // passed to the store after REST response (obviously); sliced for the demo
 
 

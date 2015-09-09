@@ -11,11 +11,11 @@ import uuid from '../utils/uuid'
 
 let serverFetchFilms = async function(apiendpoint) {
 
-    console.log('fetching films in film actions');
+    //console.log('fetching films in film actions');
 
     let films = await axios.get(apiendpoint + 'peliculas');
 
-    console.log('items '+films.data.length);
+    //console.log('items '+films.data.length);
     return films.data;  // passed to the store after REST response (obviously); sliced for the demo
 
 

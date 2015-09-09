@@ -54,7 +54,15 @@ let FormWords = React.createClass({
   },
   finish(){
     console.log('finalizar');
-    this.transitionTo('/');
+    var idPelicula = this.getParams().idPelicula;
+
+    if(+this.getParams().idEpisodio === 0){
+      this.transitionTo('/diccionarios/:id',{id: idPelicula });
+
+    } else if (+this.getParams().idEpisodio !== 0) {
+      var idEpisodio = this.getParams().idEpisodio;
+      this.transitionTo('/dictionaryEpisode/:idPelicula/:idEpisodio',{idPelicula: idPelicula, idEpisodio: idEpisodio});
+    }
 
     //var params = this.getParams().idEpisode;
     //this.transitionTo('/dictionaryEpisode/:id', {id: params});

@@ -124,7 +124,8 @@ onPerPage(e) {
 
 addWords(){
   console.log('Add Words');
-  this.transitionTo('/addWords/:id', {id: '1'});
+  var idPelicula = this.getParams().id;
+  this.transitionTo('/addWords/:id/:idPelicula/:idEpisodio', {id: '3', idPelicula: idPelicula, idEpisodio:0});
 },
 
     render() {

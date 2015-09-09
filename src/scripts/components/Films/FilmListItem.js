@@ -31,25 +31,25 @@ let FilmsListItem = React.createClass({
     this.setState({modalIsOpen: false});
   },
   remove(obj){
-    console.log('clicked the submit modal button');
+    //console.log('clicked the submit modal button');
 
-    console.log('obj', obj.ID);
+    //console.log('obj', obj.ID);
 
     var self = this;
 
     this.props.flux.getActions('films').deleteFilm(obj.ID).then((res) => {
 
-      console.log('res', res);
+      //console.log('res', res);
 
       if(res[0].Resultado === 500){
         //error película insertada añadir clases
-        console.log('error no se pudo eliminar la película');
+      //  console.log('error no se pudo eliminar la película');
       } else if (res[0].Resultado === 501) {
         //velneo caído
         console.log('Velneo caído');
       } else if(res[0].Resultado === 200){
         //we move to films
-        console.log('película eliminada');
+        //console.log('película eliminada');
         var film = document.getElementById(obj.ID);
             film.parentNode.removeChild(film);
         this.transitionTo('/films');
@@ -62,15 +62,15 @@ let FilmsListItem = React.createClass({
   },
 
   modifyFilm(obj){
-    console.log('modify');
-    console.log('name', obj.Nombre);
+    //console.log('modify');
+    //console.log('name', obj.Nombre);
     this.transitionTo('/modifyFilm/:name', {name: obj.Nombre});
 
 
   },
 
   diccionarios(obj){
-    console.log('diccionarios');
+    //console.log('diccionarios');
     this.transitionTo('/diccionarios/:id', {id: obj.ID});
 
   },

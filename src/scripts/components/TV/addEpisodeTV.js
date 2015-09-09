@@ -56,6 +56,7 @@ let addEpisodeTV = React.createClass({
       e.preventDefault();
 
       var id = this.getParams().id;
+      var idGenerator = this.getParams().idGenerator;
 
       var form = {
         id: id,
@@ -80,7 +81,7 @@ let addEpisodeTV = React.createClass({
         } else if(res[0].Resultado === 200){
           //we move to films
           console.log('episodio insertado');
-          this.transitionTo('/episodes/:id', {id: id});
+          this.transitionTo('/episodes/:id/:idGenerator', {id: id, idGenerator: idGenerator});
         }
 
       });

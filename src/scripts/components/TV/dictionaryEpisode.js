@@ -78,7 +78,7 @@ let dictionaryEpisode = React.createClass({
     };
   },
   componentWillMount() {
-    var params = this.getParams().id;
+    var params = this.getParams().idEpisodio;
 
     this.props.flux.getActions('diccionarios').fetchTVDictionaryFromEpisode(params).then((res) => {
       console.log('res', res);
@@ -91,7 +91,9 @@ let dictionaryEpisode = React.createClass({
   },
   addWords(){
     console.log('add words');
-    this.transitionTo('/addWords/:id', {id: '2'});
+    var idPelicula = this.getParams().idPelicula;
+    var idEpisodio = this.getParams().idEpisodio;
+    this.transitionTo('/addWords/:id/:idPelicula/:idEpisodio', {id: '3', idPelicula: idPelicula, idEpisodio: idEpisodio});
 
   },
   onSearch(search) {

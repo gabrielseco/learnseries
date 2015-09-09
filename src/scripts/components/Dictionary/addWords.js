@@ -6,7 +6,7 @@ import TVForm from './TVForm';
 import FormWords from './FormWords';
 import FormEpisodes from './FormEpisodes';
 
-import { State } from 'react-router';
+import { Navigation, TransitionHook, State } from 'react-router';
 
 var requiredValues = {
   idPelicula: '',
@@ -23,7 +23,18 @@ var text = {
 };
 
 let addWords = React.createClass({
-  mixins: [ State ],
+  mixins: [ Navigation, TransitionHook, State ],
+  componentDidMount(){
+
+    if(+this.getParams().idEpisodio === 0){
+      requiredValues.idPelicula = this.getParams().idPelicula;
+    }
+    else {
+      requiredValues.idSerie = this.getParams().idPelicula;
+      requiredValues.idEpisodio = this.getParams().idEpisodio;
+    }
+        
+  },
   render(){
     switch(+this.getParams().id) {
       case 1:

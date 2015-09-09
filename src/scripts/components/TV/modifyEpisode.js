@@ -49,6 +49,7 @@ let modifyEpisode = React.createClass({
 
       var id = this.getParams().id;
       var idSerie = this.getParams().idSerie;
+      var idGenerator = this.getParams().idGenerator;
 
 
       var form = {
@@ -76,7 +77,7 @@ let modifyEpisode = React.createClass({
         } else if(res[0].Resultado === 200){
 
           console.log('episodio insertado');
-          this.transitionTo('/episodes/:id', {id: idSerie});
+          this.transitionTo('/episodes/:id/:idGenerator', {id: idSerie, idGenerator: idGenerator});
         }
 
       });

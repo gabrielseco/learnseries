@@ -34,9 +34,10 @@ let episodesTV = React.createClass({
           header: 'Ver',
           cell: (value, data, rowIndex, property) => {
              var ver = () => {
-               var id = data[rowIndex].ID;
+               var idEpisodio = data[rowIndex].ID;
+               var id = this.getParams().id;
                console.log('ver palabras de un capítulo'+id);
-               this.transitionTo('dictionaryEpisode/:id', {id: id} );
+               this.transitionTo('/dictionaryEpisode/:idPelicula/:idEpisodio', {idPelicula: id, idEpisodio: idEpisodio} );
 
              };
 
@@ -54,8 +55,10 @@ let episodesTV = React.createClass({
            var editar = () => {
              var id = data[rowIndex].ID;
              var idSerie = this.getParams().id;
+             var idGenerator = this.getParams().idGenerator;
 
-             this.transitionTo('/modifyEpisode/:id/:idSerie', {id: id, idSerie: idSerie });
+
+             this.transitionTo('/modifyEpisode/:id/:idSerie/:idGenerator', {id: id, idSerie: idSerie, idGenerator: idGenerator });
            };
 
            return {
@@ -79,7 +82,7 @@ let episodesTV = React.createClass({
 
               if(del){
                 this.props.flux.getActions('tv').deleteEpisode(id).then(function(res){
-                  console.log('res delete',res);
+                  //console.log('res delete', res);
                   if(res[0].Resultado === 200){
                     location.reload();
                   }
@@ -163,8 +166,9 @@ addEpisodes(){
   console.log('Add Episodes');
 
   var id = this.getParams().id;
+  var idGenerator = this.getParams().idGenerator;
 
-  this.transitionTo('/addEpisode/:id', {id: id});
+  this.transitionTo('/addEpisode/:id/:idGenerator', {id: id, idGenerator: idGenerator});
 },
 
 generateEpisodes(){
