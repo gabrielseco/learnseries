@@ -93,7 +93,7 @@ let serverCreateFilm = async function(apiendpoint, apiDB, apiKey, imagePath, fil
 
   var name = filmContent.trim();
   var imagen = imagePath;
-  var year, idMovieDB;
+  var year, idMovieDB,overview;
 
   console.log('apiDB', apiDB);
   console.log('apiKey', apiKey);
@@ -102,20 +102,24 @@ let serverCreateFilm = async function(apiendpoint, apiDB, apiKey, imagePath, fil
   var response = await axios.get(apiDB + 'search/movie?api_key='+ apiKey +'&query='+ filmContent);
       response = response.data;
 
+      console.log('respuesta',JSON.stringify(response.results));
+
   if(response.results.length > 0){
     name = response.results[0].original_title;
     imagen += response.results[0].poster_path;
     year = response.results[0].release_date.slice(0, 4);
     idMovieDB = response.results[0].id;
+    overview = response.results[0].overview;
 
     var data = {
       'name': name,
       'imagen': imagen,
       'year': year,
-      'idMovieDB': idMovieDB
+      'idMovieDB': idMovieDB,
+      'overview': overview
     };
 
-    var url = "registro_pelicula?nombre="+ data.name+ "&imagen="+ data.imagen+"&year="+data.year.toString()+"&IDMOVIEDB="+data.idMovieDB;
+    var url = "registro_pelicula?nombre="+ data.name+ "&imagen="+ data.imagen+"&year="+data.year.toString()+"&IDMOVIEDB="+data.idMovieDB+"&descripcion="+data.overview;
 
     console.log('url', url);
 

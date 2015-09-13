@@ -5,6 +5,8 @@ import TVListItem from '../TV/TVListItem';
 import Loading from '../UI/Loading';
 import Router from 'react-router';
 import { Navigation, TransitionHook } from 'react-router';
+import Paginator from 'react-pagify';
+
 
 
 //WE USE A MAP TO LIST OUR TV ITEMS
@@ -14,7 +16,11 @@ let InterfaceTV = React.createClass({
     mixins: [ Navigation, TransitionHook ],
     getInitialState(){
       return {
-        tv: ''
+        tv: '',
+        pagination: {
+            page: 0,
+            perPage: 10,
+        }
       };
     },
     componentWillMount() {
@@ -25,14 +31,36 @@ let InterfaceTV = React.createClass({
 
       });
     },
+    onSelect(page) {
+      var pagination = this.state.pagination || {};
+
+      pagination.page = page;
+
+      this.setState({
+          pagination: pagination
+      });
+  },
+
+  onPerPage(e) {
+      var pagination = this.state.pagination || {};
+
+      pagination.perPage = parseInt(event.target.value, 10);
+
+      this.setState({
+          pagination: pagination
+      });
+  },
     render() {
 
       if(this.state.tv !== '') {
-      var list = this.state.tv.map((tv, i) => {
-        return (
-          <TVListItem key={tv.ID} data={tv} flux={this.props.flux} />
-        );
-      });
+        var data = this.state.tv;
+        var pagination = this.state.pagination;
+        var paginated = Paginator.paginate(data, pagination);
+        var list = paginated.data.map((tv, i) => {
+          return (
+            <TVListItem key={tv.ID} data={tv} flux={this.props.flux} />
+          );
+        });
 
       const addTV = () => {
         this.transitionTo('/addTV');
@@ -46,6 +74,15 @@ let InterfaceTV = React.createClass({
               <div className="tv-wrapper">
                 {list}
               </div>
+              <div className='pagination'>
+                <Paginator
+                    page={paginated.page}
+                    pages={paginated.amount}
+                    beginPages={3}
+                    endPages={3}
+                    onSelect={this.onSelect}>
+               </Paginator>
+            </div>
             </div>
         );
     } else {

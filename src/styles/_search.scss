@@ -1,0 +1,42 @@
+.search-input {
+  padding: 10px 10px;
+  height: 52px;
+}
+
+.search-input .search-wrapper {
+  position: relative;
+  margin-right: 50px;
+  margin-left: 10px;
+}
+
+.search-input .search-icon {
+  display: block;
+  position: absolute;
+  width: 15px;
+  z-index: 3;
+  height: 15px;
+  transform: rotate(-45deg);
+  font-size: 20px;
+  top: 5px;
+  left: 0;
+  line-height: 32px;
+}
+
+.search-input .search-field {
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  line-height: 22px;
+  padding: 5px 10px 5px 25px;
+  height: 32px;
+  position: relative;
+  border: 1px solid black;
+}
+
+.search-input .search-field:focus {
+
+}
+
+.hide-pagination{
+  visibility:hidden;
+}
