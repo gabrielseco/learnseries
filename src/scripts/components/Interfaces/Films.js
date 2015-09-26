@@ -30,6 +30,22 @@ let InterfaceFilms = React.createClass({
 
         this.setState({ films: res });
 
+        var width = document.getElementById('films').offsetWidth;
+
+        var img = 230;
+
+        var total = parseInt(width / img);
+
+        total = total * 2;
+
+        var pagination = {
+          page: 0,
+          perPage: total,
+        };
+
+
+        this.setState({pagination: pagination});
+
       });
     },
     onSelect(page) {
@@ -98,7 +114,7 @@ let InterfaceFilms = React.createClass({
                 <div className="filmButton">
                   <button className="addFilm" onClick={addFilm}>ADD FILM</button>
                 </div>
-                <div className="films">
+                <div id='films' className="films">
                   {list}
                 </div>
                 <div id='paginacion' className={this.state.paginacion}>

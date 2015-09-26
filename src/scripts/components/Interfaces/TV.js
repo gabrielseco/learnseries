@@ -6,6 +6,8 @@ import Loading from '../UI/Loading';
 import Router from 'react-router';
 import { Navigation, TransitionHook } from 'react-router';
 import Paginator from 'react-pagify';
+import SearchInput from 'react-search-input';
+
 
 
 
@@ -20,7 +22,9 @@ let InterfaceTV = React.createClass({
         pagination: {
             page: 0,
             perPage: 10,
-        }
+        },
+        searchTerm: '',
+        paginacion: 'pagination'
       };
     },
     componentWillMount() {
@@ -29,7 +33,24 @@ let InterfaceTV = React.createClass({
 
         this.setState({ tv: res });
 
+        var width = document.getElementById('tv').offsetWidth;
+
+        var img = 230;
+
+        var total = parseInt(width / img);
+
+        total = total * 2;
+
+        var pagination = {
+          page: 0,
+          perPage: total,
+        };
+
+
+        this.setState({pagination: pagination});
+
       });
+
     },
     onSelect(page) {
       var pagination = this.state.pagination || {};
@@ -50,12 +71,31 @@ let InterfaceTV = React.createClass({
           pagination: pagination
       });
   },
+  searchUpdated(term) {
+    this.setState({searchTerm: term});
+    if (this.state.searchTerm.length > 0) {
+      this.setState({
+        paginacion: 'hide-pagination pagination'
+      });
+    }
+    else {
+      this.setState({
+        paginacion: 'pagination'
+      });
+    }
+  },
     render() {
 
       if(this.state.tv !== '') {
         var data = this.state.tv;
         var pagination = this.state.pagination;
         var paginated = Paginator.paginate(data, pagination);
+
+        if (this.state.searchTerm.length > 0) {
+          var filters = ['Nombre'];
+          paginated.data = this.state.tv.filter(this.refs.search.filter(filters));
+        }
+
         var list = paginated.data.map((tv, i) => {
           return (
             <TVListItem key={tv.ID} data={tv} flux={this.props.flux} />
@@ -68,10 +108,11 @@ let InterfaceTV = React.createClass({
 
         return (
             <div className="tv">
+            <SearchInput ref='search' onChange={this.searchUpdated} />
               <div className="tvButton">
                 <button className="addTV" onClick={addTV}>ADD TV SHOW</button>
               </div>
-              <div className="tv-wrapper">
+              <div id='tv' className="tv-wrapper">
                 {list}
               </div>
               <div className='pagination'>
