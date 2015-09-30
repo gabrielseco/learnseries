@@ -25,7 +25,9 @@ export class AppFlux extends Flux {
     }
 
     getApiendpoint() {
-      return "http://88.2.2.236:8080/web/";
+      var _url = "http://88.2.2.236:8080/web/";
+      var url  = "http://192.168.1.130:5412/web/"
+      return url;
     }
 
     getApiDB(){
