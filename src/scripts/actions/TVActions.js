@@ -48,11 +48,11 @@ let serverBuildSelect = function(response, episodio = false){
 
 let serverFetchTVEpisodes = async function (apiendpoint, tvContent) {
 
-  console.log('fetching episodes of tv in actions');
+  //console.log('fetching episodes of tv in actions');
 
   let tv = await axios.get(apiendpoint + 'episodios?id='+ tvContent);
 
-  console.log('items episodes '+tv.data.length);
+  //console.log('items episodes '+tv.data.length);
 
   return tv.data;
 
@@ -61,7 +61,7 @@ let serverFetchTVEpisodes = async function (apiendpoint, tvContent) {
 
 let serverGetTV = async function(apiendpoint, tvContent) {
 
-  console.log('fetchicg one tv in tv actions');
+  //console.log('fetchicg one tv in tv actions');
 
   let tv = await axios.get(apiendpoint + "serie?ID="+ tvContent);
 
@@ -72,7 +72,7 @@ let serverGetTV = async function(apiendpoint, tvContent) {
 
 let serverGetTVEpisode = async function(apiendpoint, tvContent) {
 
-  console.log('fetching data from episode in tv actions');
+  //console.log('fetching data from episode in tv actions');
 
   let tv = await axios.get(apiendpoint + "episodio_serie?ID="+ tvContent);
 
@@ -130,13 +130,13 @@ let serverModifyTV = async function(apiendpoint, apiDB, apiKey, imagePath, tvCon
   var idSerie;
 
 
-  console.log('modifying tv');
+  //console.log('modifying tv');
 
 
   var response = await axios.get(apiDB + 'search/tv?api_key='+ apiKey +'&query='+ nombre);
       response = response.data;
 
-      console.log('resp', response);
+      //console.log('resp', response);
 
       if(response.results.length > 0) {
         nombre = response.results[0].original_name;
@@ -233,7 +233,7 @@ let serverCreateTV = async function(apiendpoint, apiDB, apiKey, imagePath, tvCon
 
             var url = "registro_series?nombre="+ data.name + "&temporada="+ data.temporada + "&imagen="+ data.imagen + "&year="+data.year+"&idSerie="+data.idSerie+"&idSeason="+data.idSeason;
 
-            console.log('url', url);
+            //console.log('url', url);
 
             var velneo = await axios.get(apiendpoint + url);
 
@@ -276,7 +276,7 @@ let serverModifyEpisode = async function(apiendpoint, tvContent) {
 
   var velneo = await axios.get(apiendpoint + url);
 
-  console.log(apiendpoint + url);
+  //console.log(apiendpoint + url);
 
   return velneo.data;
 

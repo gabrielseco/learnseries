@@ -28,7 +28,6 @@ let dictionaryEpisode = React.createClass({
         cell: (value, data, rowIndex, property) => {
            var editar = () => {
              var id = data[rowIndex].ID;
-             console.log('ID EDITAR'+id);
              var idPelicula = this.getParams().idPelicula;
              var idEpisodio = this.getParams().idEpisodio;
              this.transitionTo('/editWords/:id/:idPelicula/:idEpisodio',{id: id, idPelicula: idPelicula, idEpisodio: idEpisodio});
@@ -47,7 +46,18 @@ let dictionaryEpisode = React.createClass({
          cell: (value, data, rowIndex, property) => {
             var eliminar = () => {
               var id = data[rowIndex].ID;
-              console.log(id);
+              var english = data[rowIndex].english;
+
+              var del = confirm('Quieres eliminar la palabra '+english+ ' ?');
+
+              if(del){
+                this.props.flux.getActions('diccionarios').deleteWords(id).then(function(res){
+                  //console.log('res delete', res);
+                  if(res[0].Resultado === 200){
+                    location.reload();
+                  }
+                });
+              }
             };
 
             return {

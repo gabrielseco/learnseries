@@ -68,11 +68,18 @@ let serverEditWord = async function (apiendpoint, params) {
 
 
   var url = "modificar_palabra?ID="+params.ID +"&english="+params.english+"&spanish="+params.spanish;
-  console.log(apiendpoint + url);
+  //console.log(apiendpoint + url);
   let velneo = await axios.get(apiendpoint + url);
 
   return velneo.data;
 }
+
+let serverDeleteWord = async function (apiendpoint, params){
+
+  let words = await axios.get(apiendpoint + '/baja_palabra?ID='+params);
+  return words.data;
+
+};
 
 
 
@@ -119,9 +126,18 @@ export class DictionaryActions extends Actions {
       return response;
     }
 
+    async deleteWords(params){
+
+      const response = await serverDeleteWord(this.apiendpoint,params);
+      return response;
+
+    }
+
     async saveRequiredData(data) {
       this.requiredValues = data;
     }
+
+
 
 
 }

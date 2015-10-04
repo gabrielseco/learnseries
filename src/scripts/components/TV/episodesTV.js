@@ -36,7 +36,7 @@ let episodesTV = React.createClass({
              var ver = () => {
                var idEpisodio = data[rowIndex].ID;
                var id = this.getParams().id;
-               console.log('ver palabras de un capítulo'+id);
+               //console.log('ver palabras de un capítulo'+id);
                this.transitionTo('/dictionaryEpisode/:idPelicula/:idEpisodio', {idPelicula: id, idEpisodio: idEpisodio} );
 
              };
@@ -76,7 +76,7 @@ let episodesTV = React.createClass({
               var id = data[rowIndex].ID;
               var nombre = data[rowIndex].Nombre;
               var numero = data[rowIndex].Numero;
-              console.log(nombre+" "+id+" "+numero);
+              //console.log(nombre+" "+id+" "+numero);
 
               var del = confirm('Quieres eliminar el episodio numero '+numero+ ' con nombre: '+nombre);
 
@@ -127,7 +127,7 @@ let episodesTV = React.createClass({
     var self = this;
 
     this.props.flux.getActions('tv').fetchTVEpisodes(params).then((res) => {
-      console.log('res', res);
+      //console.log('res', res);
 
       this.setState({ data: res });
 
@@ -137,7 +137,7 @@ let episodesTV = React.createClass({
   },
   onSearch(search) {
 
-    console.log(search);
+    //console.log(search);
     this.setState({
         search: search
     });
@@ -163,7 +163,7 @@ onPerPage(e) {
 },
 
 addEpisodes(){
-  console.log('Add Episodes');
+  //console.log('Add Episodes');
 
   var id = this.getParams().id;
   var idGenerator = this.getParams().idGenerator;
@@ -173,7 +173,7 @@ addEpisodes(){
 
 generateEpisodes(){
 
-  console.log('generate episodes');
+  //console.log('generate episodes');
 
   var id = this.getParams().id;
   var idGenerator = this.getParams().idGenerator;
@@ -183,7 +183,7 @@ generateEpisodes(){
   };
 
   this.props.flux.getActions('tv').generateTVEpisodes(params).then((res) => {
-    console.log('generateTVEpisodes', res);
+    //console.log('generateTVEpisodes', res);
 
   });
 

@@ -110,7 +110,7 @@ let InterfaceFilms = React.createClass({
 
           return (
               <div className="films">
-              <SearchInput ref='search' onChange={this.searchUpdated} />
+              <SearchInput ref='search' onChange={this.searchUpdated} placeholder='Buscar...' />
                 <div className="filmButton">
                   <button className="addFilm" onClick={addFilm}>ADD FILM</button>
                 </div>

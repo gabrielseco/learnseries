@@ -108,7 +108,7 @@ let InterfaceTV = React.createClass({
 
         return (
             <div className="tv">
-            <SearchInput ref='search' onChange={this.searchUpdated} />
+            <SearchInput ref='search' onChange={this.searchUpdated} placeholder='Buscar...' />
               <div className="tvButton">
                 <button className="addTV" onClick={addTV}>ADD TV SHOW</button>
               </div>
