@@ -31,8 +31,9 @@ let FilmsWords = React.createClass({
         cell: (value, data, rowIndex, property) => {
            var editar = () => {
              var id = data[rowIndex].ID;
-             console.log(id);
-           };
+             var idPelicula = this.getParams().id;
+             this.transitionTo('/editWords/:id/:idPelicula/:idEpisodio',{id: id, idPelicula: idPelicula, idEpisodio: 0});
+            };
 
            return {
                value: <span>

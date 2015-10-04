@@ -28,7 +28,10 @@ let dictionaryEpisode = React.createClass({
         cell: (value, data, rowIndex, property) => {
            var editar = () => {
              var id = data[rowIndex].ID;
-             console.log(id);
+             console.log('ID EDITAR'+id);
+             var idPelicula = this.getParams().idPelicula;
+             var idEpisodio = this.getParams().idEpisodio;
+             this.transitionTo('/editWords/:id/:idPelicula/:idEpisodio',{id: id, idPelicula: idPelicula, idEpisodio: idEpisodio});
            };
 
            return {

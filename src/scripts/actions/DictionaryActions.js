@@ -54,6 +54,25 @@ let serverCreateWords = async function(apiendpoint, form){
 
 };
 
+let serverGetWord = async function (apiendpoint, params){
+  let words = await axios.get(apiendpoint + '/palabra?ID='+params);
+  return words.data;
+};
+
+let serverEditWord = async function (apiendpoint, params) {
+
+  params.english = params.english.trim();
+  params.english = params.english.charAt(0).toUpperCase() + params.english.slice(1);
+  params.spanish = params.spanish.trim();
+  params.spanish = params.spanish.charAt(0).toUpperCase() + params.spanish.slice(1);
+
+
+  var url = "modificar_palabra?ID="+params.ID +"&english="+params.english+"&spanish="+params.spanish;
+  console.log(apiendpoint + url);
+  let velneo = await axios.get(apiendpoint + url);
+
+  return velneo.data;
+}
 
 
 
@@ -87,6 +106,16 @@ export class DictionaryActions extends Actions {
 
     async insertWords(form) {
       const response = await serverCreateWords(this.apiendpoint, form);
+      return response;
+    }
+
+    async getWord(params){
+      const response = await serverGetWord(this.apiendpoint, params);
+      return response;
+    }
+
+    async editWord(params){
+      const response = await serverEditWord(this.apiendpoint, params);
       return response;
     }
 

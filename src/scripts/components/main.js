@@ -23,6 +23,7 @@ import dictionaryEpisode from './TV/dictionaryEpisode';
 import addEpisodeTV from './TV/addEpisodeTV';
 import modifyEpisode from './TV/modifyEpisode';
 import addWords from './Dictionary/addWords';
+import editWord from './Dictionary/editWord';
 import Select from './Interfaces/Select';
 
 
@@ -57,6 +58,7 @@ try {
         <Route name="dictionaryTV" path="/dictionaryTV" handler={DictionaryTV} />
         <Route name="dictionaryEpisode" path="/dictionaryEpisode/:idPelicula/:idEpisodio" handler={dictionaryEpisode} />
         <Route name="addWords" path="/addWords/:id/:idPelicula/:idEpisodio" handler={addWords} />
+        <Route name="editWords" path="/editWords/:id/:idPelicula/:idEpisodio" handler={editWord} />
         <Route name="login" path="/login" handler={InterfaceRest} />
         <Route name="select" path="/select" handler={Select} />
 
