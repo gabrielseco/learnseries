@@ -271,15 +271,19 @@ let serverGetEpisode = async function(apiendpoint, tvContent) {
 
 
 let serverModifyEpisode = async function(apiendpoint, tvContent) {
-
-  var url = "modificar_episodio?nombre="+tvContent.nombre+"&numero="+tvContent.numero+"&id="+tvContent.id;
-
+  tvContent.descripcion = tvContent.descripcion.replace(/["]+/g, '');
+  var url = "modificar_episodio?nombre="+tvContent.nombre+"&numero="+tvContent.numero+"&id="+tvContent.id+"&descripcion="+tvContent.descripcion;
+  console.log('velneo'+url);
   var velneo = await axios.get(apiendpoint + url);
 
   //console.log(apiendpoint + url);
 
   return velneo.data;
 
+
+};
+
+let sanitize = function (unsanitized){
 
 };
 

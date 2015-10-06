@@ -1,3 +1,6 @@
+#modifyEpisode{
+  max-width: 550px;
+}
 form{
   max-width: 350px;
   margin: 0 auto;
@@ -7,10 +10,15 @@ form{
     font-size:1.125rem;
     font-weight:400;
     display:inline-block;
+    margin-bottom: 10px;
   }
 
   input,textarea,select{
     @include input__reset();
+  }
+
+  textarea{
+    line-height: 25px;
   }
 
   input[type=time]::-webkit-inner-spin-button,
@@ -20,7 +28,7 @@ form{
   }
 
   textarea{
-    height:100px;
+    height:70vh;
     resize:none;
   }
 

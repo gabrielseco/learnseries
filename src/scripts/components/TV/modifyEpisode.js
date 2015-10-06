@@ -55,9 +55,11 @@ let modifyEpisode = React.createClass({
       var form = {
         id: id,
         nombre: this.refs.nombre.getDOMNode().value,
-        numero: this.refs.numero.getDOMNode().value
+        numero: this.refs.numero.getDOMNode().value,
+        descripcion: this.refs.descripcion.getDOMNode().value
       };
 
+      console.log('form '+JSON.stringify(form));
 
       this.props.flux.getActions('tv').modifyEpisode(form).then((res) => {
 
@@ -76,7 +78,7 @@ let modifyEpisode = React.createClass({
 
         } else if(res[0].Resultado === 200){
 
-          console.log('episodio insertado');
+          console.log('episodio modificado');
           this.transitionTo('/episodes/:id/:idGenerator', {id: idSerie, idGenerator: idGenerator});
         }
 
@@ -89,13 +91,15 @@ let modifyEpisode = React.createClass({
       return (
         <div>
           <Mensaje mostrar={this.state.mostrar} mensaje={mensaje.errorInsertada} />
-          <form onSubmit={this.handleForm} id="addEpisode" method="post" role="form">
+          <form onSubmit={this.handleForm} id="modifyEpisode" method="post" role="form">
           <p>{this.state.value[0].Serie} - Season {this.state.value[0].Temporada}</p>
           <label className="is-required">Nombre</label>
           <input ref="nombre" className={this.state.inputName} type="text" required placeholder="Nombre" defaultValue={this.state.value[0].Nombre}></input>
-            <label className="is-required">Número</label>
-            <input ref="numero" className={this.state.inputName} type="number" required placeholder="Número" defaultValue={this.state.value[0].Numero}></input>
-            <input type="submit" value="Enviar"></input>
+          <label className="is-required">Número</label>
+          <input ref="numero" className={this.state.inputName} type="number" required placeholder="Número" defaultValue={this.state.value[0].Numero}></input>
+          <label>Descripción</label>
+          <textarea ref="descripcion" defaultValue={this.state.value[0].Descripcion}></textarea>
+          <input type="submit" value="Enviar"></input>
           </form>
        </div>
 
