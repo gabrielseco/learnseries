@@ -13,6 +13,7 @@ import InterfaceFilms from './Interfaces/Films';
 import InterfaceTV from './Interfaces/TV';
 import DictionaryFilms from './Interfaces/DictionaryFilms';
 import DictionaryTV from './Interfaces/DictionaryTV';
+import InterfaceBooks from './Interfaces/Books';
 import addFilm from './Films/addFilm';
 import modifyFilm from './Films/modifyFilm';
 import FilmsWords from './Films/FilmsWords';
@@ -59,6 +60,10 @@ try {
         <Route name="dictionaryEpisode" path="/dictionaryEpisode/:idPelicula/:idEpisodio" handler={dictionaryEpisode} />
         <Route name="addWords" path="/addWords/:id/:idPelicula/:idEpisodio" handler={addWords} />
         <Route name="editWords" path="/editWords/:id/:idPelicula/:idEpisodio" handler={editWord} />
+
+        <Route name="books" path="/books" handler={InterfaceBooks} />
+
+
         <Route name="login" path="/login" handler={InterfaceRest} />
         <Route name="select" path="/select" handler={Select} />
 

@@ -8,6 +8,7 @@ import { FilmsStore } from '../stores/FilmsStore';
 import { TVActions } from '../actions/TVActions';
 import { TVStore } from '../stores/TVStore';
 import { DictionaryActions } from '../actions/DictionaryActions';
+import { BookActions } from '../actions/BookActions';
 
 
 export class AppFlux extends Flux {
@@ -22,6 +23,8 @@ export class AppFlux extends Flux {
         this.createActions('tv', TVActions, this.getApiendpoint(), this.getApiDB(), this.getApiKey(), this.getPathImageDB());
         this.createStore('tv', TVStore, this);
         this.createActions('diccionarios', DictionaryActions, this.getApiendpoint());
+        this.createActions('books', BookActions, this.getApiendpoint());
+
     }
 
     getApiendpoint() {
