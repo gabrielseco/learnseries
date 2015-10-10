@@ -1,0 +1,11 @@
+div.show-image .youtube {
+  position: absolute;
+  visibility: hidden;
+  color: white;
+}
+
+div.show-image:hover .youtube{
+  visibility: visible;
+  top: 54%;
+  left: 43%;
+}

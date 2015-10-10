@@ -1,9 +1,5 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'react-search-input',
-1 verbose cli   '--save' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'react-youtube' ]
 2 info using npm@2.13.0
 3 info using node@v0.12.5
 4 verbose install initial load of /Users/gabriel/learnseries/package.json
@@ -37,216 +33,830 @@
 32 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/lodash/package.json
 33 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/node-sass/package.json
 34 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react/package.json
-35 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-hot-loader/package.json
-36 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-modal/package.json
-37 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-pagify/package.json
-38 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-paginate/package.json
-39 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-router/package.json
-40 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-select/package.json
-41 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/reactabular/package.json
-42 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/sass-loader/package.json
-43 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/style-loader/package.json
-44 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/url-loader/package.json
-45 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/webpack/package.json
-46 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/webpack-dev-server/package.json
-47 info package.json babel-core@4.7.16 No license field.
-48 info package.json file-loader@0.8.1 No license field.
-49 info package.json babel-runtime@4.7.16 No license field.
-50 info package.json grunt-contrib-connect@0.8.0 No license field.
-51 info package.json grunt@0.4.5 No license field.
-52 info package.json grunt-contrib-copy@0.5.0 No license field.
-53 info package.json grunt-contrib-clean@0.6.0 No license field.
-54 info package.json grunt-open@0.2.3 No license field.
-55 info package.json grunt-webpack@1.0.11 No license field.
-56 info package.json css-loader@0.9.1 No license field.
-57 info package.json immutable@3.6.4 license should be a valid SPDX license expression
-58 info package.json karma-webpack@1.2.2 No license field.
-59 info package.json react-pagify@0.6.5 No license field.
-60 info package.json style-loader@0.8.3 No license field.
-61 info package.json webpack-dev-server@1.6.6 No license field.
-62 info package.json webpack@1.4.15 No license field.
-63 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/package.json
-64 verbose readDependencies npm-shrinkwrap.json is overriding dependencies
-65 info shrinkwrap file "/Users/gabriel/learnseries/npm-shrinkwrap.json"
-66 verbose readDependencies returned deps { axios: 'https://registry.npmjs.org/axios/-/axios-0.5.2.tgz',
-66 verbose readDependencies returned deps   'babel-runtime': 'https://registry.npmjs.org/babel-runtime/-/babel-runtime-4.7.16.tgz',
-66 verbose readDependencies returned deps   'file-loader': 'https://registry.npmjs.org/file-loader/-/file-loader-0.8.1.tgz',
-66 verbose readDependencies returned deps   flummox: 'https://registry.npmjs.org/flummox/-/flummox-2.13.2.tgz',
-66 verbose readDependencies returned deps   immutable: 'https://registry.npmjs.org/immutable/-/immutable-3.6.4.tgz',
-66 verbose readDependencies returned deps   react: 'https://registry.npmjs.org/react/-/react-0.12.2.tgz',
-66 verbose readDependencies returned deps   'react-router': 'https://registry.npmjs.org/react-router/-/react-router-0.11.6.tgz' }
-67 silly cache add args [ 'react-search-input', null ]
-68 verbose cache add spec react-search-input
-69 silly cache add parsed spec { raw: 'react-search-input',
-69 silly cache add   scope: null,
-69 silly cache add   name: 'react-search-input',
-69 silly cache add   rawSpec: '',
-69 silly cache add   spec: '*',
-69 silly cache add   type: 'range' }
-70 silly addNamed react-search-input@*
-71 verbose addNamed "*" is a valid semver range for react-search-input
-72 silly addNameRange { name: 'react-search-input', range: '*', hasData: false }
-73 silly mapToRegistry name react-search-input
-74 silly mapToRegistry using default registry
-75 silly mapToRegistry registry https://registry.npmjs.org/
-76 silly mapToRegistry uri https://registry.npmjs.org/react-search-input
-77 verbose addNameRange registry:https://registry.npmjs.org/react-search-input not in flight; fetching
-78 verbose request uri https://registry.npmjs.org/react-search-input
-79 verbose request no auth needed
-80 info attempt registry request try #1 at 21:20:22
-81 verbose request id 2381205f33654414
-82 http request GET https://registry.npmjs.org/react-search-input
-83 http 200 https://registry.npmjs.org/react-search-input
-84 silly get cb [ 200,
-84 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-84 silly get     etag: '"A5EEBXUG9VVAXAIHKHNVE9R6M"',
-84 silly get     'content-type': 'application/json',
-84 silly get     'cache-control': 'max-age=60',
-84 silly get     'content-length': '19483',
-84 silly get     'accept-ranges': 'bytes',
-84 silly get     date: 'Sun, 13 Sep 2015 19:20:24 GMT',
-84 silly get     via: '1.1 varnish',
-84 silly get     age: '0',
-84 silly get     connection: 'keep-alive',
-84 silly get     'x-served-by': 'cache-ams4128-AMS',
-84 silly get     'x-cache': 'MISS',
-84 silly get     'x-cache-hits': '0',
-84 silly get     'x-timer': 'S1442172023.958698,VS0,VE867',
-84 silly get     vary: 'Accept' } ]
-85 verbose get saving react-search-input to /Users/gabriel/.npm/registry.npmjs.org/react-search-input/.cache.json
-86 silly addNameRange number 2 { name: 'react-search-input', range: '*', hasData: true }
-87 silly addNameRange versions [ 'react-search-input',
-87 silly addNameRange   [ '0.1.0',
-87 silly addNameRange     '0.1.1',
-87 silly addNameRange     '0.1.2',
-87 silly addNameRange     '0.2.0',
-87 silly addNameRange     '0.2.1',
-87 silly addNameRange     '0.2.2',
-87 silly addNameRange     '0.2.3',
-87 silly addNameRange     '0.2.4',
-87 silly addNameRange     '0.2.5',
-87 silly addNameRange     '0.2.6',
-87 silly addNameRange     '0.2.7',
-87 silly addNameRange     '0.2.8' ] ]
-88 silly addNamed react-search-input@0.2.8
-89 verbose addNamed "0.2.8" is a plain semver version for react-search-input
-90 silly mapToRegistry name react-search-input
-91 silly mapToRegistry using default registry
-92 silly mapToRegistry registry https://registry.npmjs.org/
-93 silly mapToRegistry uri https://registry.npmjs.org/react-search-input
-94 verbose addRemoteTarball https://registry.npmjs.org/react-search-input/-/react-search-input-0.2.8.tgz not in flight; adding
-95 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-search-input/-/react-search-input-0.2.8.tgz',
-95 verbose addRemoteTarball   '040a4e120f445b8d8cbe1083278fc57b7ff9e9c3' ]
-96 info retry fetch attempt 1 at 21:20:25
-97 info attempt registry request try #1 at 21:20:25
-98 http fetch GET https://registry.npmjs.org/react-search-input/-/react-search-input-0.2.8.tgz
-99 http fetch 200 https://registry.npmjs.org/react-search-input/-/react-search-input-0.2.8.tgz
-100 silly fetchAndShaCheck shasum 040a4e120f445b8d8cbe1083278fc57b7ff9e9c3
-101 verbose addTmpTarball /var/folders/6c/639ypg2d19v0yxr_zjv65z8h0000gn/T/npm-745-ebdbb39a/registry.npmjs.org/react-search-input/-/react-search-input-0.2.8.tgz not in flight; adding
-102 verbose addTmpTarball already have metadata; skipping unpack for react-search-input@0.2.8
-103 silly cache afterAdd react-search-input@0.2.8
-104 verbose afterAdd /Users/gabriel/.npm/react-search-input/0.2.8/package/package.json not in flight; writing
-105 verbose afterAdd /Users/gabriel/.npm/react-search-input/0.2.8/package/package.json written
-106 silly install resolved [ { name: 'react-search-input',
-106 silly install resolved     version: '0.2.8',
-106 silly install resolved     description: 'Simple react.js component for a search input, providing a filter function.',
-106 silly install resolved     main: 'react-search-input.js',
-106 silly install resolved     dependencies: { react: '~0.x' },
-106 silly install resolved     devDependencies:
-106 silly install resolved      { jsdom: '^3.0.2',
-106 silly install resolved        coveralls: '^2.11.2',
-106 silly install resolved        mocha: '^2.1.0',
-106 silly install resolved        istanbul: '^0.3.5' },
-106 silly install resolved     scripts:
-106 silly install resolved      { test: 'mocha',
-106 silly install resolved        coverage: './node_modules/istanbul/lib/cli.js cover --print detail ./node_modules/mocha/bin/_mocha -- --ui bdd -R spec' },
-106 silly install resolved     repository:
-106 silly install resolved      { type: 'git',
-106 silly install resolved        url: 'git+https://github.com/enki-com/react-search-input.git' },
-106 silly install resolved     keywords:
-106 silly install resolved      [ 'react',
-106 silly install resolved        'search',
-106 silly install resolved        'input',
-106 silly install resolved        'filter',
-106 silly install resolved        'component',
-106 silly install resolved        'javascript',
-106 silly install resolved        'react-component' ],
-106 silly install resolved     author: { name: 'Mathieu Dutour' },
-106 silly install resolved     license: 'MIT',
-106 silly install resolved     bugs: { url: 'https://github.com/enki-com/react-search-input/issues' },
-106 silly install resolved     homepage: 'https://github.com/enki-com/react-search-input',
-106 silly install resolved     gitHead: '5e1dfb03add38fac8e00749d2df10bb51fc26e90',
-106 silly install resolved     _id: 'react-search-input@0.2.8',
-106 silly install resolved     _shasum: '040a4e120f445b8d8cbe1083278fc57b7ff9e9c3',
-106 silly install resolved     _from: 'react-search-input@*',
-106 silly install resolved     _npmVersion: '2.10.1',
-106 silly install resolved     _nodeVersion: '0.12.4',
-106 silly install resolved     _npmUser: { name: 'mathieudutour', email: 'mathieu@dutour.me' },
-106 silly install resolved     dist:
-106 silly install resolved      { shasum: '040a4e120f445b8d8cbe1083278fc57b7ff9e9c3',
-106 silly install resolved        tarball: 'http://registry.npmjs.org/react-search-input/-/react-search-input-0.2.8.tgz' },
-106 silly install resolved     maintainers: [ [Object] ],
-106 silly install resolved     directories: {},
-106 silly install resolved     _resolved: 'https://registry.npmjs.org/react-search-input/-/react-search-input-0.2.8.tgz' } ]
-107 info install react-search-input@0.2.8 into /Users/gabriel/learnseries
-108 info installOne react-search-input@0.2.8
-109 verbose installOne of react-search-input to /Users/gabriel/learnseries not in flight; installing
-110 verbose lock using /Users/gabriel/.npm/_locks/react-search-input-f0c9fc97c393d5d2.lock for /Users/gabriel/learnseries/node_modules/react-search-input
-111 silly install write writing react-search-input 0.2.8 to /Users/gabriel/learnseries/node_modules/react-search-input
-112 verbose unbuild node_modules/react-search-input
-113 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-search-input is being purged from base /Users/gabriel/learnseries
-114 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-search-input
-115 verbose tar unpack /Users/gabriel/.npm/react-search-input/0.2.8/package.tgz
-116 verbose tar unpacking to /Users/gabriel/learnseries/node_modules/react-search-input
-117 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-search-input is being purged
-118 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-search-input
-119 silly gunzTarPerm modes [ '755', '644' ]
-120 silly gunzTarPerm extractEntry package.json
-121 silly gunzTarPerm extractEntry .npmignore
-122 silly gunzTarPerm extractEntry README.md
-123 silly gunzTarPerm extractEntry react-search-input.js
-124 silly gunzTarPerm extractEntry bower.json
-125 silly gunzTarPerm extractEntry example/index.html
-126 silly gunzTarPerm extractEntry react-search-input.css
-127 silly gunzTarPerm extractEntry test/index.js
-128 verbose write writing to /Users/gabriel/learnseries/node_modules/react-search-input/package.json
-129 info preinstall react-search-input@0.2.8
-130 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-search-input/package.json
-131 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-search-input/package.json
-132 silly install resolved []
-133 verbose about to build /Users/gabriel/learnseries/node_modules/react-search-input
-134 info build /Users/gabriel/learnseries/node_modules/react-search-input
-135 info linkStuff react-search-input@0.2.8
-136 silly linkStuff react-search-input@0.2.8 has /Users/gabriel/learnseries/node_modules as its parent node_modules
-137 verbose linkBins react-search-input@0.2.8
-138 verbose linkMans react-search-input@0.2.8
-139 verbose rebuildBundles react-search-input@0.2.8
-140 info install react-search-input@0.2.8
-141 info postinstall react-search-input@0.2.8
-142 verbose unlock done using /Users/gabriel/.npm/_locks/react-search-input-f0c9fc97c393d5d2.lock for /Users/gabriel/learnseries/node_modules/react-search-input
-143 verbose validateInstall loading /Users/gabriel/learnseries/package.json for validation
-144 verbose stack Error: The package react@0.12.2 does not satisfy its siblings' peerDependencies requirements!
-144 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
-144 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
-144 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
-144 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
-144 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
-144 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
-144 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
-144 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
-144 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
-144 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
-145 verbose cwd /Users/gabriel/learnseries
-146 error Darwin 15.0.0
-147 error argv "node" "/usr/local/bin/npm" "install" "react-search-input" "--save"
-148 error node v0.12.5
-149 error npm  v2.13.0
-150 error code EPEERINVALID
-151 error peerinvalid The package react@0.12.2 does not satisfy its siblings' peerDependencies requirements!
-151 error peerinvalid Peer react-modal@0.2.0 wants react@>=0.12.0
-151 error peerinvalid Peer react-pagify@0.6.5 wants react@>=0.11.0 <1.0.0
-151 error peerinvalid Peer react-router@0.11.6 wants react@0.12.x
-151 error peerinvalid Peer reactabular@0.6.4 wants react@>= 0.11.2 < 1.0.0
-151 error peerinvalid Peer react-hot-loader@1.2.7 wants react@>=0.11.0
-151 error peerinvalid Peer react-select@0.6.7 wants react@>=0.13.3 || ^0.14.0-beta3
-152 verbose exit [ 1, true ]
+35 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-fontawesome/package.json
+36 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-hot-loader/package.json
+37 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-modal/package.json
+38 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-pagify/package.json
+39 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-paginate/package.json
+40 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-router/package.json
+41 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-search-input/package.json
+42 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/react-select/package.json
+43 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/reactabular/package.json
+44 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/sass-loader/package.json
+45 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/style-loader/package.json
+46 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/url-loader/package.json
+47 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/webpack/package.json
+48 verbose installManyTop reading scoped package data from /Users/gabriel/learnseries/node_modules/webpack-dev-server/package.json
+49 info package.json babel-core@4.7.16 No license field.
+50 info package.json babel-runtime@4.7.16 No license field.
+51 info package.json css-loader@0.9.1 No license field.
+52 info package.json file-loader@0.8.1 No license field.
+53 info package.json grunt@0.4.5 No license field.
+54 info package.json grunt-contrib-clean@0.6.0 No license field.
+55 info package.json grunt-contrib-connect@0.8.0 No license field.
+56 info package.json grunt-contrib-copy@0.5.0 No license field.
+57 info package.json grunt-open@0.2.3 No license field.
+58 info package.json grunt-webpack@1.0.11 No license field.
+59 info package.json immutable@3.6.4 license should be a valid SPDX license expression
+60 info package.json karma-webpack@1.2.2 No license field.
+61 info package.json react-pagify@0.6.5 No license field.
+62 info package.json style-loader@0.8.3 No license field.
+63 info package.json webpack@1.4.15 No license field.
+64 info package.json webpack-dev-server@1.6.6 No license field.
+65 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/package.json
+66 verbose readDependencies npm-shrinkwrap.json is overriding dependencies
+67 info shrinkwrap file "/Users/gabriel/learnseries/npm-shrinkwrap.json"
+68 verbose readDependencies returned deps { axios: 'https://registry.npmjs.org/axios/-/axios-0.5.2.tgz',
+68 verbose readDependencies returned deps   'babel-runtime': 'https://registry.npmjs.org/babel-runtime/-/babel-runtime-4.7.16.tgz',
+68 verbose readDependencies returned deps   'file-loader': 'https://registry.npmjs.org/file-loader/-/file-loader-0.8.1.tgz',
+68 verbose readDependencies returned deps   flummox: 'https://registry.npmjs.org/flummox/-/flummox-2.13.2.tgz',
+68 verbose readDependencies returned deps   immutable: 'https://registry.npmjs.org/immutable/-/immutable-3.6.4.tgz',
+68 verbose readDependencies returned deps   react: 'https://registry.npmjs.org/react/-/react-0.12.2.tgz',
+68 verbose readDependencies returned deps   'react-router': 'https://registry.npmjs.org/react-router/-/react-router-0.11.6.tgz' }
+69 silly cache add args [ 'react-youtube', null ]
+70 verbose cache add spec react-youtube
+71 silly cache add parsed spec { raw: 'react-youtube',
+71 silly cache add   scope: null,
+71 silly cache add   name: 'react-youtube',
+71 silly cache add   rawSpec: '',
+71 silly cache add   spec: '*',
+71 silly cache add   type: 'range' }
+72 silly addNamed react-youtube@*
+73 verbose addNamed "*" is a valid semver range for react-youtube
+74 silly addNameRange { name: 'react-youtube', range: '*', hasData: false }
+75 silly mapToRegistry name react-youtube
+76 silly mapToRegistry using default registry
+77 silly mapToRegistry registry https://registry.npmjs.org/
+78 silly mapToRegistry uri https://registry.npmjs.org/react-youtube
+79 verbose addNameRange registry:https://registry.npmjs.org/react-youtube not in flight; fetching
+80 verbose request uri https://registry.npmjs.org/react-youtube
+81 verbose request no auth needed
+82 info attempt registry request try #1 at 09:30:39
+83 verbose request id 367b8243ae7f0635
+84 http request GET https://registry.npmjs.org/react-youtube
+85 http 200 https://registry.npmjs.org/react-youtube
+86 silly get cb [ 200,
+86 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+86 silly get     etag: '"4FSLSVBR40NU4P9VH9U7TEL35"',
+86 silly get     'content-type': 'application/json',
+86 silly get     'cache-control': 'max-age=60',
+86 silly get     'content-length': '41516',
+86 silly get     'accept-ranges': 'bytes',
+86 silly get     date: 'Sat, 10 Oct 2015 07:30:39 GMT',
+86 silly get     via: '1.1 varnish',
+86 silly get     age: '0',
+86 silly get     connection: 'keep-alive',
+86 silly get     'x-served-by': 'cache-fra1233-FRA',
+86 silly get     'x-cache': 'MISS',
+86 silly get     'x-cache-hits': '0',
+86 silly get     'x-timer': 'S1444462238.871528,VS0,VE207',
+86 silly get     vary: 'Accept' } ]
+87 verbose get saving react-youtube to /Users/gabriel/.npm/registry.npmjs.org/react-youtube/.cache.json
+88 silly addNameRange number 2 { name: 'react-youtube', range: '*', hasData: true }
+89 silly addNameRange versions [ 'react-youtube',
+89 silly addNameRange   [ '0.0.1',
+89 silly addNameRange     '0.0.2',
+89 silly addNameRange     '1.0.0',
+89 silly addNameRange     '1.0.1',
+89 silly addNameRange     '1.0.2',
+89 silly addNameRange     '1.0.3',
+89 silly addNameRange     '1.1.0',
+89 silly addNameRange     '1.2.0',
+89 silly addNameRange     '1.3.0',
+89 silly addNameRange     '2.0.0',
+89 silly addNameRange     '2.1.0',
+89 silly addNameRange     '2.1.1',
+89 silly addNameRange     '2.1.2',
+89 silly addNameRange     '2.1.3',
+89 silly addNameRange     '2.2.0',
+89 silly addNameRange     '2.2.1',
+89 silly addNameRange     '2.2.2',
+89 silly addNameRange     '3.0.0',
+89 silly addNameRange     '3.0.1',
+89 silly addNameRange     '3.1.0',
+89 silly addNameRange     '3.2.0',
+89 silly addNameRange     '3.3.0',
+89 silly addNameRange     '4.0.0',
+89 silly addNameRange     '4.1.0',
+89 silly addNameRange     '4.1.1',
+89 silly addNameRange     '4.1.2' ] ]
+90 silly addNamed react-youtube@4.1.2
+91 verbose addNamed "4.1.2" is a plain semver version for react-youtube
+92 silly mapToRegistry name react-youtube
+93 silly mapToRegistry using default registry
+94 silly mapToRegistry registry https://registry.npmjs.org/
+95 silly mapToRegistry uri https://registry.npmjs.org/react-youtube
+96 verbose addRemoteTarball https://registry.npmjs.org/react-youtube/-/react-youtube-4.1.2.tgz not in flight; adding
+97 verbose addRemoteTarball [ 'https://registry.npmjs.org/react-youtube/-/react-youtube-4.1.2.tgz',
+97 verbose addRemoteTarball   'e79326e63004dd50cfd3d2830b6a42d929162103' ]
+98 info retry fetch attempt 1 at 09:30:40
+99 info attempt registry request try #1 at 09:30:40
+100 http fetch GET https://registry.npmjs.org/react-youtube/-/react-youtube-4.1.2.tgz
+101 http fetch 200 https://registry.npmjs.org/react-youtube/-/react-youtube-4.1.2.tgz
+102 silly fetchAndShaCheck shasum e79326e63004dd50cfd3d2830b6a42d929162103
+103 verbose addTmpTarball /var/folders/6c/639ypg2d19v0yxr_zjv65z8h0000gn/T/npm-869-4b0379e8/registry.npmjs.org/react-youtube/-/react-youtube-4.1.2.tgz not in flight; adding
+104 verbose addTmpTarball already have metadata; skipping unpack for react-youtube@4.1.2
+105 silly cache afterAdd react-youtube@4.1.2
+106 verbose afterAdd /Users/gabriel/.npm/react-youtube/4.1.2/package/package.json not in flight; writing
+107 verbose afterAdd /Users/gabriel/.npm/react-youtube/4.1.2/package/package.json written
+108 silly install resolved [ { name: 'react-youtube',
+108 silly install resolved     version: '4.1.2',
+108 silly install resolved     description: 'react.js powered YouTube player component',
+108 silly install resolved     main: 'dist/YouTube.js',
+108 silly install resolved     repository:
+108 silly install resolved      { type: 'git',
+108 silly install resolved        url: 'git+ssh://git@github.com/compedit/react-youtube.git' },
+108 silly install resolved     keywords: [ 'react', 'youtube', 'player', 'react-component' ],
+108 silly install resolved     author: { name: 'troy betz', email: 'troybetz@gmail.com' },
+108 silly install resolved     license: 'MIT',
+108 silly install resolved     bugs: { url: 'https://github.com/compedit/react-youtube/issues' },
+108 silly install resolved     homepage: 'https://github.com/compedit/react-youtube',
+108 silly install resolved     dependencies:
+108 silly install resolved      { 'get-youtube-id': '^1.0.0',
+108 silly install resolved        'random-global': '^1.0.0',
+108 silly install resolved        'random-string': '^0.1.2',
+108 silly install resolved        'youtube-iframe': '^1.0.0' },
+108 silly install resolved     devDependencies:
+108 silly install resolved      { babel: '^5.6.14',
+108 silly install resolved        'babel-eslint': '^4.1.1',
+108 silly install resolved        'babel-jest': '^5.0.1',
+108 silly install resolved        eslint: '^1.3.1',
+108 silly install resolved        'eslint-config-airbnb': '0.0.8',
+108 silly install resolved        'eslint-plugin-react': '^3.3.1',
+108 silly install resolved        'jest-cli': '^0.5.1',
+108 silly install resolved        react: '^0.13.3' },
+108 silly install resolved     peerDependencies: { react: '>=0.13.0' },
+108 silly install resolved     scripts:
+108 silly install resolved      { test: 'jest',
+108 silly install resolved        compile: 'babel src --out-dir dist',
+108 silly install resolved        prepublish: 'npm run compile',
+108 silly install resolved        lint: 'eslint .' },
+108 silly install resolved     jest:
+108 silly install resolved      { scriptPreprocessor: '<rootDir>/node_modules/babel-jest',
+108 silly install resolved        testFileExtensions: [Object],
+108 silly install resolved        moduleFileExtensions: [Object],
+108 silly install resolved        unmockedModulePathPatterns: [Object],
+108 silly install resolved        testPathDirs: [Object] },
+108 silly install resolved     gitHead: 'c0e432c0cd41adfe22bcbc2d96380c1ccc27a505',
+108 silly install resolved     _id: 'react-youtube@4.1.2',
+108 silly install resolved     _shasum: 'e79326e63004dd50cfd3d2830b6a42d929162103',
+108 silly install resolved     _from: 'react-youtube@*',
+108 silly install resolved     _npmVersion: '2.14.2',
+108 silly install resolved     _nodeVersion: '4.0.0',
+108 silly install resolved     _npmUser: { name: 'compedit', email: 'troybetz@gmail.com' },
+108 silly install resolved     dist:
+108 silly install resolved      { shasum: 'e79326e63004dd50cfd3d2830b6a42d929162103',
+108 silly install resolved        tarball: 'http://registry.npmjs.org/react-youtube/-/react-youtube-4.1.2.tgz' },
+108 silly install resolved     maintainers: [ [Object] ],
+108 silly install resolved     directories: {},
+108 silly install resolved     _resolved: 'https://registry.npmjs.org/react-youtube/-/react-youtube-4.1.2.tgz' } ]
+109 info install react-youtube@4.1.2 into /Users/gabriel/learnseries
+110 info installOne react-youtube@4.1.2
+111 verbose installOne of react-youtube to /Users/gabriel/learnseries not in flight; installing
+112 verbose lock using /Users/gabriel/.npm/_locks/react-youtube-71a33c62c02e9964.lock for /Users/gabriel/learnseries/node_modules/react-youtube
+113 silly install write writing react-youtube 4.1.2 to /Users/gabriel/learnseries/node_modules/react-youtube
+114 verbose unbuild node_modules/react-youtube
+115 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube is being purged from base /Users/gabriel/learnseries
+116 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube
+117 verbose tar unpack /Users/gabriel/.npm/react-youtube/4.1.2/package.tgz
+118 verbose tar unpacking to /Users/gabriel/learnseries/node_modules/react-youtube
+119 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube is being purged
+120 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube
+121 silly gunzTarPerm modes [ '755', '644' ]
+122 silly gunzTarPerm extractEntry package.json
+123 silly gunzTarPerm extractEntry .npmignore
+124 silly gunzTarPerm extractEntry README.md
+125 silly gunzTarPerm extractEntry LICENSE
+126 silly gunzTarPerm extractEntry .babelrc
+127 silly gunzTarPerm extractEntry .eslintignore
+128 silly gunzTarPerm extractEntry .eslintrc
+129 silly gunzTarPerm extractEntry dist/YouTube.js
+130 silly gunzTarPerm extractEntry dist/lib/createPlayer.js
+131 verbose write writing to /Users/gabriel/learnseries/node_modules/react-youtube/package.json
+132 info preinstall react-youtube@4.1.2
+133 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/package.json
+134 silly prepareForInstallMany adding get-youtube-id@^1.0.0 from react-youtube dependencies
+135 silly prepareForInstallMany adding random-global@^1.0.0 from react-youtube dependencies
+136 silly prepareForInstallMany adding random-string@^0.1.2 from react-youtube dependencies
+137 silly prepareForInstallMany adding youtube-iframe@^1.0.0 from react-youtube dependencies
+138 silly prepareForInstallMany adding react@>=0.13.0 from react-youtube peerDependencies
+139 warn peerDependencies The peer dependency react@>=0.13.0 included from react-youtube will no
+140 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+141 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+142 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/package.json
+143 silly cache add args [ 'get-youtube-id@^1.0.0', null ]
+144 verbose cache add spec get-youtube-id@^1.0.0
+145 silly cache add args [ 'random-global@^1.0.0', null ]
+146 verbose cache add spec random-global@^1.0.0
+147 silly cache add parsed spec { raw: 'get-youtube-id@^1.0.0',
+147 silly cache add   scope: null,
+147 silly cache add   name: 'get-youtube-id',
+147 silly cache add   rawSpec: '^1.0.0',
+147 silly cache add   spec: '>=1.0.0 <2.0.0',
+147 silly cache add   type: 'range' }
+148 silly addNamed get-youtube-id@>=1.0.0 <2.0.0
+149 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for get-youtube-id
+150 silly addNameRange { name: 'get-youtube-id',
+150 silly addNameRange   range: '>=1.0.0 <2.0.0',
+150 silly addNameRange   hasData: false }
+151 silly mapToRegistry name get-youtube-id
+152 silly mapToRegistry using default registry
+153 silly mapToRegistry registry https://registry.npmjs.org/
+154 silly mapToRegistry uri https://registry.npmjs.org/get-youtube-id
+155 verbose addNameRange registry:https://registry.npmjs.org/get-youtube-id not in flight; fetching
+156 silly cache add parsed spec { raw: 'random-global@^1.0.0',
+156 silly cache add   scope: null,
+156 silly cache add   name: 'random-global',
+156 silly cache add   rawSpec: '^1.0.0',
+156 silly cache add   spec: '>=1.0.0 <2.0.0',
+156 silly cache add   type: 'range' }
+157 silly addNamed random-global@>=1.0.0 <2.0.0
+158 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for random-global
+159 silly addNameRange { name: 'random-global',
+159 silly addNameRange   range: '>=1.0.0 <2.0.0',
+159 silly addNameRange   hasData: false }
+160 silly mapToRegistry name random-global
+161 silly mapToRegistry using default registry
+162 silly mapToRegistry registry https://registry.npmjs.org/
+163 silly mapToRegistry uri https://registry.npmjs.org/random-global
+164 verbose addNameRange registry:https://registry.npmjs.org/random-global not in flight; fetching
+165 silly cache add args [ 'random-string@^0.1.2', null ]
+166 verbose cache add spec random-string@^0.1.2
+167 silly cache add parsed spec { raw: 'random-string@^0.1.2',
+167 silly cache add   scope: null,
+167 silly cache add   name: 'random-string',
+167 silly cache add   rawSpec: '^0.1.2',
+167 silly cache add   spec: '>=0.1.2 <0.2.0',
+167 silly cache add   type: 'range' }
+168 silly addNamed random-string@>=0.1.2 <0.2.0
+169 verbose addNamed ">=0.1.2 <0.2.0" is a valid semver range for random-string
+170 silly addNameRange { name: 'random-string',
+170 silly addNameRange   range: '>=0.1.2 <0.2.0',
+170 silly addNameRange   hasData: false }
+171 silly mapToRegistry name random-string
+172 silly mapToRegistry using default registry
+173 silly mapToRegistry registry https://registry.npmjs.org/
+174 silly mapToRegistry uri https://registry.npmjs.org/random-string
+175 verbose addNameRange registry:https://registry.npmjs.org/random-string not in flight; fetching
+176 silly cache add args [ 'youtube-iframe@^1.0.0', null ]
+177 verbose cache add spec youtube-iframe@^1.0.0
+178 silly cache add parsed spec { raw: 'youtube-iframe@^1.0.0',
+178 silly cache add   scope: null,
+178 silly cache add   name: 'youtube-iframe',
+178 silly cache add   rawSpec: '^1.0.0',
+178 silly cache add   spec: '>=1.0.0 <2.0.0',
+178 silly cache add   type: 'range' }
+179 silly addNamed youtube-iframe@>=1.0.0 <2.0.0
+180 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for youtube-iframe
+181 silly addNameRange { name: 'youtube-iframe',
+181 silly addNameRange   range: '>=1.0.0 <2.0.0',
+181 silly addNameRange   hasData: false }
+182 silly mapToRegistry name youtube-iframe
+183 silly mapToRegistry using default registry
+184 silly mapToRegistry registry https://registry.npmjs.org/
+185 silly mapToRegistry uri https://registry.npmjs.org/youtube-iframe
+186 verbose addNameRange registry:https://registry.npmjs.org/youtube-iframe not in flight; fetching
+187 verbose request uri https://registry.npmjs.org/get-youtube-id
+188 verbose request no auth needed
+189 info attempt registry request try #1 at 09:30:40
+190 http request GET https://registry.npmjs.org/get-youtube-id
+191 verbose request uri https://registry.npmjs.org/random-global
+192 verbose request no auth needed
+193 info attempt registry request try #1 at 09:30:40
+194 http request GET https://registry.npmjs.org/random-global
+195 verbose request uri https://registry.npmjs.org/random-string
+196 verbose request no auth needed
+197 info attempt registry request try #1 at 09:30:40
+198 http request GET https://registry.npmjs.org/random-string
+199 verbose request uri https://registry.npmjs.org/youtube-iframe
+200 verbose request no auth needed
+201 info attempt registry request try #1 at 09:30:40
+202 http request GET https://registry.npmjs.org/youtube-iframe
+203 http 200 https://registry.npmjs.org/random-global
+204 silly get cb [ 200,
+204 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+204 silly get     etag: '"C6ST96EMPF6QX2PZ6R5VMC5FD"',
+204 silly get     'content-type': 'application/json',
+204 silly get     'cache-control': 'max-age=60',
+204 silly get     'content-length': '3343',
+204 silly get     'accept-ranges': 'bytes',
+204 silly get     date: 'Sat, 10 Oct 2015 07:30:40 GMT',
+204 silly get     via: '1.1 varnish',
+204 silly get     age: '0',
+204 silly get     connection: 'keep-alive',
+204 silly get     'x-served-by': 'cache-fra1239-FRA',
+204 silly get     'x-cache': 'MISS',
+204 silly get     'x-cache-hits': '0',
+204 silly get     'x-timer': 'S1444462240.117995,VS0,VE103',
+204 silly get     vary: 'Accept' } ]
+205 verbose get saving random-global to /Users/gabriel/.npm/registry.npmjs.org/random-global/.cache.json
+206 silly addNameRange number 2 { name: 'random-global', range: '>=1.0.0 <2.0.0', hasData: true }
+207 silly addNameRange versions [ 'random-global', [ '1.0.0', '1.0.1' ] ]
+208 silly addNamed random-global@1.0.1
+209 verbose addNamed "1.0.1" is a plain semver version for random-global
+210 silly mapToRegistry name random-global
+211 silly mapToRegistry using default registry
+212 silly mapToRegistry registry https://registry.npmjs.org/
+213 silly mapToRegistry uri https://registry.npmjs.org/random-global
+214 verbose addRemoteTarball https://registry.npmjs.org/random-global/-/random-global-1.0.1.tgz not in flight; adding
+215 verbose addRemoteTarball [ 'https://registry.npmjs.org/random-global/-/random-global-1.0.1.tgz',
+215 verbose addRemoteTarball   '81e289d4c3923806162d6c1ed7ab746019f4c6fa' ]
+216 info retry fetch attempt 1 at 09:30:41
+217 info attempt registry request try #1 at 09:30:41
+218 http fetch GET https://registry.npmjs.org/random-global/-/random-global-1.0.1.tgz
+219 http 200 https://registry.npmjs.org/random-string
+220 silly get cb [ 200,
+220 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+220 silly get     etag: '"OO4RB6GIOH1HN1WOVE6SAS1T"',
+220 silly get     'content-type': 'application/json',
+220 silly get     'cache-control': 'max-age=60',
+220 silly get     'content-length': '6863',
+220 silly get     'accept-ranges': 'bytes',
+220 silly get     date: 'Sat, 10 Oct 2015 07:30:40 GMT',
+220 silly get     via: '1.1 varnish',
+220 silly get     age: '0',
+220 silly get     connection: 'keep-alive',
+220 silly get     'x-served-by': 'cache-fra1237-FRA',
+220 silly get     'x-cache': 'MISS',
+220 silly get     'x-cache-hits': '0',
+220 silly get     'x-timer': 'S1444462240.136923,VS0,VE182',
+220 silly get     vary: 'Accept' } ]
+221 verbose get saving random-string to /Users/gabriel/.npm/registry.npmjs.org/random-string/.cache.json
+222 silly addNameRange number 2 { name: 'random-string', range: '>=0.1.2 <0.2.0', hasData: true }
+223 silly addNameRange versions [ 'random-string', [ '0.1.0', '0.1.1', '0.1.2' ] ]
+224 silly addNamed random-string@0.1.2
+225 verbose addNamed "0.1.2" is a plain semver version for random-string
+226 silly mapToRegistry name random-string
+227 silly mapToRegistry using default registry
+228 silly mapToRegistry registry https://registry.npmjs.org/
+229 silly mapToRegistry uri https://registry.npmjs.org/random-string
+230 verbose addRemoteTarball https://registry.npmjs.org/random-string/-/random-string-0.1.2.tgz not in flight; adding
+231 verbose addRemoteTarball [ 'https://registry.npmjs.org/random-string/-/random-string-0.1.2.tgz',
+231 verbose addRemoteTarball   '2d6afb6076651316ac5b8a62d63106db31eb8d44' ]
+232 info retry fetch attempt 1 at 09:30:41
+233 info attempt registry request try #1 at 09:30:41
+234 http fetch GET https://registry.npmjs.org/random-string/-/random-string-0.1.2.tgz
+235 http fetch 200 https://registry.npmjs.org/random-global/-/random-global-1.0.1.tgz
+236 silly fetchAndShaCheck shasum 81e289d4c3923806162d6c1ed7ab746019f4c6fa
+237 verbose addTmpTarball /var/folders/6c/639ypg2d19v0yxr_zjv65z8h0000gn/T/npm-869-4b0379e8/registry.npmjs.org/random-global/-/random-global-1.0.1.tgz not in flight; adding
+238 verbose addTmpTarball already have metadata; skipping unpack for random-global@1.0.1
+239 silly cache afterAdd random-global@1.0.1
+240 verbose afterAdd /Users/gabriel/.npm/random-global/1.0.1/package/package.json not in flight; writing
+241 verbose afterAdd /Users/gabriel/.npm/random-global/1.0.1/package/package.json written
+242 http fetch 200 https://registry.npmjs.org/random-string/-/random-string-0.1.2.tgz
+243 silly fetchAndShaCheck shasum 2d6afb6076651316ac5b8a62d63106db31eb8d44
+244 verbose addTmpTarball /var/folders/6c/639ypg2d19v0yxr_zjv65z8h0000gn/T/npm-869-4b0379e8/registry.npmjs.org/random-string/-/random-string-0.1.2.tgz not in flight; adding
+245 verbose addTmpTarball already have metadata; skipping unpack for random-string@0.1.2
+246 silly cache afterAdd random-string@0.1.2
+247 verbose afterAdd /Users/gabriel/.npm/random-string/0.1.2/package/package.json not in flight; writing
+248 verbose afterAdd /Users/gabriel/.npm/random-string/0.1.2/package/package.json written
+249 http 200 https://registry.npmjs.org/youtube-iframe
+250 silly get cb [ 200,
+250 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+250 silly get     etag: '"A4NXZB150C7KRHDTNZF50QT8Z"',
+250 silly get     'content-type': 'application/json',
+250 silly get     'cache-control': 'max-age=60',
+250 silly get     'content-length': '3475',
+250 silly get     'accept-ranges': 'bytes',
+250 silly get     date: 'Sat, 10 Oct 2015 07:30:40 GMT',
+250 silly get     via: '1.1 varnish',
+250 silly get     age: '0',
+250 silly get     connection: 'keep-alive',
+250 silly get     'x-served-by': 'cache-fra1229-FRA',
+250 silly get     'x-cache': 'MISS',
+250 silly get     'x-cache-hits': '0',
+250 silly get     'x-timer': 'S1444462240.157411,VS0,VE699',
+250 silly get     vary: 'Accept' } ]
+251 verbose get saving youtube-iframe to /Users/gabriel/.npm/registry.npmjs.org/youtube-iframe/.cache.json
+252 silly addNameRange number 2 { name: 'youtube-iframe',
+252 silly addNameRange   range: '>=1.0.0 <2.0.0',
+252 silly addNameRange   hasData: true }
+253 silly addNameRange versions [ 'youtube-iframe', [ '1.0.0', '1.0.1' ] ]
+254 silly addNamed youtube-iframe@1.0.1
+255 verbose addNamed "1.0.1" is a plain semver version for youtube-iframe
+256 silly mapToRegistry name youtube-iframe
+257 silly mapToRegistry using default registry
+258 silly mapToRegistry registry https://registry.npmjs.org/
+259 silly mapToRegistry uri https://registry.npmjs.org/youtube-iframe
+260 verbose addRemoteTarball https://registry.npmjs.org/youtube-iframe/-/youtube-iframe-1.0.1.tgz not in flight; adding
+261 verbose addRemoteTarball [ 'https://registry.npmjs.org/youtube-iframe/-/youtube-iframe-1.0.1.tgz',
+261 verbose addRemoteTarball   '6ca5987c98750142304c9c87643ce5fc4b892b15' ]
+262 info retry fetch attempt 1 at 09:30:41
+263 info attempt registry request try #1 at 09:30:41
+264 http fetch GET https://registry.npmjs.org/youtube-iframe/-/youtube-iframe-1.0.1.tgz
+265 http 200 https://registry.npmjs.org/get-youtube-id
+266 silly get cb [ 200,
+266 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+266 silly get     etag: '"7KLB876RHGV15TQKBDFPQP5LZ"',
+266 silly get     'content-type': 'application/json',
+266 silly get     'cache-control': 'max-age=60',
+266 silly get     'content-length': '6047',
+266 silly get     'accept-ranges': 'bytes',
+266 silly get     date: 'Sat, 10 Oct 2015 07:30:40 GMT',
+266 silly get     via: '1.1 varnish',
+266 silly get     age: '0',
+266 silly get     connection: 'keep-alive',
+266 silly get     'x-served-by': 'cache-fra1244-FRA',
+266 silly get     'x-cache': 'MISS',
+266 silly get     'x-cache-hits': '0',
+266 silly get     'x-timer': 'S1444462240.149139,VS0,VE717',
+266 silly get     vary: 'Accept' } ]
+267 verbose get saving get-youtube-id to /Users/gabriel/.npm/registry.npmjs.org/get-youtube-id/.cache.json
+268 silly addNameRange number 2 { name: 'get-youtube-id',
+268 silly addNameRange   range: '>=1.0.0 <2.0.0',
+268 silly addNameRange   hasData: true }
+269 silly addNameRange versions [ 'get-youtube-id',
+269 silly addNameRange   [ '0.1.0', '0.1.1', '0.1.2', '0.1.3', '1.0.0' ] ]
+270 silly addNamed get-youtube-id@1.0.0
+271 verbose addNamed "1.0.0" is a plain semver version for get-youtube-id
+272 silly mapToRegistry name get-youtube-id
+273 silly mapToRegistry using default registry
+274 silly mapToRegistry registry https://registry.npmjs.org/
+275 silly mapToRegistry uri https://registry.npmjs.org/get-youtube-id
+276 verbose addRemoteTarball https://registry.npmjs.org/get-youtube-id/-/get-youtube-id-1.0.0.tgz not in flight; adding
+277 verbose addRemoteTarball [ 'https://registry.npmjs.org/get-youtube-id/-/get-youtube-id-1.0.0.tgz',
+277 verbose addRemoteTarball   '367680848a29842635a68227c2d10b0a4924560f' ]
+278 info retry fetch attempt 1 at 09:30:41
+279 info attempt registry request try #1 at 09:30:41
+280 http fetch GET https://registry.npmjs.org/get-youtube-id/-/get-youtube-id-1.0.0.tgz
+281 http fetch 200 https://registry.npmjs.org/youtube-iframe/-/youtube-iframe-1.0.1.tgz
+282 silly fetchAndShaCheck shasum 6ca5987c98750142304c9c87643ce5fc4b892b15
+283 verbose addTmpTarball /var/folders/6c/639ypg2d19v0yxr_zjv65z8h0000gn/T/npm-869-4b0379e8/registry.npmjs.org/youtube-iframe/-/youtube-iframe-1.0.1.tgz not in flight; adding
+284 verbose addTmpTarball already have metadata; skipping unpack for youtube-iframe@1.0.1
+285 silly cache afterAdd youtube-iframe@1.0.1
+286 verbose afterAdd /Users/gabriel/.npm/youtube-iframe/1.0.1/package/package.json not in flight; writing
+287 verbose afterAdd /Users/gabriel/.npm/youtube-iframe/1.0.1/package/package.json written
+288 http fetch 200 https://registry.npmjs.org/get-youtube-id/-/get-youtube-id-1.0.0.tgz
+289 silly fetchAndShaCheck shasum 367680848a29842635a68227c2d10b0a4924560f
+290 verbose addTmpTarball /var/folders/6c/639ypg2d19v0yxr_zjv65z8h0000gn/T/npm-869-4b0379e8/registry.npmjs.org/get-youtube-id/-/get-youtube-id-1.0.0.tgz not in flight; adding
+291 verbose addTmpTarball already have metadata; skipping unpack for get-youtube-id@1.0.0
+292 silly cache afterAdd get-youtube-id@1.0.0
+293 verbose afterAdd /Users/gabriel/.npm/get-youtube-id/1.0.0/package/package.json not in flight; writing
+294 verbose afterAdd /Users/gabriel/.npm/get-youtube-id/1.0.0/package/package.json written
+295 silly install resolved [ { name: 'random-global',
+295 silly install resolved     version: '1.0.1',
+295 silly install resolved     description: 'globalize variables under a random alias',
+295 silly install resolved     main: 'index.js',
+295 silly install resolved     repository:
+295 silly install resolved      { type: 'git',
+295 silly install resolved        url: 'git+ssh://git@github.com/compedit/random-global.git' },
+295 silly install resolved     keywords: [ 'random', 'global', 'window', 'browser' ],
+295 silly install resolved     author: { name: 'troy betz', email: 'troybetz@gmail.com' },
+295 silly install resolved     license: 'MIT',
+295 silly install resolved     bugs: { url: 'https://github.com/compedit/random-global/issues' },
+295 silly install resolved     homepage: 'https://github.com/compedit/random-global',
+295 silly install resolved     dependencies: { 'random-string': '^0.1.2' },
+295 silly install resolved     scripts: { test: 'browserify test/randomglobal-test.js > test/bundle.js' },
+295 silly install resolved     devDependencies: { browserify: '^10.2.4', tape: '^4.0.0' },
+295 silly install resolved     gitHead: '89d4d79be0774eb3a56486c51171bf94c4ab6923',
+295 silly install resolved     _id: 'random-global@1.0.1',
+295 silly install resolved     _shasum: '81e289d4c3923806162d6c1ed7ab746019f4c6fa',
+295 silly install resolved     _from: 'random-global@>=1.0.0 <2.0.0',
+295 silly install resolved     _npmVersion: '2.10.1',
+295 silly install resolved     _nodeVersion: '0.12.4',
+295 silly install resolved     _npmUser: { name: 'compedit', email: 'troybetz@gmail.com' },
+295 silly install resolved     maintainers: [ [Object] ],
+295 silly install resolved     dist:
+295 silly install resolved      { shasum: '81e289d4c3923806162d6c1ed7ab746019f4c6fa',
+295 silly install resolved        tarball: 'http://registry.npmjs.org/random-global/-/random-global-1.0.1.tgz' },
+295 silly install resolved     directories: {},
+295 silly install resolved     _resolved: 'https://registry.npmjs.org/random-global/-/random-global-1.0.1.tgz' },
+295 silly install resolved   { name: 'random-string',
+295 silly install resolved     description: 'Simple Module for generating Random Strings',
+295 silly install resolved     version: '0.1.2',
+295 silly install resolved     homepage: 'https://github.com/valiton/node-random-string',
+295 silly install resolved     author:
+295 silly install resolved      { name: 'Valiton GmbH, Bastian \'hereandnow\' Behrens',
+295 silly install resolved        email: 'bastian.behrens@valiton.com' },
+295 silly install resolved     repository:
+295 silly install resolved      { type: 'git',
+295 silly install resolved        url: 'git://github.com/valiton/node-random-string.git' },
+295 silly install resolved     bugs: { url: 'https://github.com/valiton/node-random-string/issues' },
+295 silly install resolved     licenses: [ [Object] ],
+295 silly install resolved     main: 'lib/random-string',
+295 silly install resolved     engines: { node: '>= 0.6.0' },
+295 silly install resolved     scripts: { test: 'grunt nodeunit' },
+295 silly install resolved     devDependencies:
+295 silly install resolved      { 'grunt-contrib-jshint': '~0.4.3',
+295 silly install resolved        'grunt-contrib-nodeunit': '~0.1.2',
+295 silly install resolved        'grunt-contrib-watch': '~0.4.3',
+295 silly install resolved        grunt: '~0.4.1' },
+295 silly install resolved     keywords: [ 'random', 'string' ],
+295 silly install resolved     gitHead: '917b7fb8811984f6bc341bfa0d2372b5959d5dd2',
+295 silly install resolved     _id: 'random-string@0.1.2',
+295 silly install resolved     _shasum: '2d6afb6076651316ac5b8a62d63106db31eb8d44',
+295 silly install resolved     _from: 'random-string@>=0.1.2 <0.2.0',
+295 silly install resolved     _npmVersion: '1.4.21',
+295 silly install resolved     _npmUser: { name: 'hereandnow', email: 'hereandnow78@googlemail.com' },
+295 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object] ],
+295 silly install resolved     dist:
+295 silly install resolved      { shasum: '2d6afb6076651316ac5b8a62d63106db31eb8d44',
+295 silly install resolved        tarball: 'http://registry.npmjs.org/random-string/-/random-string-0.1.2.tgz' },
+295 silly install resolved     directories: {},
+295 silly install resolved     _resolved: 'https://registry.npmjs.org/random-string/-/random-string-0.1.2.tgz' },
+295 silly install resolved   { name: 'youtube-iframe',
+295 silly install resolved     version: '1.0.1',
+295 silly install resolved     description: 'Wrapper for dynamically loading the YouTube iframe api script',
+295 silly install resolved     main: 'index.js',
+295 silly install resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+295 silly install resolved     repository:
+295 silly install resolved      { type: 'git',
+295 silly install resolved        url: 'https://github.com/Prinzhorn/youtube-iframe.git' },
+295 silly install resolved     keywords: [ 'youtube', 'iframe', 'wrapper' ],
+295 silly install resolved     author: { name: 'Alexander Prinzhorn' },
+295 silly install resolved     license: 'MIT',
+295 silly install resolved     bugs: { url: 'https://github.com/Prinzhorn/youtube-iframe/issues' },
+295 silly install resolved     homepage: 'https://github.com/Prinzhorn/youtube-iframe',
+295 silly install resolved     gitHead: '53b10f7b60480f0de66f0406ca9fa77da5225b1e',
+295 silly install resolved     _id: 'youtube-iframe@1.0.1',
+295 silly install resolved     _shasum: '6ca5987c98750142304c9c87643ce5fc4b892b15',
+295 silly install resolved     _from: 'youtube-iframe@>=1.0.0 <2.0.0',
+295 silly install resolved     _npmVersion: '2.5.1',
+295 silly install resolved     _nodeVersion: '0.12.0',
+295 silly install resolved     _npmUser: { name: 'prinzhorn', email: 'alexander@prinzhorn.it' },
+295 silly install resolved     maintainers: [ [Object] ],
+295 silly install resolved     dist:
+295 silly install resolved      { shasum: '6ca5987c98750142304c9c87643ce5fc4b892b15',
+295 silly install resolved        tarball: 'http://registry.npmjs.org/youtube-iframe/-/youtube-iframe-1.0.1.tgz' },
+295 silly install resolved     directories: {},
+295 silly install resolved     _resolved: 'https://registry.npmjs.org/youtube-iframe/-/youtube-iframe-1.0.1.tgz' },
+295 silly install resolved   { name: 'get-youtube-id',
+295 silly install resolved     version: '1.0.0',
+295 silly install resolved     description: 'Parse a youtube url returning the video ID.',
+295 silly install resolved     main: 'index.js',
+295 silly install resolved     bin: {},
+295 silly install resolved     directories: { test: 'test' },
+295 silly install resolved     dependencies: {},
+295 silly install resolved     devDependencies: { tape: '~0.2.2' },
+295 silly install resolved     scripts: { test: 'node test' },
+295 silly install resolved     repository:
+295 silly install resolved      { type: 'git',
+295 silly install resolved        url: 'git://github.com/jmorrell/get-youtube-id.git' },
+295 silly install resolved     homepage: 'https://github.com/jmorrell/get-youtube-id',
+295 silly install resolved     keywords: [ 'youtube', 'url' ],
+295 silly install resolved     author: { name: 'Jeremy Morrell', email: 'morrell.jeremy@gmail.com' },
+295 silly install resolved     license: 'MIT',
+295 silly install resolved     gitHead: '93fd942249c29f25381503ee7fa435fe0749afdc',
+295 silly install resolved     bugs: { url: 'https://github.com/jmorrell/get-youtube-id/issues' },
+295 silly install resolved     _id: 'get-youtube-id@1.0.0',
+295 silly install resolved     _shasum: '367680848a29842635a68227c2d10b0a4924560f',
+295 silly install resolved     _from: 'get-youtube-id@>=1.0.0 <2.0.0',
+295 silly install resolved     _npmVersion: '1.4.21',
+295 silly install resolved     _npmUser: { name: 'jmorrell', email: 'morrell.jeremy@gmail.com' },
+295 silly install resolved     maintainers: [ [Object] ],
+295 silly install resolved     dist:
+295 silly install resolved      { shasum: '367680848a29842635a68227c2d10b0a4924560f',
+295 silly install resolved        tarball: 'http://registry.npmjs.org/get-youtube-id/-/get-youtube-id-1.0.0.tgz' },
+295 silly install resolved     _resolved: 'https://registry.npmjs.org/get-youtube-id/-/get-youtube-id-1.0.0.tgz' } ]
+296 info install random-global@1.0.1 into /Users/gabriel/learnseries/node_modules/react-youtube
+297 info install random-string@0.1.2 into /Users/gabriel/learnseries/node_modules/react-youtube
+298 info install youtube-iframe@1.0.1 into /Users/gabriel/learnseries/node_modules/react-youtube
+299 info install get-youtube-id@1.0.0 into /Users/gabriel/learnseries/node_modules/react-youtube
+300 info installOne random-global@1.0.1
+301 verbose installOne of random-global to /Users/gabriel/learnseries/node_modules/react-youtube not in flight; installing
+302 info installOne random-string@0.1.2
+303 verbose installOne of random-string to /Users/gabriel/learnseries/node_modules/react-youtube not in flight; installing
+304 info installOne youtube-iframe@1.0.1
+305 verbose installOne of youtube-iframe to /Users/gabriel/learnseries/node_modules/react-youtube not in flight; installing
+306 info installOne get-youtube-id@1.0.0
+307 verbose installOne of get-youtube-id to /Users/gabriel/learnseries/node_modules/react-youtube not in flight; installing
+308 verbose lock using /Users/gabriel/.npm/_locks/random-global-ecd1c04eb57b5648.lock for /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global
+309 verbose lock using /Users/gabriel/.npm/_locks/random-string-c4e5b1fdd8cda76e.lock for /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string
+310 verbose lock using /Users/gabriel/.npm/_locks/youtube-iframe-c8e98cc10658de5b.lock for /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe
+311 silly install write writing random-global 1.0.1 to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global
+312 silly install write writing random-string 0.1.2 to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string
+313 verbose lock using /Users/gabriel/.npm/_locks/get-youtube-id-fe99c9a30ba5d8c2.lock for /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id
+314 silly install write writing youtube-iframe 1.0.1 to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe
+315 silly install write writing get-youtube-id 1.0.0 to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id
+316 verbose unbuild node_modules/react-youtube/node_modules/random-global
+317 verbose unbuild node_modules/react-youtube/node_modules/random-string
+318 verbose unbuild node_modules/react-youtube/node_modules/youtube-iframe
+319 verbose unbuild node_modules/react-youtube/node_modules/get-youtube-id
+320 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global is being purged from base /Users/gabriel/learnseries
+321 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global
+322 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string is being purged from base /Users/gabriel/learnseries
+323 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string
+324 verbose tar unpack /Users/gabriel/.npm/random-global/1.0.1/package.tgz
+325 verbose tar unpacking to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global
+326 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global is being purged
+327 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global
+328 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe is being purged from base /Users/gabriel/learnseries
+329 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe
+330 verbose tar unpack /Users/gabriel/.npm/random-string/0.1.2/package.tgz
+331 verbose tar unpacking to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string
+332 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string is being purged
+333 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string
+334 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id is being purged from base /Users/gabriel/learnseries
+335 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id
+336 silly gunzTarPerm modes [ '755', '644' ]
+337 verbose tar unpack /Users/gabriel/.npm/youtube-iframe/1.0.1/package.tgz
+338 verbose tar unpacking to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe
+339 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe is being purged
+340 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe
+341 silly gunzTarPerm modes [ '755', '644' ]
+342 verbose tar unpack /Users/gabriel/.npm/get-youtube-id/1.0.0/package.tgz
+343 verbose tar unpacking to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id
+344 silly gentlyRm /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id is being purged
+345 verbose gentlyRm don't care about contents; nuking /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id
+346 silly gunzTarPerm modes [ '755', '644' ]
+347 silly gunzTarPerm modes [ '755', '644' ]
+348 silly gunzTarPerm extractEntry package.json
+349 silly gunzTarPerm extractEntry package.json
+350 silly gunzTarPerm extractEntry package.json
+351 silly gunzTarPerm extractEntry package.json
+352 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+353 silly gunzTarPerm extractEntry .npmignore
+354 silly gunzTarPerm extractEntry README.md
+355 silly gunzTarPerm extractEntry .npmignore
+356 silly gunzTarPerm extractEntry README.md
+357 silly gunzTarPerm extractEntry .npmignore
+358 silly gunzTarPerm extractEntry README.md
+359 silly gunzTarPerm extractEntry README.md
+360 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+361 silly gunzTarPerm extractEntry LICENSE
+362 silly gunzTarPerm modified mode [ 'LICENSE', 436, 420 ]
+363 silly gunzTarPerm extractEntry index.js
+364 silly gunzTarPerm extractEntry test/randomglobal-test.js
+365 silly gunzTarPerm extractEntry index.js
+366 silly gunzTarPerm modified mode [ 'index.js', 436, 420 ]
+367 silly gunzTarPerm extractEntry index.html
+368 silly gunzTarPerm modified mode [ 'index.html', 436, 420 ]
+369 silly gunzTarPerm extractEntry Gruntfile.js
+370 silly gunzTarPerm extractEntry .jshintrc
+371 silly gunzTarPerm extractEntry LICENSE
+372 silly gunzTarPerm extractEntry index.js
+373 silly gunzTarPerm extractEntry component.json
+374 silly gunzTarPerm extractEntry test/index.js
+375 silly gunzTarPerm extractEntry test/test.html
+376 silly gunzTarPerm extractEntry .travis.yml
+377 silly gunzTarPerm extractEntry LICENSE-MIT
+378 silly gunzTarPerm extractEntry lib/random-string.js
+379 silly gunzTarPerm extractEntry test/random-string_test.js
+380 verbose write writing to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe/package.json
+381 verbose write writing to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global/package.json
+382 info preinstall youtube-iframe@1.0.1
+383 info preinstall random-global@1.0.1
+384 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe/package.json
+385 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global/package.json
+386 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe/package.json
+387 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global/package.json
+388 verbose write writing to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id/package.json
+389 silly install resolved []
+390 verbose about to build /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe
+391 info build /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe
+392 info preinstall get-youtube-id@1.0.0
+393 silly install resolved []
+394 verbose about to build /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global
+395 info build /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global
+396 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id/package.json
+397 info linkStuff youtube-iframe@1.0.1
+398 silly linkStuff youtube-iframe@1.0.1 has /Users/gabriel/learnseries/node_modules/react-youtube/node_modules as its parent node_modules
+399 info linkStuff random-global@1.0.1
+400 silly linkStuff random-global@1.0.1 has /Users/gabriel/learnseries/node_modules/react-youtube/node_modules as its parent node_modules
+401 verbose write writing to /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string/package.json
+402 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id/package.json
+403 info preinstall random-string@0.1.2
+404 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string/package.json
+405 verbose linkBins youtube-iframe@1.0.1
+406 verbose linkMans youtube-iframe@1.0.1
+407 verbose rebuildBundles youtube-iframe@1.0.1
+408 verbose linkBins random-global@1.0.1
+409 verbose linkMans random-global@1.0.1
+410 verbose rebuildBundles random-global@1.0.1
+411 info install youtube-iframe@1.0.1
+412 info install random-global@1.0.1
+413 silly install resolved []
+414 verbose about to build /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id
+415 info build /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id
+416 info postinstall youtube-iframe@1.0.1
+417 info postinstall random-global@1.0.1
+418 verbose unlock done using /Users/gabriel/.npm/_locks/youtube-iframe-c8e98cc10658de5b.lock for /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/youtube-iframe
+419 verbose unlock done using /Users/gabriel/.npm/_locks/random-global-ecd1c04eb57b5648.lock for /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-global
+420 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string/package.json
+421 info linkStuff get-youtube-id@1.0.0
+422 silly linkStuff get-youtube-id@1.0.0 has /Users/gabriel/learnseries/node_modules/react-youtube/node_modules as its parent node_modules
+423 silly install resolved []
+424 verbose about to build /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string
+425 info build /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string
+426 verbose linkBins get-youtube-id@1.0.0
+427 verbose link bins [ {},
+427 verbose link bins   '/Users/gabriel/learnseries/node_modules/react-youtube/node_modules/.bin',
+427 verbose link bins   false ]
+428 verbose linkMans get-youtube-id@1.0.0
+429 verbose rebuildBundles get-youtube-id@1.0.0
+430 info install get-youtube-id@1.0.0
+431 info postinstall get-youtube-id@1.0.0
+432 info linkStuff random-string@0.1.2
+433 silly linkStuff random-string@0.1.2 has /Users/gabriel/learnseries/node_modules/react-youtube/node_modules as its parent node_modules
+434 verbose unlock done using /Users/gabriel/.npm/_locks/get-youtube-id-fe99c9a30ba5d8c2.lock for /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/get-youtube-id
+435 verbose linkBins random-string@0.1.2
+436 verbose linkMans random-string@0.1.2
+437 verbose rebuildBundles random-string@0.1.2
+438 info install random-string@0.1.2
+439 info postinstall random-string@0.1.2
+440 verbose unlock done using /Users/gabriel/.npm/_locks/random-string-c4e5b1fdd8cda76e.lock for /Users/gabriel/learnseries/node_modules/react-youtube/node_modules/random-string
+441 verbose about to build /Users/gabriel/learnseries/node_modules/react-youtube
+442 info build /Users/gabriel/learnseries/node_modules/react-youtube
+443 info linkStuff react-youtube@4.1.2
+444 silly linkStuff react-youtube@4.1.2 has /Users/gabriel/learnseries/node_modules as its parent node_modules
+445 verbose linkBins react-youtube@4.1.2
+446 verbose linkMans react-youtube@4.1.2
+447 verbose rebuildBundles react-youtube@4.1.2
+448 verbose rebuildBundles [ 'get-youtube-id',
+448 verbose rebuildBundles   'random-global',
+448 verbose rebuildBundles   'random-string',
+448 verbose rebuildBundles   'youtube-iframe' ]
+449 info install react-youtube@4.1.2
+450 info postinstall react-youtube@4.1.2
+451 verbose readDependencies loading dependencies from /Users/gabriel/learnseries/package.json
+452 verbose readDependencies npm-shrinkwrap.json is overriding dependencies
+453 info shrinkwrap file "/Users/gabriel/learnseries/npm-shrinkwrap.json"
+454 verbose readDependencies returned deps { axios: 'https://registry.npmjs.org/axios/-/axios-0.5.2.tgz',
+454 verbose readDependencies returned deps   'babel-runtime': 'https://registry.npmjs.org/babel-runtime/-/babel-runtime-4.7.16.tgz',
+454 verbose readDependencies returned deps   'file-loader': 'https://registry.npmjs.org/file-loader/-/file-loader-0.8.1.tgz',
+454 verbose readDependencies returned deps   flummox: 'https://registry.npmjs.org/flummox/-/flummox-2.13.2.tgz',
+454 verbose readDependencies returned deps   immutable: 'https://registry.npmjs.org/immutable/-/immutable-3.6.4.tgz',
+454 verbose readDependencies returned deps   react: 'https://registry.npmjs.org/react/-/react-0.12.2.tgz',
+454 verbose readDependencies returned deps   'react-router': 'https://registry.npmjs.org/react-router/-/react-router-0.11.6.tgz' }
+455 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/axios/package.json
+456 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/babel-core/package.json
+457 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/babel-eslint/package.json
+458 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/babel-loader/package.json
+459 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/babel-runtime/package.json
+460 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/classnames/package.json
+461 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/css-loader/package.json
+462 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/eslint/package.json
+463 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/eslint-loader/package.json
+464 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/file-loader/package.json
+465 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/flummox/package.json
+466 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/grunt/package.json
+467 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/grunt-contrib-clean/package.json
+468 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/grunt-contrib-connect/package.json
+469 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/grunt-contrib-copy/package.json
+470 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/grunt-karma/package.json
+471 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/grunt-open/package.json
+472 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/grunt-webpack/package.json
+473 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/immutable/package.json
+474 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/karma/package.json
+475 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/karma-chrome-launcher/package.json
+476 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/karma-firefox-launcher/package.json
+477 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/karma-jasmine/package.json
+478 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/karma-phantomjs-launcher/package.json
+479 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/karma-script-launcher/package.json
+480 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/karma-webpack/package.json
+481 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/load-grunt-tasks/package.json
+482 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/lodash/package.json
+483 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/node-sass/package.json
+484 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react/package.json
+485 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react-fontawesome/package.json
+486 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react-hot-loader/package.json
+487 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react-modal/package.json
+488 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react-pagify/package.json
+489 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react-paginate/package.json
+490 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react-router/package.json
+491 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react-search-input/package.json
+492 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react-select/package.json
+493 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/react-youtube/package.json
+494 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/reactabular/package.json
+495 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/sass-loader/package.json
+496 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/style-loader/package.json
+497 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/url-loader/package.json
+498 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/webpack/package.json
+499 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/webpack-dev-server/package.json
+500 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/.bin/eslint/package.json
+501 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/.bin/grunt-open/package.json
+502 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/.bin/karma/package.json
+503 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/.bin/node-sass/package.json
+504 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/.bin/webpack/package.json
+505 verbose targetResolver reading package data from /Users/gabriel/learnseries/node_modules/.bin/webpack-dev-server/package.json
+506 verbose already installed skipping react@>=0.13.0 /Users/gabriel/learnseries
+507 silly install resolved []
+508 verbose unlock done using /Users/gabriel/.npm/_locks/react-youtube-71a33c62c02e9964.lock for /Users/gabriel/learnseries/node_modules/react-youtube
+509 verbose validateInstall loading /Users/gabriel/learnseries/package.json for validation
+510 verbose stack Error: The package react@0.12.2 does not satisfy its siblings' peerDependencies requirements!
+510 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+510 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+510 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+510 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+510 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+510 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+510 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+510 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+510 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+510 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+511 verbose cwd /Users/gabriel/learnseries
+512 error Darwin 15.0.0
+513 error argv "node" "/usr/local/bin/npm" "install" "react-youtube"
+514 error node v0.12.5
+515 error npm  v2.13.0
+516 error code EPEERINVALID
+517 error peerinvalid The package react@0.12.2 does not satisfy its siblings' peerDependencies requirements!
+517 error peerinvalid Peer react-modal@0.2.0 wants react@>=0.12.0
+517 error peerinvalid Peer react-pagify@0.6.5 wants react@>=0.11.0 <1.0.0
+517 error peerinvalid Peer react-router@0.11.6 wants react@0.12.x
+517 error peerinvalid Peer reactabular@0.6.4 wants react@>= 0.11.2 < 1.0.0
+517 error peerinvalid Peer react-fontawesome@0.3.3 wants react@>=0.12.0
+517 error peerinvalid Peer react-youtube@4.1.2 wants react@>=0.13.0
+517 error peerinvalid Peer react-hot-loader@1.2.7 wants react@>=0.11.0
+517 error peerinvalid Peer react-select@0.6.7 wants react@>=0.13.3 || ^0.14.0-beta3
+518 verbose exit [ 1, true ]

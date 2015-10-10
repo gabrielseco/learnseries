@@ -2,6 +2,8 @@
 
 import React from 'react/addons';
 import Modal from 'react-modal';
+import FontAwesome from 'react-fontawesome';
+//import YouTube from 'react-youtube';
 import Mensaje from '../UI/Mensaje';
 import { Navigation, TransitionHook } from 'react-router';
 
@@ -19,7 +21,7 @@ let BookListItem = React.createClass({
   mixins: [ Navigation, TransitionHook ],
   getInitialState(){
     return {
-      modalIsOpen: false
+      modalIsOpen: false,
     };
   },
   openModal: function() {
@@ -67,9 +69,20 @@ let BookListItem = React.createClass({
     this.transitionTo('/diccionarios/:id', {id: obj.ID});
 
   },
+  youtube(obj){
 
-
+  },
     render() {
+      var youtube = "http://www.youtube.com/watch?v="+this.props.data.Youtube + "";
+
+
+      const opts = {
+      height: '390',
+      width: '640',
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1
+      }
+    };
 
       return (
 
@@ -85,6 +98,14 @@ let BookListItem = React.createClass({
                          value="BORRAR"
                          onClick={this.openModal}>
                   </input>
+                  <a href={youtube} target="_blank">
+                  <FontAwesome
+                  className='youtube'
+                  name='youtube-play'
+                  size='2x'
+                  onClick={this.openYoutubeModal}
+                  />
+                  </a>
                   <div className="diccionarios">
                     <button onClick={this.diccionarios.bind(this, this.props.data)}>PALABRAS</button>
                   </div>
