@@ -12,6 +12,7 @@ var requiredValues = {
   idPelicula: '',
   idSerie: '',
   idEpisodio: '',
+  idLibro: '',
   english: '',
   spanish: ''
 };
@@ -29,11 +30,14 @@ let addWords = React.createClass({
     if(+this.getParams().idEpisodio === 0){
       requiredValues.idPelicula = this.getParams().idPelicula;
     }
+    else if(+this.getParams().idEpisodio === -1){
+      requiredValues.idLibro = this.getParams().idPelicula;
+    }
     else {
       requiredValues.idSerie = this.getParams().idPelicula;
       requiredValues.idEpisodio = this.getParams().idEpisodio;
     }
-        
+
   },
   render(){
     switch(+this.getParams().id) {

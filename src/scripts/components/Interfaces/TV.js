@@ -35,9 +35,13 @@ let InterfaceTV = React.createClass({
 
         var width = document.getElementById('tv').offsetWidth;
 
+        console.log('width'+width);
+
         var img = 230;
 
         var total = parseInt(width / img);
+        total  = total
+        console.log('total'+total);
 
         total = total * 2;
 
@@ -48,6 +52,7 @@ let InterfaceTV = React.createClass({
 
 
         this.setState({pagination: pagination});
+
 
       });
 

@@ -23,7 +23,7 @@ export class AppFlux extends Flux {
         this.createActions('tv', TVActions, this.getApiendpoint(), this.getApiDB(), this.getApiKey(), this.getPathImageDB());
         this.createStore('tv', TVStore, this);
         this.createActions('diccionarios', DictionaryActions, this.getApiendpoint());
-        this.createActions('books', BookActions, this.getApiendpoint());
+        this.createActions('books', BookActions, this.getApiendpoint(), this.getBooksApi());
 
     }
 
@@ -31,6 +31,10 @@ export class AppFlux extends Flux {
       var _url = "http://88.2.2.236:8080/web/";
       var url  = "http://192.168.1.130:5412/web/"
       return url;
+    }
+
+    getBooksApi(){
+      return "https://www.googleapis.com/books/v1/volumes";
     }
 
     getApiDB(){

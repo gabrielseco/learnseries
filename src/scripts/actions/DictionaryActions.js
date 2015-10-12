@@ -33,6 +33,16 @@ let serverCreateWords = async function(apiendpoint, form){
   form.spanish = form.spanish.trim();
   form.spanish = form.spanish.charAt(0).toUpperCase() + form.spanish.slice(1);
 
+  if(form.idLibro !== ''){
+    var url = "registro_palabra?english="+form.english+
+      "&spanish="+form.spanish+"&ID_LIBRO="+form.idLibro.toString();
+
+    var velneo = await axios.get(apiendpoint + url);
+
+    return velneo.data;
+  }
+
+
   if(form.idEpisodio !== ''){
     var url = "registro_palabra?english="+form.english+
       "&spanish="+form.spanish+"&ID_SERIE="+form.idSerie.toString()+

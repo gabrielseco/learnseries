@@ -61,12 +61,12 @@ let BookListItem = React.createClass({
   },
 
   modify(obj){
-    this.transitionTo('/modifyBook/:name', {name: obj.Nombre});
+    this.transitionTo('/modifyBook/:id', {id: obj.ID});
   },
 
   diccionarios(obj){
     //console.log('diccionarios');
-    this.transitionTo('/diccionarios/:id', {id: obj.ID});
+    this.transitionTo('/diccionariosLibro/:id', {id: obj.ID});
 
   },
   youtube(obj){

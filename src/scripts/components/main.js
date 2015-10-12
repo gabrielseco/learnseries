@@ -19,6 +19,9 @@ import modifyFilm from './Films/modifyFilm';
 import FilmsWords from './Films/FilmsWords';
 import addTV from './TV/addTV';
 import modifyTV from './TV/modifyTV';
+import addBook from './Books/addBook';
+import modifyBook from './Books/modifyBook';
+import BooksWords from './Books/BooksWords';
 import episodesTV from './TV/episodesTV';
 import dictionaryEpisode from './TV/dictionaryEpisode';
 import addEpisodeTV from './TV/addEpisodeTV';
@@ -62,7 +65,10 @@ try {
         <Route name="editWords" path="/editWords/:id/:idPelicula/:idEpisodio" handler={editWord} />
 
         <Route name="books" path="/books" handler={InterfaceBooks} />
+        <Route name="addbook" path="/addBook" handler={addBook} />
+        <Route name="modifybook" path="/modifyBook/:id" handler={modifyBook} />
 
+        <Route name="diccionariosLibro" path="/diccionariosLibro/:id" handler={BooksWords}/>
 
         <Route name="login" path="/login" handler={InterfaceRest} />
         <Route name="select" path="/select" handler={Select} />
