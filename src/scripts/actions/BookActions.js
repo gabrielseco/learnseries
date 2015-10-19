@@ -48,7 +48,15 @@ let serverCreate = async function(apiendpoint, apiBooks, params) {
 
 let serverModify = async function(apiendpoint, params) {
 
-  let qry = "modificar_libro?ID="+params.ID+"&name="+params.name+"&imagen="+params.photo+"&descripcion="+params.description+"&airdate="+params.airdate+"&youtube="+params.youtube;
+  var fecha = params.airdate.split("/");
+
+  fecha = fecha[1] + "/" + fecha[0] + "/"+ fecha[2];
+
+  console.log('fecha',fecha);
+
+
+
+  let qry = "modificar_libro?ID="+params.ID+"&name="+params.name+"&imagen="+params.photo+"&descripcion="+params.description+"&airdate="+fecha+"&youtube="+params.youtube;
   console.log(apiendpoint + qry);
   var books = await axios.get(apiendpoint + qry);
 
