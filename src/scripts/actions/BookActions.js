@@ -3,11 +3,13 @@
 import { Actions } from 'flummox';
 import axios from 'axios';
 import uuid from '../utils/uuid';
+import request from '../utils/config';
+
 
 
 let serverFetch = async function(apiendpoint) {
 
-    let books = await axios.get(apiendpoint + 'libros');
+    let books = await request.get(apiendpoint + 'libros');
 
     return books.data;
 
@@ -15,13 +17,13 @@ let serverFetch = async function(apiendpoint) {
 
 let serverFetchBook = async function(apiendpoint, params) {
 
-    let books = await axios.get(apiendpoint + 'libro?ID='+params);
+    let books = await request.get(apiendpoint + 'libro?ID='+params);
     return books.data;
 }
 
 let serverFetchWords = async function(apiendpoint, params) {
 
-    let books = await axios.get(apiendpoint + 'diccionarios_libros?ID='+params);
+    let books = await request.get(apiendpoint + 'diccionarios_libros?ID='+params);
 
     return books.data;
 
@@ -31,7 +33,7 @@ let serverCreate = async function(apiendpoint, apiBooks, params) {
 
   let qry = "?q="+params.name;
 
-  var books = await axios.get(apiBooks + qry);
+  var books = await request.get(apiBooks + qry);
 
   var arrayOfBooks = new Array();
 
@@ -58,7 +60,7 @@ let serverModify = async function(apiendpoint, params) {
 
   let qry = "modificar_libro?ID="+params.ID+"&name="+params.name+"&imagen="+params.photo+"&descripcion="+params.description+"&airdate="+fecha+"&youtube="+params.youtube;
   console.log(apiendpoint + qry);
-  var books = await axios.get(apiendpoint + qry);
+  var books = await request.get(apiendpoint + qry);
 
   return books.data;
 };

@@ -2,19 +2,21 @@
 
 import { Actions } from 'flummox';
 import axios from 'axios';
-import uuid from '../utils/uuid'
+import uuid from '../utils/uuid';
+import request from '../utils/config';
+
 
 
 //we fetch our series from our database
 
 let serverFetchTV = async function(apiendpoint) {
 
-    //console.log('fetching tv in tv actions');
+  //console.log('fetching tv in tv actions');
 
-    let tv = await axios.get(apiendpoint + 'series');
+  let tv = await request.get(apiendpoint + 'series');
 
-    //console.log('items '+tv.data.length);
-    return tv.data;  // passed to the store after REST response (obviously); sliced for the demo
+  //console.log('items '+tv.data.length);
+  return tv.data;  // passed to the store after REST response (obviously); sliced for the demo
 
 
 };
@@ -50,7 +52,7 @@ let serverFetchTVEpisodes = async function (apiendpoint, tvContent) {
 
   //console.log('fetching episodes of tv in actions');
 
-  let tv = await axios.get(apiendpoint + 'episodios?id='+ tvContent);
+  let tv = await request.get(apiendpoint + 'episodios?id='+ tvContent);
 
   //console.log('items episodes '+tv.data.length);
 
@@ -63,7 +65,7 @@ let serverGetTV = async function(apiendpoint, tvContent) {
 
   //console.log('fetchicg one tv in tv actions');
 
-  let tv = await axios.get(apiendpoint + "serie?ID="+ tvContent);
+  let tv = await request.get(apiendpoint + "serie?ID="+ tvContent);
 
   return tv.data;
 
@@ -74,7 +76,7 @@ let serverGetTVEpisode = async function(apiendpoint, tvContent) {
 
   //console.log('fetching data from episode in tv actions');
 
-  let tv = await axios.get(apiendpoint + "episodio_serie?ID="+ tvContent);
+  let tv = await request.get(apiendpoint + "episodio_serie?ID="+ tvContent);
 
   return tv.data;
 
@@ -133,52 +135,52 @@ let serverModifyTV = async function(apiendpoint, apiDB, apiKey, imagePath, tvCon
   //console.log('modifying tv');
 
 
-  var response = await axios.get(apiDB + 'search/tv?api_key='+ apiKey +'&query='+ nombre);
-      response = response.data;
+  var response = await request.get(apiDB + 'search/tv?api_key='+ apiKey +'&query='+ nombre);
+  response = response.data;
 
-      //console.log('resp', response);
+  //console.log('resp', response);
 
-      if(response.results.length > 0) {
-        nombre = response.results[0].original_name;
-        idSerie = response.results[0].id;
-
-
-        var responseImg = await axios.get(apiDB + 'tv/'+idSerie+'?api_key='+ apiKey +'&query='+ name);
-            responseImg = responseImg.data;
+  if(response.results.length > 0) {
+    nombre = response.results[0].original_name;
+    idSerie = response.results[0].id;
 
 
-            for(var i = 0; i < responseImg.seasons.length; i++){
-
-              if(responseImg.seasons[i].season_number.toString() === temporada){
-                var idSeason = responseImg.seasons[i].id;
-                var imagen = imagePath + responseImg.seasons[i].poster_path;
-                var year = responseImg.seasons[i].air_date.slice(0, 4);
-              }
-
-            }
-
-            var data = {
-              nombre: nombre,
-              temporada: temporada,
-              anterior: anterior,
-              imagen: imagen,
-              year: year,
-              idSerie: idSerie,
-              idSeason: idSeason
-            };
-
-            console.log('datos', data);
+    var responseImg = await request.get(apiDB + 'tv/'+idSerie+'?api_key='+ apiKey +'&query='+ name);
+    responseImg = responseImg.data;
 
 
-            var url = "modificar_series?name="+ data.nombre + "&anterior="+ data.anterior + "&temporada="+ data.temporada + "&imagen="+ data.imagen + "&year="+data.year.toString()+"&idSerie="+data.idSerie.toString()+"&idSeason="+data.idSeason.toString();
+    for(var i = 0; i < responseImg.seasons.length; i++){
 
-            console.log('url', url);
+      if(responseImg.seasons[i].season_number.toString() === temporada){
+        var idSeason = responseImg.seasons[i].id;
+        var imagen = imagePath + responseImg.seasons[i].poster_path;
+        var year = responseImg.seasons[i].air_date.slice(0, 4);
+      }
 
-            var velneo = await axios.get(apiendpoint + url);
+    }
 
-            return velneo.data;
+    var data = {
+      nombre: nombre,
+      temporada: temporada,
+      anterior: anterior,
+      imagen: imagen,
+      year: year,
+      idSerie: idSerie,
+      idSeason: idSeason
+    };
 
-          }
+    console.log('datos', data);
+
+
+    var url = "modificar_series?name="+ data.nombre + "&anterior="+ data.anterior + "&temporada="+ data.temporada + "&imagen="+ data.imagen + "&year="+data.year.toString()+"&idSerie="+data.idSerie.toString()+"&idSeason="+data.idSeason.toString();
+
+    console.log('url', url);
+
+    var velneo = await request.get(apiendpoint + url);
+
+    return velneo.data;
+
+  }
 
 
 
@@ -200,47 +202,47 @@ let serverCreateTV = async function(apiendpoint, apiDB, apiKey, imagePath, tvCon
 
 
   var response = await axios.get(apiDB + 'search/tv?api_key='+ apiKey +'&query='+ name);
-      response = response.data;
+  response = response.data;
 
-      if(response.results.length > 0) {
-        name = response.results[0].original_name;
-        idSerie = response.results[0].id;
-
-
-        var responseImg = await axios.get(apiDB + 'tv/'+idSerie+'?api_key='+ apiKey +'&query='+ name);
-            responseImg = responseImg.data;
+  if(response.results.length > 0) {
+    name = response.results[0].original_name;
+    idSerie = response.results[0].id;
 
 
-            for(var i = 0; i < responseImg.seasons.length; i++){
-
-              if(responseImg.seasons[i].season_number.toString() === temporada){
-                var idSeason = responseImg.seasons[i].id;
-                var imagen = imagePath + responseImg.seasons[i].poster_path;
-                var year = responseImg.seasons[i].air_date.slice(0, 4);
-              }
-
-            }
-
-            var data = {
-              name: name,
-              temporada: temporada,
-              imagen: imagen,
-              year: year,
-              idSerie: idSerie,
-              idSeason: idSeason
-            };
+    var responseImg = await request.get(apiDB + 'tv/'+idSerie+'?api_key='+ apiKey +'&query='+ name);
+    responseImg = responseImg.data;
 
 
-            var url = "registro_series?nombre="+ data.name + "&temporada="+ data.temporada + "&imagen="+ data.imagen + "&year="+data.year+"&idSerie="+data.idSerie+"&idSeason="+data.idSeason;
+    for(var i = 0; i < responseImg.seasons.length; i++){
 
-            //console.log('url', url);
+      if(responseImg.seasons[i].season_number.toString() === temporada){
+        var idSeason = responseImg.seasons[i].id;
+        var imagen = imagePath + responseImg.seasons[i].poster_path;
+        var year = responseImg.seasons[i].air_date.slice(0, 4);
+      }
 
-            var velneo = await axios.get(apiendpoint + url);
+    }
 
-            return velneo.data;
+    var data = {
+      name: name,
+      temporada: temporada,
+      imagen: imagen,
+      year: year,
+      idSerie: idSerie,
+      idSeason: idSeason
+    };
 
 
-        }
+    var url = "registro_series?nombre="+ data.name + "&temporada="+ data.temporada + "&imagen="+ data.imagen + "&year="+data.year+"&idSerie="+data.idSerie+"&idSeason="+data.idSeason;
+
+    //console.log('url', url);
+
+    var velneo = await request.get(apiendpoint + url);
+
+    return velneo.data;
+
+
+  }
 
 
 
@@ -255,8 +257,8 @@ let serverCreateEpisode = async function(apiendpoint, tvContent) {
   var url = "registro_episodio?nombre=" + tvContent.nombre + "&numero="+ tvContent.numero +"&ID="+ tvContent.id;
 
 
-  var velneo = await axios.get(apiendpoint + url);
-      return velneo.data;
+  var velneo = await request.get(apiendpoint + url);
+  return velneo.data;
 
 
 };
@@ -264,7 +266,7 @@ let serverCreateEpisode = async function(apiendpoint, tvContent) {
 let serverGetEpisode = async function(apiendpoint, tvContent) {
   var url = "episodio?ID=" + tvContent;
 
-  var velneo = await axios.get(apiendpoint + url);
+  var velneo = await request.get(apiendpoint + url);
 
   return velneo.data;
 };
@@ -274,7 +276,7 @@ let serverModifyEpisode = async function(apiendpoint, tvContent) {
   tvContent.descripcion = tvContent.descripcion.replace(/["]+/g, '');
   var url = "modificar_episodio?nombre="+tvContent.nombre+"&numero="+tvContent.numero+"&id="+tvContent.id+"&descripcion="+tvContent.descripcion;
   console.log('velneo'+url);
-  var velneo = await axios.get(apiendpoint + url);
+  var velneo = await request.get(apiendpoint + url);
 
   //console.log(apiendpoint + url);
 
@@ -283,127 +285,124 @@ let serverModifyEpisode = async function(apiendpoint, tvContent) {
 
 };
 
-let sanitize = function (unsanitized){
-
-};
 
 
 
 
 let serverDeleteTV = async function(apiendpoint, tvContent) {
-    let tv = await axios.get(apiendpoint + '/baja_serie?id=' + tvContent);
-    return tv.data;
+  let tv = await request.get(apiendpoint + '/baja_serie?id=' + tvContent);
+  return tv.data;
 };
 
 let serverDeleteEpisode = async function(apiendpoint, tvContent){
-  let tv = await axios.get(apiendpoint + '/baja_episodio?id=' + tvContent);
+  let tv = await request.get(apiendpoint + '/baja_episodio?id=' + tvContent);
   return tv.data;
 };
 
 
 export class TVActions extends Actions {
 
-    constructor(apiendpoint, apiDB, apiKey, imagePath) {
-        super();
-        this.apiendpoint = apiendpoint;
-        this.apiDB = apiDB;
-        this.apiKey = apiKey;
-        this.imagePath = imagePath;
-    }
+  constructor(apiendpoint, apiDB, apiKey, imagePath) {
+    super();
+    this.apiendpoint = apiendpoint;
+    this.apiDB = apiDB;
+    this.apiKey = apiKey;
+    this.imagePath = imagePath;
+  }
 
-    async fetchTV() {
-      const response = await serverFetchTV(this.apiendpoint);
-      return response;
-    }
+  async fetchTV() {
+    const response = await serverFetchTV(this.apiendpoint);
+    return response;
+  }
 
-    async fetchTVSelect(){
+  async fetchTVSelect(){
 
-      var response = await serverFetchTV(this.apiendpoint);
-          response = serverBuildSelect(response);
-      return response;
-    }
+    var response = await serverFetchTV(this.apiendpoint);
+    response = serverBuildSelect(response);
+    return response;
+  }
 
-    async fetchTVEpisodesSelect(tvContent){
-      var response = await serverFetchTVEpisodes(this.apiendpoint, tvContent);
-          response = serverBuildSelect(response, true);
-      return response;
-    }
+  async fetchTVEpisodesSelect(tvContent){
+    var response = await serverFetchTVEpisodes(this.apiendpoint, tvContent);
+    response = serverBuildSelect(response, true);
+    return response;
+  }
 
-    async fetchTVEpisodes(tvContent){
+  async fetchTVEpisodes(tvContent){
 
-      const response = await serverFetchTVEpisodes(this.apiendpoint, tvContent);
-      return response;
+    const response = await serverFetchTVEpisodes(this.apiendpoint, tvContent);
+    return response;
 
-    }
-
-
-    async getTV(tvContent){
-
-      const response = await serverGetTV(this.apiendpoint, tvContent);
-      return response;
-
-    }
-
-    async getTVEpisode(tvContent) {
-
-      const response = await serverGetTVEpisode(this.apiendpoint, tvContent);
-
-      return response;
-
-    }
-
-    async createTV(tvContent) {
-
-      const response = await serverCreateTV(this.apiendpoint, this.apiDB, this.apiKey, this.imagePath, tvContent);
-      return response;
-
-    }
-
-    async createEpisodeTV(tvContent) {
-
-      const response = await serverCreateEpisode(this.apiendpoint, tvContent);
-
-      return response;
-
-    }
-
-    async getEpisode(tvContent) {
-
-      const response = await serverGetEpisode(this.apiendpoint, tvContent);
-      return response;
-
-    }
-
-    async generateTVEpisodes(tvContent){
-
-      const response = await serverGenerateTVEpisodes(this.apiendpoint, this.apiDB, this.apiKey, tvContent);
-      return response;
-    }
-
-    async modifyEpisode(tvContent) {
-
-      const response = await serverModifyEpisode(this.apiendpoint, tvContent);
-      return response;
-    }
+  }
 
 
-    async modifyTV(tvContent) {
+  async getTV(tvContent){
 
-      const response = await serverModifyTV(this.apiendpoint, this.apiDB, this.apiKey, this.imagePath, tvContent);
-      return response;
+    const response = await serverGetTV(this.apiendpoint, tvContent);
+    return response;
 
-    }
+  }
+
+  async getTVEpisode(tvContent) {
+
+    const response = await serverGetTVEpisode(this.apiendpoint, tvContent);
+
+    return response;
+
+  }
+
+  async createTV(tvContent) {
+
+    const response = await serverCreateTV(this.apiendpoint, this.apiDB, this.apiKey, this.imagePath, tvContent);
+    return response;
+
+  }
+
+  async createEpisodeTV(tvContent) {
+
+    const response = await serverCreateEpisode(this.apiendpoint, tvContent);
+
+    return response;
+
+  }
+
+  async getEpisode(tvContent) {
+
+    const response = await serverGetEpisode(this.apiendpoint, tvContent);
+    return response;
+
+  }
+
+  async generateTVEpisodes(tvContent){
+
+    const response = await serverGenerateTVEpisodes(this.apiendpoint, this.apiDB, this.apiKey, tvContent);
+    return response;
+  }
+
+  async modifyEpisode(tvContent) {
+
+    const response = await serverModifyEpisode(this.apiendpoint, tvContent);
+    return response;
+  }
 
 
-    async deleteTV(tvContent) {
+  async modifyTV(tvContent) {
 
-      const response = await serverDeleteTV(this.apiendpoint, tvContent);
-      return response;
+    const response = await serverModifyTV(this.apiendpoint, this.apiDB, this.apiKey, this.imagePath, tvContent);
+    return response;
 
-    }
+  }
 
-    async deleteEpisode(tvContent){
-      const response = await serverDeleteEpisode(this.apiendpoint, tvContent);
-      return response;
-    }
+
+  async deleteTV(tvContent) {
+
+    const response = await serverDeleteTV(this.apiendpoint, tvContent);
+    return response;
+
+  }
+
+  async deleteEpisode(tvContent){
+    const response = await serverDeleteEpisode(this.apiendpoint, tvContent);
+    return response;
+  }
 }

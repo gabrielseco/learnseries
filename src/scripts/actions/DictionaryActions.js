@@ -2,11 +2,13 @@
 
 import { Actions } from 'flummox';
 import axios from 'axios';
-import uuid from '../utils/uuid'
+import uuid from '../utils/uuid';
+import request from '../utils/config';
+
 
 let serverFetchFilmsWords = async function(apiendpoint) {
 
-    let words = await axios.get(apiendpoint + '/diccionarios_peliculas');
+    let words = await request.get(apiendpoint + '/diccionarios_peliculas');
     return words.data;
 
 };
@@ -14,14 +16,14 @@ let serverFetchFilmsWords = async function(apiendpoint) {
 
 let serverFetchTVWords = async function(apiendpoint) {
 
-  let words = await axios.get(apiendpoint + '/diccionarios_series');
+  let words = await request.get(apiendpoint + '/diccionarios_series');
   return words.data;
 
 };
 
 let serverFetchDictionaryEpisode = async function(apiendpoint, formContent){
 
-  let words = await axios.get(apiendpoint + '/diccionarios_episodio?ID='+formContent);
+  let words = await request.get(apiendpoint + '/diccionarios_episodio?ID='+formContent);
   return words.data;
 
 };
@@ -37,7 +39,7 @@ let serverCreateWords = async function(apiendpoint, form){
     var url = "registro_palabra?english="+form.english+
       "&spanish="+form.spanish+"&ID_LIBRO="+form.idLibro.toString();
 
-    var velneo = await axios.get(apiendpoint + url);
+    var velneo = await request.get(apiendpoint + url);
 
     return velneo.data;
   }
@@ -48,14 +50,14 @@ let serverCreateWords = async function(apiendpoint, form){
       "&spanish="+form.spanish+"&ID_SERIE="+form.idSerie.toString()+
       "&ID_EPISODIO="+form.idEpisodio.toString();
 
-    var velneo = await axios.get(apiendpoint + url);
+    var velneo = await request.get(apiendpoint + url);
 
     return velneo.data;
 
   } else {
      url = "registro_palabra?english="+form.english+
       "&spanish="+form.spanish+"&ID="+form.idPelicula.toString();
-     velneo = await axios.get(apiendpoint + url);
+     velneo = await request.get(apiendpoint + url);
 
     return velneo.data;
   }
@@ -65,7 +67,7 @@ let serverCreateWords = async function(apiendpoint, form){
 };
 
 let serverGetWord = async function (apiendpoint, params){
-  let words = await axios.get(apiendpoint + '/palabra?ID='+params);
+  let words = await request.get(apiendpoint + '/palabra?ID='+params);
   return words.data;
 };
 
@@ -79,14 +81,14 @@ let serverEditWord = async function (apiendpoint, params) {
 
   var url = "modificar_palabra?ID="+params.ID +"&english="+params.english+"&spanish="+params.spanish;
   //console.log(apiendpoint + url);
-  let velneo = await axios.get(apiendpoint + url);
+  let velneo = await request.get(apiendpoint + url);
 
   return velneo.data;
 }
 
 let serverDeleteWord = async function (apiendpoint, params){
 
-  let words = await axios.get(apiendpoint + '/baja_palabra?ID='+params);
+  let words = await request.get(apiendpoint + '/baja_palabra?ID='+params);
   return words.data;
 
 };
