@@ -84,15 +84,26 @@ let modifyEpisode = React.createClass({
 
       });
     },
+    addWords(){
+      //console.log('Add Words');
+      var idEpisodio = this.getParams().id;
+      var idSerie = this.getParams().idSerie;
+      this.transitionTo('/addWords/:id/:idPelicula/:idEpisodio', {id: '3', idPelicula: idSerie, idEpisodio: idEpisodio});
+    },
     render() {
-
+      var float = {
+        float: 'right'
+      };
       if(this.state.value !== ''){
 
       return (
         <div>
           <Mensaje mostrar={this.state.mostrar} mensaje={mensaje.errorInsertada} />
+          <div className="dictionaryButton" style={float}>
+            <button className="addWords" onClick={this.addWords}>ADD WORDS</button>
+          </div>
+          <img className='img' src={this.state.value[0].Foto} width="230" height="345"/>
           <form onSubmit={this.handleForm} id="modifyEpisode" method="post" role="form">
-          <p>{this.state.value[0].Serie} - Season {this.state.value[0].Temporada}</p>
           <label className="is-required">Nombre</label>
           <input ref="nombre" className={this.state.inputName} type="text" required placeholder="Nombre" defaultValue={this.state.value[0].Nombre}></input>
           <label className="is-required">Número</label>

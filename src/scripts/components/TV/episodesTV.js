@@ -10,6 +10,10 @@ import { Navigation, TransitionHook, State } from 'react-router';
 require('reactabular/style.css');
 
 
+var button = {
+  marginRight:'20px'
+};
+
 let episodesTV = React.createClass({
 
   mixins: [ Navigation, TransitionHook, State ],
@@ -185,6 +189,8 @@ generateEpisodes(){
   this.props.flux.getActions('tv').generateTVEpisodes(params).then((res) => {
     //console.log('generateTVEpisodes', res);
 
+    location.reload();
+
   });
 
 
@@ -219,9 +225,10 @@ generateEpisodes(){
       return (
         <div className="table-react">
           <div className="dictionaryButton">
-              <button onClick={this.addEpisodes}>ADD EPISODES</button>
-              <div>
-              <button onClick={this.generateEpisodes}>GENERATE</button>
+              <button style={button} onClick={this.addEpisodes}>ADD EPISODES</button>
+              <button style={button}  onClick={this.generateEpisodes}>GENERATE</button>
+
+          <div>
               </div>
           </div>
           <div className='per-page-container'>
